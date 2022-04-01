@@ -4,9 +4,9 @@ import {
   Form,
   Button,
   Container,
-  NavDropdown,
   FormControl,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const NavigationBar = () => {
   return (
     <>
@@ -20,9 +20,8 @@ const NavigationBar = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link>Home</Nav.Link>
-              <Nav.Link>Login</Nav.Link>
-              <Nav.Link>Link</Nav.Link>
+              <Link to="/">Home</Link>
+              <Link to="/login">Login</Link>
             </Nav>
             <Form className="d-flex">
               <FormControl
