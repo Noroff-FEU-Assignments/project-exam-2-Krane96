@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC,eAAe,CAAC;EACzB,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "../src/components/navbar/navigationBar.scss"
+    ],
+    "names": [],
+    "file": "navigationBar.css"
+}

@@ -1,32 +1,84 @@
-import {
-  Navbar,
-  Nav,
-  Form,
-  Button,
-  Container,
-  FormControl,
-} from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { BiMenuAltRight } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
+import { useEffect, useState } from "react";
+import classes from "./NavigationBar.module.scss";
+
+
 const NavigationBar = () => {
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [size, setSize] = useState({
+      width: undefined,
+      height: undefined,
+  });
+
+  useEffect(() => {
+      const handleResize = () => {
+          setSize({
+              width: window.innerWidth,
+              height: window.innerHeight,
+          });
+      };
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+      if (size.width > 768 && menuOpen) {
+          setMenuOpen(false);
+      }
+  }, [size.width, menuOpen]);
+
+  const menuToggleHandler = () => {
+      setMenuOpen((p) => !p);
+  };
+
+  const ctaClickHandler = () => {
+      menuToggleHandler();
+      navigate("/login");
+  };
+
   return (
-    <>
-      <Navbar expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="#">Holidaze</Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Link to="/">Home</Link>
-              <Link to="/login">Login</Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+      <header className={classes.header}>
+          <div className={classes.header__content}>
+              <Link to="/" className={classes.header__content__logo}>
+                  Holidaze
+              </Link>
+              <nav
+                  className={`${classes.header__content__nav} ${
+                      menuOpen && size.width < 768 ? classes.isMenu : ""
+                  }`}
+              >
+                  <ul>
+                      <li>
+                          <Link to="/page-one" onClick={menuToggleHandler}>
+                              Home  
+                          </Link>
+                      </li>
+                      <li>
+                          <Link to="/page-two" onClick={menuToggleHandler}>
+                              Contact
+                          </Link>
+                      </li>
+                      <li>
+                          <Link to="/page-three" onClick={menuToggleHandler}>
+                              PageThree
+                          </Link>
+                      </li>
+                  </ul>
+                  <button onClick={ctaClickHandler}>Login</button>
+              </nav>
+              <div className={classes.header__content__toggle}>
+                  {!menuOpen ? (
+                      <BiMenuAltRight onClick={menuToggleHandler} />
+                  ) : (
+                      <AiOutlineClose onClick={menuToggleHandler} />
+                  )}
+              </div>
+          </div>
+      </header>
   );
 };
 
