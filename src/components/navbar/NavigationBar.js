@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const NavigationBar = () => {
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar expand="lg">
         <Container fluid>
           <Navbar.Brand href="#">Holidaze</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -23,15 +23,6 @@ const NavigationBar = () => {
               <Link to="/">Home</Link>
               <Link to="/login">Login</Link>
             </Nav>
-            <Form className="d-flex">
-              <FormControl
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-success">Search</Button>
-            </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>

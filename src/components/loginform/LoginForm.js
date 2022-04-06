@@ -6,6 +6,8 @@ import { AUTH_URL } from '../../utils/api';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import AuthContext from '../../utils/context';
+import "./login.scss";
+
 
 const LoginForm = () => {
   // navigation hook

@@ -4,6 +4,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Admin from "./components/pages/Admin";
 import { AuthProvider } from "./utils/context";
+import "./sass/main.scss"
 function App() {
   return (
     <>
