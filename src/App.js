@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/navbar/NavigationBar";
-import Home from "./components/pages/Home";
-import Login from "./components/pages/Login";
-import Admin from "./components/pages/Admin";
+import Home from "./components/pages/home/Home";
+import Login from "./components/pages/login/Login";
+import Admin from "./components/pages/admin/Admin";
 import { AuthProvider } from "./utils/context";
 import "./styles/main.scss"
 function App() {

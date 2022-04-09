@@ -8,8 +8,14 @@ body {
     width: 100%;
     font-family: $Poppins;
     color: $dark;
+    background-color: #f8f9fa;
 }
 
 #root {
     height: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: $light;
 }
