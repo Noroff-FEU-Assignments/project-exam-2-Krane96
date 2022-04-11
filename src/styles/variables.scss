@@ -6,6 +6,7 @@ $Poppins: "Poppins", sans-serif;
 $dark: rgb(29, 29, 29);
 $light: #fff;
 $primary: #ffb5a7;
+$secondary: #480ca8;
 $bg: rgb(244, 244, 255);
 $bg_section: #f4f1de;
 
@@ -15,6 +16,7 @@ $spacing-lg: 32px;
 
 // border radius
 $borderRadius: 3px;
+$borderRound: 9999px;
 
 
 @mixin breakpoint($point) {

@@ -3,6 +3,7 @@ import NavigationBar from "./components/navbar/NavigationBar";
 import Home from "./components/pages/home/Home";
 import Login from "./components/pages/login/Login";
 import Admin from "./components/pages/admin/Admin";
+import Footer from "./components/footer/Footer";
 import { AuthProvider } from "./utils/context";
 import "./styles/main.scss"
 function App() {
@@ -17,6 +18,10 @@ function App() {
             <Route path="/admin" element={<Admin />} />
           </Routes>
     </Router>
+    <div style={{height: "100vh"}}>
+
+    </div>
+    <Footer />
     </AuthProvider>
     </>
   );

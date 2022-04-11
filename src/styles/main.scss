@@ -9,6 +9,10 @@ body {
     font-family: $Poppins;
     color: $dark;
     background-color: #f8f9fa;
+
+}
+html {
+    height: 100vh;
 }
 
 #root {
@@ -19,3 +23,4 @@ a{
     text-decoration: none;
     color: $light;
 }
+

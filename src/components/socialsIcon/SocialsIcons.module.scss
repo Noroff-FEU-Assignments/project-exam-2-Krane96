@@ -1,0 +1,12 @@
+@import "./../../styles/variables.scss";
+
+
+.social_icons span{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: $borderRound;
+    background-color: $dark;
+    color: $light;
+    display: inline-block;
+}
