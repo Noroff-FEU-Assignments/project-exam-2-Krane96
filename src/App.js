@@ -5,7 +5,10 @@ import Login from "./components/pages/login/Login";
 import Admin from "./components/pages/admin/Admin";
 import Footer from "./components/footer/Footer";
 import { AuthProvider } from "./utils/context";
+import LoginForm from "./components/loginform/LoginForm";
+import { useState } from "react";
 import "./styles/main.scss"
+
 function App() {
   return (
     <>
@@ -18,9 +21,7 @@ function App() {
             <Route path="/admin" element={<Admin />} />
           </Routes>
     </Router>
-    <div style={{height: "100vh"}}>
-
-    </div>
+    <div style={{height:"100vh"}}></div>
     <Footer />
     </AuthProvider>
     </>

@@ -1,3 +1,43 @@
-input{
-    border: none;
+input {
+  border: none;
+  padding: 5px;
+  margin: .5rem 0;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+}
+form button{
+  margin-top: 10px;
+  padding: .5rem;
+}
+.loginContainer {
+  max-width: 400px;
+  min-height: 400px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  position: relative;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5rem auto;
+}
+.closeBtn {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  width: 30px;
+}
+
+.closeBtnContainer{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }

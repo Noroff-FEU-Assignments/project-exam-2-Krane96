@@ -1,15 +1,14 @@
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { userLoginSchema } from '../../utils/yupSchema';
-import axios from 'axios';
-import { AUTH_URL } from '../../utils/api';
-import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
-import AuthContext from '../../utils/context';
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { userLoginSchema } from "../../utils/yupSchema";
+import axios from "axios";
+import { AUTH_URL } from "../../utils/api";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../utils/context";
 import "./login.scss";
 
-
-const LoginForm = () => {
+const LoginForm = ({ closeLogin }) => {
   // navigation hook
   const navigate = useNavigate();
 
@@ -51,19 +50,43 @@ const LoginForm = () => {
   // Render page
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("email")} placeholder="Your email..." />
-        {errors.email && <span>{errors.email.message}</span>}
+      <div className="loginBackground">
+        <div className="loginContainer">
+          <div className="closeBtnContainer">
+            <button
+              className="closeBtn"
+              onClick={() => {
+                closeLogin(false);
+              }}
+            >
+              &times;
+            </button>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label>Username</label>
+            <input {...register("email")} placeholder="Your email..." />
+            {errors.email && <span>{errors.email.message}</span>}
+              <label>Password</label>
+            <input
+              {...register("password")}
+              type="password"
+              placeholder="Your password..."
+            />
+            {errors.password && <span>{errors.password.message}</span>}
 
-        <input
-          {...register("password")}
-          type="password"
-          placeholder="Your password..."
-        />
-        {errors.password && <span>{errors.password.message}</span>}
-
-        <button>Send</button>
-      </form>
+            <button>Send</button>
+          </form>
+          <div className="closeBtnContainer">
+          <button
+            onClick={() => {
+              closeLogin(false);
+            }}
+          >
+            Back
+          </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

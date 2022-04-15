@@ -3,10 +3,12 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import classes from "./NavigationBar.module.scss";
+import LoginForm from "../loginform/LoginForm";
 
 const NavigationBar = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openLogin, setOpenLogin] = useState(false);
   const [size, setSize] = useState({
     width: undefined,
     height: undefined,
@@ -34,10 +36,6 @@ const NavigationBar = () => {
     setMenuOpen((p) => !p);
   };
 
-  const loginButton = () => {
-    menuToggle();
-    navigate("/login");
-  };
 
   return (
     <header className={classes.header}>
@@ -67,7 +65,9 @@ const NavigationBar = () => {
               </Link>
             </li>
           </ul>
-          <button onClick={loginButton}>Login</button>
+          <button onClick={ () => {
+            setOpenLogin(true);
+          }}>Login</button>
         </nav>
         <div className={classes.header__content__toggle}>
           <span onClick={menuToggle} style={{fontSize:"1.1rem"}}>Menu</span>
@@ -77,8 +77,11 @@ const NavigationBar = () => {
             <AiOutlineClose onClick={menuToggle} />
           )}
         </div>
+        
       </div>
+      {openLogin && <LoginForm closeLogin={setOpenLogin}/>}
     </header>
+    
   );
 };
 

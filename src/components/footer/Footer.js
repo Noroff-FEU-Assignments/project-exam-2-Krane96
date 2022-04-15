@@ -35,8 +35,8 @@ const Footer = () => {
           </div>
         </div>
         <div className={classes.footer_row_2}>
-          <span>&#169; Holidaze. All rights reserved</span>
-          <span>something - something</span>
+          <span style={{color:"#eff1f394",marginTop:"1rem",fontSize:".9em"}}>&#169; Holidaze. All rights reserved</span>
+          <span style={{color:"#eff1f394",marginTop:"1rem",fontSize:".9em"}}>something - something</span>
           <SocialsIcons />
         </div>
       </footer>

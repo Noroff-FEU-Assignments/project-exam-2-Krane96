@@ -10,15 +10,17 @@ const Home = () => {
           <RiAccountPinCircleLine />
         </div>
       </div>
-      <div className={classes.hero_header}>
-        <img src="/images/hero_header.jpg" />
-        <div className={classes.hero_text}>
-          <h2>Check out our hotels and apartments</h2>
-          <Link to="/hotels">Find now</Link>
-        </div>
-      </div>
+      
     </>
   );
 };
 
 export default Home;
+
+/*<div className={classes.hero_header}>
+        <img src="/images/hero_header.jpg" />
+        <div className={classes.hero_text}>
+          <h2>Check out our hotels and apartments</h2>
+          <Link to="/hotels">Find now</Link>
+        </div>
+      </div>*/
