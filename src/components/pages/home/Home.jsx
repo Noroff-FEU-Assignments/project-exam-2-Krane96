@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom";
 import classes from "./Home.module.scss";
 import { RiAccountPinCircleLine } from "react-icons/ri";
+import AuthContext from "../../../utils/context";
+import { useContext } from "react";
+
 
 const Home = () => {
+  const [auth, setAuth] = useContext(AuthContext);
   return (
     <>
       <div className={classes.info_section}>
         <div className={classes.account_icon}>
+        <h3 className="loggedUser">{`Hi, ${auth.user.username + " "}`}</h3>
           <RiAccountPinCircleLine />
+          
         </div>
       </div>
       

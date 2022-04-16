@@ -60,14 +60,15 @@ const NavigationBar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/page-three" onClick={menuToggle}>
-                PageThree
+              <Link to="/Hotels" onClick={menuToggle}>
+                Hotels
               </Link>
             </li>
           </ul>
           <button onClick={ () => {
-            setOpenLogin(true);
-          }}>Login</button>
+            setOpenLogin(true);menuToggle();
+          }}
+         >Login</button>
         </nav>
         <div className={classes.header__content__toggle}>
           <span onClick={menuToggle} style={{fontSize:"1.1rem"}}>Menu</span>

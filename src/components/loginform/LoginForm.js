@@ -78,6 +78,7 @@ const LoginForm = ({ closeLogin }) => {
           </form>
           <div className="closeBtnContainer">
           <button
+          style={{background:"none",border:"none",textDecoration:"underline"}}
             onClick={() => {
               closeLogin(false);
             }}
