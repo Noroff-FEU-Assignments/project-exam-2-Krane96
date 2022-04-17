@@ -11,7 +11,7 @@ const Home = () => {
     <>
       <div className={classes.info_section}>
         <div className={classes.account_icon}>
-        <h3 className="loggedUser">{`Hi, ${auth.user.username + " "}`}</h3>
+        
           <RiAccountPinCircleLine />
           
         </div>
@@ -29,4 +29,6 @@ export default Home;
           <h2>Check out our hotels and apartments</h2>
           <Link to="/hotels">Find now</Link>
         </div>
-      </div>*/
+      </div>
+      <h3 className="loggedUser">{`Hi, ${auth.user.username + " "}`}</h3>
+      */

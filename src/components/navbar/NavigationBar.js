@@ -60,7 +60,7 @@ const NavigationBar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/Hotels" onClick={menuToggle}>
+              <Link to="/hotels" onClick={menuToggle}>
                 Hotels
               </Link>
             </li>
