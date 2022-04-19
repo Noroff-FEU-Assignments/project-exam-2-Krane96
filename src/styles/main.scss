@@ -3,12 +3,17 @@
     box-sizing: border-box;
     margin: 0;
 }
-
+h1,h2,h3,h4,h5{
+    color: $dark;
+}
+p{
+    color: $paragraph;
+}
 body {
     width: 100%;
     font-family: $Poppins;
     color: $dark;
-    background-color: #f8f9fa;
+    background-color: #f1faee;
 
 }
 html {

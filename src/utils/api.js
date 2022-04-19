@@ -12,4 +12,4 @@ export const getData = (url) => {
   axios.get(url).then((response) => console.log(response.data.data));
 };
 
-export const getHotels = getData(BASE_URL + HOTELS_URL + POPULATE);
+export const getHotels = getData( HOTELS_URL + POPULATE);

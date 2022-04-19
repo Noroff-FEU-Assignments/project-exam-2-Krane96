@@ -1,12 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import classes from "./NavigationBar.module.scss";
 import LoginForm from "../loginform/LoginForm";
+import AuthContext from "../../utils/context";
 
 const NavigationBar = () => {
   const navigate = useNavigate();
+  const [auth, setAuth] = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
   const [size, setSize] = useState({
@@ -35,6 +37,11 @@ const NavigationBar = () => {
   const menuToggle = () => {
     setMenuOpen((p) => !p);
   };
+
+  function logout() {
+    setAuth(null);
+    navigate("/");
+  }
 
 
   return (
@@ -65,10 +72,17 @@ const NavigationBar = () => {
               </Link>
             </li>
           </ul>
-          <button onClick={ () => {
-            setOpenLogin(true);menuToggle();
-          }}
-         >Login</button>
+          {auth ? (
+            <>
+             <Link to="/admin">Admin</Link> | <button onClick={logout}>Log out</button>
+            </>
+          ) : (
+            <button onClick={ () => {
+              setOpenLogin(true);menuToggle();
+            }}
+           >Login</button>
+          )}
+          
         </nav>
         <div className={classes.header__content__toggle}>
           <span onClick={menuToggle} style={{fontSize:"1.1rem"}}>Menu</span>

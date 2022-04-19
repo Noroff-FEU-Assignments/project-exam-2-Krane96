@@ -8,8 +8,16 @@ footer h4{
     color: $light;
 }
 footer li{
-    color: $paragraph;
+    color: $paragraphLight;
     font-size: .9em;
+}
+ul{
+    display: inline-block;
+}
+footer li:hover{
+    transition: 0.2s;
+    color: $light;
+    cursor: pointer;
 }
 
 .footer_row_2 {
@@ -18,5 +26,7 @@ footer li{
     justify-content: center;
     align-items: center;
 }
+
+
 
 
