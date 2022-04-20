@@ -70,6 +70,7 @@ const NavigationBar = () => {
                 Hotels
               </Link>
             </li>
+            <Link to="/Details"></Link>
           </ul>
           {auth ? (
             <>

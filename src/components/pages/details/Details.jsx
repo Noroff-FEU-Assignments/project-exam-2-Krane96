@@ -2,33 +2,60 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import HotelCard from "../../hotel_items/HotelCard";
-import { HOTELS_URL } from "../../../utils/api";
+import { HOTELS_URL, BASE_URL } from "../../../utils/api";
 
-const HotelDetails = () => {
-  const [hotel, setHotel] = useState(null);
+function Details() {
+	const [hotel, setHotel] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
 
-  let navigate = useNavigate();
+	let navigate = useNavigate();
 
-  const { id } = useParams();
+	const { id } = useParams();
 
-  if (!id) {
-    navigate("/");
-  }
+	if (!id) {
+		navigate("/");
+	}
 
-  const url = HOTELS_URL + "/" + id;
+	const url = HOTELS_URL + "/" + id;
 
-  useEffect(() => {
-    axios.get(url).then((response) => setHotel(response.hotel.hotel));
-  }, [url]);
+	useEffect(
+		function () {
+			async function fetchData() {
+				try {
+					const response = await fetch(url);
 
-  return (
-    <div className="hotel">
-      {hotel.map(function (hotel) {
-        const { name, description, id } = hotel.attributes;
-        return <HotelCard name={name} description={description} id={id} />;
-      })}
-    </div>
-  );
-};
+					if (response.ok) {
+						const json = await response.json();
+						console.log(json.data);
+						setHotel(json.data);
+					} else {
+						setError("An error occured");
+					}
+				} catch (error) {
+					setError(error.toString());
+				} finally {
+					setLoading(false);
+				}
+			}
+			fetchData();
+		},
+		[url]
+	);
 
-export default HotelDetails;
+	if (loading) {
+		return <div>Loading...</div>;
+	}
+
+	if (error) {
+		return <div>An error occured: {error}</div>;
+	}
+
+	return (
+		<div className="hotel-detail">
+			<h1>{hotel.attributes.name}</h1>
+		</div>
+	);
+}
+
+export default Details;

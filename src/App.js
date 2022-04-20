@@ -23,7 +23,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/hotels" element={<Hotels />} />
-            <Route path=":hotelId" element={<Details />} />
+            <Route path="details/:id" element={<Details />} />
           </Routes>
         </Router>
         <div style={{ height: "100vh" }}></div>
