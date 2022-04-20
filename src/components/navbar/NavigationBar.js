@@ -43,7 +43,6 @@ const NavigationBar = () => {
     navigate("/");
   }
 
-
   return (
     <header className={classes.header}>
       <div className={classes.header__content}>
@@ -74,29 +73,33 @@ const NavigationBar = () => {
           </ul>
           {auth ? (
             <>
-             <Link to="/admin">Admin</Link> | <button onClick={logout}>Log out</button>
+              <Link to="/admin">Admin</Link> |{" "}
+              <button onClick={logout}>Log out</button>
             </>
           ) : (
-            <button onClick={ () => {
-              setOpenLogin(true);menuToggle();
-            }}
-           >Login</button>
+            <button
+              onClick={() => {
+                setOpenLogin(true);
+                menuToggle();
+              }}
+            >
+              Login
+            </button>
           )}
-          
         </nav>
         <div className={classes.header__content__toggle}>
-          <span onClick={menuToggle} style={{fontSize:"1.1rem"}}>Menu</span>
+          <span onClick={menuToggle} style={{ fontSize: "1.1rem" }}>
+            Menu
+          </span>
           {!menuOpen ? (
             <BiMenuAltRight onClick={menuToggle} />
           ) : (
             <AiOutlineClose onClick={menuToggle} />
           )}
         </div>
-        
       </div>
-      {openLogin && <LoginForm closeLogin={setOpenLogin}/>}
+      {openLogin && <LoginForm closeLogin={setOpenLogin} />}
     </header>
-    
   );
 };
 

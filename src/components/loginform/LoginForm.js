@@ -9,9 +9,7 @@ import AuthContext from "../../utils/context";
 import "./login.scss";
 
 const LoginForm = ({ closeLogin }) => {
-  // navigation hook
   const navigate = useNavigate();
-
   const [auth, setAuth] = useContext(AuthContext);
 
   // YUP
@@ -66,7 +64,7 @@ const LoginForm = ({ closeLogin }) => {
             <label>Username</label>
             <input {...register("email")} placeholder="Your email..." />
             {errors.email && <span>{errors.email.message}</span>}
-              <label>Password</label>
+            <label>Password</label>
             <input
               {...register("password")}
               type="password"
@@ -77,14 +75,18 @@ const LoginForm = ({ closeLogin }) => {
             <button className="Btn">Send</button>
           </form>
           <div className="closeBtnContainer">
-          <button
-          style={{background:"none",border:"none",textDecoration:"underline"}}
-            onClick={() => {
-              closeLogin(false);
-            }}
-          >
-            Back
-          </button>
+            <button
+              style={{
+                background: "none",
+                border: "none",
+                textDecoration: "underline",
+              }}
+              onClick={() => {
+                closeLogin(false);
+              }}
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
