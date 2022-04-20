@@ -74,7 +74,7 @@ const LoginForm = ({ closeLogin }) => {
             />
             {errors.password && <span>{errors.password.message}</span>}
 
-            <button>Send</button>
+            <button className="Btn">Send</button>
           </form>
           <div className="closeBtnContainer">
           <button

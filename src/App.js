@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import Hotels from "./components/pages/hotels/Hotels";
 import Details from "./components/pages/details/Details";
 import { AuthProvider } from "./utils/context";
+import HowItWorks from "./components/howitworks/HowItWorks";
 
 
 import "./styles/main.scss";
@@ -26,6 +27,7 @@ function App() {
           </Routes>
         </Router>
         <div style={{ height: "100vh" }}></div>
+        <HowItWorks />
         <Footer />
       </AuthProvider>
     </>

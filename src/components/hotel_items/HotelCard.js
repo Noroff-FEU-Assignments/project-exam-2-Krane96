@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const HotelCard = ({ name, image, id, idx}) => {
+  
   return (
     <div className="hotel-card">
       <Link to={`Details/${id}`} key={idx}>
