@@ -11,6 +11,7 @@ $bg: rgb(244, 244, 255);
 $bg_section: #fdfcdc;
 $paragraph: #000000a7;
 $paragraphLight: rgba(239, 241, 243, 0.58);
+$callToActionBtn: #457b9d;
 
 
 // spacing
@@ -19,6 +20,7 @@ $spacing-lg: 32px;
 
 // border radius
 $borderRadius: 3px;
+$borderRadiusBtn: 12px;
 $borderRound: 9999px;
 
 
@@ -30,3 +32,4 @@ $borderRound: 9999px;
         }
     }
 }
+

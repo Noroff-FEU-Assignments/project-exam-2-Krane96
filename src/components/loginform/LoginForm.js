@@ -12,6 +12,7 @@ const LoginForm = ({ closeLogin }) => {
   const navigate = useNavigate();
   const [auth, setAuth] = useContext(AuthContext);
 
+
   // YUP
   const {
     register,

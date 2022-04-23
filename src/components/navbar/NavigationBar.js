@@ -11,6 +11,14 @@ const NavigationBar = () => {
   const [auth, setAuth] = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
+  const [hideToggle, setHideToggle] = useState(false);
+
+  function handleToggle() {
+    setHideToggle((hideToggle) => !hideToggle);
+  }
+
+  let hideToggleCheck = hideToggle ? "hide" : "";
+
   const [size, setSize] = useState({
     width: undefined,
     height: undefined,
@@ -79,9 +87,11 @@ const NavigationBar = () => {
             </>
           ) : (
             <button
+              className={`${hideToggleCheck}`}
               onClick={() => {
                 setOpenLogin(true);
                 menuToggle();
+                handleToggle();
               }}
             >
               Login

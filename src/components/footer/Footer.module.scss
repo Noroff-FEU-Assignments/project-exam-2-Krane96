@@ -13,11 +13,21 @@ footer li{
 }
 ul{
     display: inline-block;
+
 }
 footer li:hover{
     transition: 0.2s;
     color: $light;
     cursor: pointer;
+}
+footer h4, ul{
+    text-align: center;
+}
+.footer_row_1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }
 
 .footer_row_2 {

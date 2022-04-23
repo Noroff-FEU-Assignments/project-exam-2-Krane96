@@ -40,7 +40,7 @@ function Details() {
 			}
 			fetchData();
 		},
-		[url]
+		[]
 	);
 
 	if (loading) {

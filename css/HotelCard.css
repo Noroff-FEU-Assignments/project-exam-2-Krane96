@@ -1,0 +1,19 @@
+.hotel-featured-card {
+  position: relative;
+  text-align: center;
+  color: white;
+  max-width: 85%;
+  margin: 2rem auto;
+}
+
+.hotel-featured-card img {
+  width: 100%;
+}
+
+.centered {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 1.1em;
+}
+/*# sourceMappingURL=HotelCard.css.map */

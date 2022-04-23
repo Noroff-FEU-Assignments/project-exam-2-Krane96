@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+.social_icons span {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding: 0.5rem 0.7rem;
+  margin: 1rem .5rem 0 .5rem;
+  border-radius: 9999px;
+  background-color: #1d1d1d;
+  color: #fff;
+  display: inline-block;
+}
+/*# sourceMappingURL=SocialsIcons.module.css.map */

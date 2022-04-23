@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+.info_section {
+  height: 100px;
+  background-color: #fdfcdc;
+}
+
+.hero_header {
+  max-height: 1000px;
+  text-align: center;
+  position: relative;
+}
+
+.hero_header img {
+  width: 100%;
+}
+
+.hero_text {
+  text-align: center;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #fff;
+  width: 80%;
+}
+
+.hero_text a {
+  border-radius: 25px;
+  background-color: #fff;
+  color: #1d1d1d;
+  padding: 10px 20px 10px 20px;
+}
+
+.hero_text h2 {
+  margin-bottom: 15px;
+}
+
+.account_icon {
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 8px;
+}
+
+.hotel-featured-card {
+  position: relative;
+  text-align: center;
+  color: white;
+  max-width: 85%;
+  margin: 2rem auto;
+}
+
+.hotel-featured-card img {
+  width: 100%;
+}
+
+.centered {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 1.1em;
+}
+/*# sourceMappingURL=Home.module.css.map */

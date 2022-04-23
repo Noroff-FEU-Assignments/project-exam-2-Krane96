@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,6FAAI;ADGZ,AAAA,aAAa,CAAC,IAAI,CAAA;EACd,SAAS,EAAE,OAAO;EAClB,WAAW,EAAE,OAAO;EACpB,OAAO,EAAE,aAAa;EACtB,MAAM,EAAE,kBAAkB;EAC1B,aAAa,ECaH,MAAM;EDZhB,gBAAgB,ECJb,OAAe;EDKlB,KAAK,ECJD,IAAI;EDKR,OAAO,EAAE,YAAY;CAExB",
+    "sources": [
+        "../src/components/socialsIcon/SocialsIcons.module.scss",
+        "../src/styles/variables.scss"
+    ],
+    "names": [],
+    "file": "SocialsIcons.module.css"
+}
