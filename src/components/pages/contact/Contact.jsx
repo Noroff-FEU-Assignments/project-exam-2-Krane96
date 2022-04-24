@@ -25,7 +25,7 @@ const Contact = () => {
   const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
 
-  const url = baseURL + "/messages";
+  const url = BASE_URL + "/messages";
   const {
     register,
     handleSubmit,
