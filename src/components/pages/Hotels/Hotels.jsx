@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import HotelCard from "../../hotel_items/HotelCard";
 import { HOTELS_URL } from "../../../utils/api";
+import "./Hotels.scss";
+import CarouselHotels from "../../carousels/CarouselHotels";
 
 function Hotels() {
 	const [hotel, setHotel] = useState([]);
@@ -37,13 +39,20 @@ function Hotels() {
 	}
 
 	return (
-		<div className="hotel">
+    <>
+    <CarouselHotels/>
+    <div className="hotel_container">
+    <h2>Our available hotels</h2>
+		<div className="grid_two">
 			{hotel.map(function (hotel, idx) {
 				const { name } = hotel.attributes;
 				return <HotelCard key={idx} id={hotel.id} name={name}  />;
 			})}
 		</div>
+    </div>
+    </>
 	);
+  
 }
 
 export default Hotels;
