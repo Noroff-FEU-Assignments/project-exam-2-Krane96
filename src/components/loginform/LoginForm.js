@@ -61,6 +61,7 @@ const LoginForm = ({ closeLogin }) => {
               &times;
             </button>
           </div>
+          <h2>Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <label>Username</label>
             <input {...register("email")} placeholder="Your email..." />
@@ -73,14 +74,14 @@ const LoginForm = ({ closeLogin }) => {
             />
             {errors.password && <span>{errors.password.message}</span>}
 
-            <button className="Btn">Send</button>
+            <button className="Btn">Login</button>
           </form>
           <div className="closeBtnContainer">
             <button
               style={{
                 background: "none",
                 border: "none",
-                textDecoration: "underline",
+                marginTop: "1rem",
               }}
               onClick={() => {
                 closeLogin(false);

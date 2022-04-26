@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import "./Home.scss";
 import { RiAccountPinCircleLine } from "react-icons/ri";
 import AuthContext from "../../../utils/context";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { HOTELS_URL } from "../../../utils/api";
-import HotelCard from "../../hotel_items/HotelCard";
+import FeaturedCard from "../../hotel_items/FeaturedCard";
+import CarouselHotels from "../../carousels/CarouselHotels";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [hotel, setHotel] = useState([]);
@@ -63,13 +65,22 @@ const Home = () => {
           <Link to="/hotels">Find now</Link>
         </div>
       </div>
-      <div className="featured_hotels_container">
-        <h2>Our most popular hotels</h2>
-        {hotel.map(function (hotel, idx) {
-          const { name } = hotel.attributes;
-          return <HotelCard key={idx} id={hotel.id} name={name} />;
-        })}
-      </div>
+      <div className="">
+            <motion.div className="featured_carousel">
+                <motion.div className="inner_carousel">
+                {hotel.map(function (hotel, idx) {
+				        const { name } = hotel.attributes;
+				        return (
+                  <>
+                  <motion.div>
+                  <FeaturedCard key={idx} id={hotel.id} name={name}  />;
+                  </motion.div>
+                  </>
+                )
+			})}
+                </motion.div>
+            </motion.div>
+        </div>
     </>
   );
 };

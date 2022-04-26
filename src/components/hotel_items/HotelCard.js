@@ -1,4 +1,3 @@
-import React from "react";
 import { icons } from "react-icons";
 import { Link } from "react-router-dom";
 import {AiFillStar, AiOutlineStar} from "react-icons/ai";

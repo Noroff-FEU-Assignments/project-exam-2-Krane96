@@ -1,7 +1,9 @@
+@import "../../styles/variables.scss";
 input {
   border: none;
   padding: 5px;
   margin: .5rem 0;
+  background-color: rgba(197, 184, 184, 0.265);
 }
 form{
   display: flex;
@@ -26,6 +28,10 @@ form button{
   align-items: center;
   justify-content: space-evenly;
   margin: 5rem auto;
+}
+.loginContainer h2{
+  margin-top: -1rem;
+  margin-bottom: .5rem;
 }
 .closeBtn {
   display: flex;
