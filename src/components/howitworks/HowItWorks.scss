@@ -2,7 +2,7 @@
 .container {
   max-width: 85%;
   margin: auto;
-
+  margin-top: 3rem;
 }
 .box{
  border-radius: $borderRadius;
@@ -21,7 +21,7 @@
 
 @media screen and (max-width: 768px) {
   .container {
-    max-width: 90%;
+    max-width: 80%;
   }
   .grid {
     grid-template-columns: repeat(2, 1fr);

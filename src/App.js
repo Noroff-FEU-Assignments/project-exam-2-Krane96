@@ -28,12 +28,12 @@ function App() {
           </Routes>
         </Router>
 
-        <div style={{ height: "100vh" }}></div>
+        
         <HowItWorks />
         <Footer />
       </AuthProvider>
     </>
   );
 }
-
+//<div style={{ height: "100vh" }}></div>
 export default App;

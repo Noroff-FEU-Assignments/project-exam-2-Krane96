@@ -5,7 +5,7 @@ import AuthContext from "../../../utils/context";
 import { useState, useEffect, useContext, useRef } from "react";
 import { HOTELS_URL } from "../../../utils/api";
 import FeaturedCard from "../../hotel_items/FeaturedCard";
-import CarouselHotels from "../../carousels/CarouselHotels";
+//import CarouselHotels from "../../carousels/CarouselHotels";
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -13,6 +13,13 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [auth, setAuth] = useContext(AuthContext);
+  const [width, setWidth] = useState(0);
+  const carousel = useRef();
+  
+
+  useEffect(() => {
+    //setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
+   }, []);
 
   useEffect(function () {
     async function fetchData() {
@@ -34,6 +41,7 @@ const Home = () => {
     }
     fetchData();
   }, []);
+  
 
   if (loading) {
     return <div>Loading...</div>;
@@ -42,7 +50,9 @@ const Home = () => {
   if (error) {
     return <div>An error occured: {error}</div>;
   }
-
+  
+  
+  
   return (
     <>
       <div className="info_section">
@@ -56,7 +66,9 @@ const Home = () => {
           ) : (
             <></>
           )}
+          
           <RiAccountPinCircleLine style={{fontSize:"2em"}}/>
+          
         </div>
       </div>
       <div className="hero_container">
@@ -65,54 +77,33 @@ const Home = () => {
           <Link to="/hotels">Find now</Link>
         </div>
       </div>
-      <div className="">
-            <motion.div className="featured_carousel">
-                <motion.div className="inner_carousel">
+            <motion.div ref={carousel} className="featured_carousel" whileTap={{cursor:"grabbing"}}>
+            <h2>Featured hotels</h2>
+                <motion.div drag="x" dragConstraints={{ right: 0, left: -width }} className="inner_carousel">
                 {hotel.map(function (hotel, idx) {
 				        const { name } = hotel.attributes;
 				        return (
                   <>
-                  <motion.div>
-                  <FeaturedCard key={idx} id={hotel.id} name={name}  />;
+                  <motion.div className="item_carousel">
+                  <FeaturedCard key={idx} id={hotel.id} name={name}  />
                   </motion.div>
                   </>
                 )
 			})}
                 </motion.div>
             </motion.div>
-        </div>
+       <div className="contact_hero">
+         <div className="contact_hero_content">
+         <h2>Any questions?</h2>
+         <div className="action_Btn">
+         <Link to="/contact">Ask us here</Link>
+         </div>
+         </div>
+       </div>
     </>
   );
 };
 
 export default Home;
 
-/*<div className={classes.hero_header}>
-        <img src="/images/hero_header.jpg" />
-        <div className={classes.hero_text}>
-          <h2>Check out our hotels and apartments</h2>
-          
-        </div>
-      </div>
 
-      const [auth, setAuth] = useContext(AuthContext);
-  return (
-    <>
-      <div className={classes.info_section}>
-        <div className={classes.account_icon}>
-        {auth ? (
-            <>
-             <h3 className="loggedUser">{`Hi, ${auth.user.username + " "}`}</h3>
-            </>
-          ) : (
-            <></>
-          )}
-          <RiAccountPinCircleLine />
-          
-        </div>
-      </div>
-      
-    </>
-  );
-      
-      */
