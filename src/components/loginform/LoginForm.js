@@ -61,13 +61,13 @@ const LoginForm = ({ closeLogin }) => {
               &times;
             </button>
           </div>
-          <h2>Login</h2>
+          <h2 >Login</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <label>Username</label>
-            <input {...register("email")} placeholder="Your email..." />
+            <label >Username</label>
+            <input style={{boxShadow: "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px"}} {...register("email")} placeholder="Your email..." />
             {errors.email && <span>{errors.email.message}</span>}
             <label>Password</label>
-            <input
+            <input style={{boxShadow: "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px"}}
               {...register("password")}
               type="password"
               placeholder="Your password..."
