@@ -4,12 +4,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../../utils/api";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
+import "./Contact.scss";
 
 const schema = yup.object().shape({
   author: yup
     .string()
     .required("Please enter your name!")
-    .min(1, "Name must be at least 1 characters!"),
+    .min(3, "Name must be longer than 2 characters!"),
   email: yup
     .string()
     .required("Please enter an email address!")
@@ -51,36 +52,36 @@ const Contact = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="contactForm">
+    <form onSubmit={handleSubmit(onSubmit)} className="contact_form">
       <fieldset disabled={submitting}>
         <input
           {...register("author")}
           placeholder="Name"
-          className="form-info block"
+          className="form-info"
         />
         {errors.author && (
-          <span className="form-error block">{errors.author.message}</span>
+          <span className="form-error">{errors.author.message}</span>
         )}
 
         <input
           {...register("email")}
           placeholder="Email"
-          className="form-info block"
+          className="form-info"
         />
         {errors.email && (
-          <span className="form-error block">{errors.email.message}</span>
+          <span className="form-error">{errors.email.message}</span>
         )}
 
         <textarea
           {...register("message")}
           placeholder="Message"
-          className="form-message block"
+          className="form-message"
         />
         {errors.message && (
-          <span className="form-error block">{errors.message.message}</span>
+          <span className="form-error">{errors.message.message}</span>
         )}
 
-        <button className="BtnConfirm">Send</button>
+        <button className="Btn">Send</button>
       </fieldset>
     </form>
   );

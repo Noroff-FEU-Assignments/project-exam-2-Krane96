@@ -1,0 +1,8 @@
+@import "../../../styles/variables.scss";
+
+.admin_navigation ul li{
+    display: inline-block;
+}
+.admin_navigation a{
+    color: $dark;
+}
