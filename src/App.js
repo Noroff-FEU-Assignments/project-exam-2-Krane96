@@ -9,6 +9,8 @@ import Details from "./components/pages/hotels/Details";
 import { AuthProvider } from "./utils/context";
 import HowItWorks from "./components/howitworks/HowItWorks";
 import Contact from "./components/pages/contact/Contact";
+import Messages from "./components/pages/admin/Messages";
+import BookingSent from "./components/common_messages/BookingSent";
 
 import "./styles/main.scss";
 
@@ -25,6 +27,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/hotels" element={<Hotels />} />
             <Route path="details/:id" element={<Details />} />
+            <Route path="/messages" element={<Messages/>} />
+            <Route path="/BookingSent" element={<BookingSent />} />
           </Routes>
         </Router>
 

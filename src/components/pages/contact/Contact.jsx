@@ -5,11 +5,13 @@ import { BASE_URL } from "../../../utils/api";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import "./Contact.scss";
+import axios from "axios";
+const url = BASE_URL + "api/messages";
 
 const schema = yup.object().shape({
   author: yup
     .string()
-    .required("Please enter your name!")
+    .required("Please enter your author!")
     .min(3, "Name must be longer than 2 characters!"),
   email: yup
     .string()
@@ -21,12 +23,12 @@ const schema = yup.object().shape({
     .min(10, "The message must be at least 10 characters!"),
 });
 
-const Contact = () => {
+const Contact = (contactData) => {
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
 
-  const url = BASE_URL + "/messages";
+  
   const {
     register,
     handleSubmit,
@@ -36,24 +38,20 @@ const Contact = () => {
   });
 
   async function onSubmit(data) {
+    data.contactform = contactData;
     setSubmitting(true);
-    const axios = require("axios").default;
 
-    axios.post(url, data).then(
-      (response) => {
-        console.log(response);
-        setSubmitting(false);
-        navigate("/MessageSent");
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    try {
+      const response = await axios.post(url, data.attributes);
+      console.log("response", response.data);
+    } catch (error) {
+      console.log("error", error);
+    }
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact_form">
-      <fieldset disabled={submitting}>
+      <fieldset>
         <input
           {...register("author")}
           placeholder="Name"
@@ -85,6 +83,6 @@ const Contact = () => {
       </fieldset>
     </form>
   );
-}
+};
 
 export default Contact;
