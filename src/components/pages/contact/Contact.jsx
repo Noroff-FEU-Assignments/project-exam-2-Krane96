@@ -9,9 +9,9 @@ import axios from "axios";
 const url = BASE_URL + "api/messages";
 
 const schema = yup.object().shape({
-  author: yup
+  name: yup
     .string()
-    .required("Please enter your author!")
+    .required("Please enter your name!")
     .min(3, "Name must be longer than 2 characters!"),
   email: yup
     .string()
@@ -53,12 +53,12 @@ const Contact = (contactData) => {
     <form onSubmit={handleSubmit(onSubmit)} className="contact_form">
       <fieldset>
         <input
-          {...register("author")}
+          {...register("name")}
           placeholder="Name"
           className="form-info"
         />
-        {errors.author && (
-          <span className="form-error">{errors.author.message}</span>
+        {errors.name && (
+          <span className="form-error">{errors.name.message}</span>
         )}
 
         <input

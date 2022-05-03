@@ -98,7 +98,7 @@ function Details() {
         <fieldset>
           <input
             value={details.name}
-            {...register("establishment")}
+            {...register("hotel")}
             className="form-info block hidden"
           />
           <input
@@ -124,7 +124,7 @@ function Details() {
               />
             </div>
           </div>
-          <button className="BtnConfirm">Book</button>
+          <button className="Btn">Book</button>
         </fieldset>
       </form>
     </div>
