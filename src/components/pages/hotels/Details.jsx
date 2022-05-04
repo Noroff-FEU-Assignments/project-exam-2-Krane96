@@ -6,6 +6,7 @@ import { HOTELS_URL, BOOKINGS_PATH, BASE_URL } from "../../../utils/api";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import useAxios from "../../../hooks/useAxios";
 
 const schema = yup.object().shape({
   name: yup
@@ -14,12 +15,13 @@ const schema = yup.object().shape({
     .min(1, "Name must be at least 1 characters!"),
 });
 
-function Details() {
+const Details = () => {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
+  const http = useAxios();
 
   const {
     register,
@@ -51,30 +53,21 @@ function Details() {
   }, []);
   const [submitting, setSubmitting] = useState(false);
 
-  async function onSubmit(data) {
-    setSubmitting(true);
-    const axios = require("axios").default;
-    const postUrl = BASE_URL + BOOKINGS_PATH;
-    console.log(data);
-    axios.post(postUrl, data).then(
-      (response) => {
-        console.log(response);
-        setSubmitting(false);
-        navigate("/BookingSent");
+  const onBooking = async (data) => {
+    const options = {
+      data: {
+        name: data.name,
+        email: data.email,
+        message: data.message,
       },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+    };
+    const responseData = await axios.post(BASE_URL + BOOKINGS_PATH, options);
+    console.log(responseData);
+  };
 
   if (loading) {
     return (
       <div className="loader">
-        <div className="lds-ripple">
-          <div></div>
-          <div></div>
-        </div>
       </div>
     );
   }
@@ -86,15 +79,20 @@ function Details() {
   return (
     <div className="">
       <div className="">
-        <div className="">
-          <h5>{details.name}</h5>
+        <div className="hotel_details_card">
+          <img src={details.image_url} />
+          <h3>{details.name}</h3>
           <p className="details-p">{details.description}</p>
-          <h5>Address:{details.address}</h5>
+          <h5>
+            Address:
+            <br />
+            {details.address}
+          </h5>
           <h5>{details.price},-NOK</h5>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="bookingForm">
+      <form onBooking={handleSubmit(onBooking)} className="booking_form">
         <fieldset>
           <input
             value={details.name}
@@ -106,7 +104,7 @@ function Details() {
             placeholder="Your Name"
             className="form-info block"
           />
-          <div className="datesContainer">
+          <div className="date_container">
             <div className="date">
               CheckIn Date:
               <input
@@ -129,7 +127,7 @@ function Details() {
       </form>
     </div>
   );
-}
+};
 
 export default Details;
 

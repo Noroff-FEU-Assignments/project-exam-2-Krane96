@@ -8,3 +8,31 @@
 .hotel_container p{
     margin: 5px 0;
 }
+.hotel_details_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hotel_details_card h3{
+     text-align: center;
+     margin-top: .8rem;
+}
+.hotel_details_card h5{
+     text-align: center;
+     line-height: 25px;
+}
+.hotel_details_card p{
+     padding: 1rem;
+}
+.booking_form{
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
