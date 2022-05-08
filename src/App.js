@@ -14,7 +14,6 @@ import BookingSent from "./components/common_messages/BookingSent";
 import Bookings from "./components/pages/admin/Bookings";
 
 import "./styles/main.scss";
-import AdminBookings from "./components/admin_items/AdminBookings";
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
       <AuthProvider>
         <Router>
           <NavigationBar />
-
           <Routes>
             <Route index element={<Home />} />
             <Route path="/login" element={<Login />} />

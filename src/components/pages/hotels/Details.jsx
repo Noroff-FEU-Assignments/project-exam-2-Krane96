@@ -7,7 +7,13 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import useAxios from "../../../hooks/useAxios";
-import { OneStar, TwoStar, ThreeStar, FourStar , FiveStar } from "../../hotel_items/hotel_stars";
+import {
+  OneStar,
+  TwoStar,
+  ThreeStar,
+  FourStar,
+  FiveStar,
+} from "../../hotel_items/hotel_stars";
 import { ImMug } from "react-icons/im";
 import { AiFillCar, AiOutlineWifi } from "react-icons/ai";
 import { CgSmartHomeRefrigerator } from "react-icons/cg";
@@ -94,19 +100,43 @@ const Details = () => {
         <div className="offers">
           <h3>This stay offers</h3>
           <ul className="offers_container grid_two">
-            <li><ImMug/>Free Breakfast</li>
-            <li><AiFillCar/>Parking available</li>
-            <li><CgSmartHomeRefrigerator/>Refrigerator</li>
-            <li><AiOutlineWifi/>Wifi</li>
-            <li><GiWeightLiftingUp/>Gym</li>
-            <li><MdPets/>Pet friendly</li>
-            <li><FaSmokingBan/>No smoking</li>
-            <li><MdOutlineRestaurantMenu/>Bar & Restaurant</li>
+            <li>
+              <ImMug />
+              Free Breakfast
+            </li>
+            <li>
+              <AiFillCar />
+              Parking available
+            </li>
+            <li>
+              <CgSmartHomeRefrigerator />
+              Refrigerator
+            </li>
+            <li>
+              <AiOutlineWifi />
+              Wifi
+            </li>
+            <li>
+              <GiWeightLiftingUp />
+              Gym
+            </li>
+            <li>
+              <MdPets />
+              Pet friendly
+            </li>
+            <li>
+              <FaSmokingBan />
+              No smoking
+            </li>
+            <li>
+              <MdOutlineRestaurantMenu />
+              Bar & Restaurant
+            </li>
           </ul>
         </div>
         <h3>Description</h3>
         <p className="details-p">{details.description}</p>
-        <h5 style={{textAlign:"center",marginTop:"1.5rem"}}>
+        <h5 style={{ textAlign: "center", marginTop: "1.5rem" }}>
           Address:
           <br />
           {details.address}
@@ -143,7 +173,7 @@ const Details = () => {
               />
             </div>
           </div>
-          <h5 style={{textAlign:"center"}}>{details.price},-NOK</h5>
+          <h5 style={{ textAlign: "center" }}>{details.price},-NOK</h5>
           <button className="Btn">Book</button>
         </fieldset>
       </form>

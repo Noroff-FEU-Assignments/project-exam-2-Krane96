@@ -46,7 +46,14 @@ function Hotels() {
         <div className="grid_two">
           {hotel.map(function (hotel, idx) {
             const { name, image_url } = hotel.attributes;
-            return <HotelCard key={idx} id={hotel.id} name={name} image_url={image_url}/>;
+            return (
+              <HotelCard
+                key={idx}
+                id={hotel.id}
+                name={name}
+                image_url={image_url}
+              />
+            );
           })}
         </div>
       </div>
