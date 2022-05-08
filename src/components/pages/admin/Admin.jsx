@@ -27,8 +27,6 @@ const Admin = () => {
         <div className="admin_container">
           {auth ? (
             <>
-              <h3>{`Hi, ${auth.user.username + " "}`}</h3>
-              <h3>Welcome back</h3>
               <AdminDashboard />
               {error ? (
                 "Error"

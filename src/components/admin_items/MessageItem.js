@@ -1,4 +1,4 @@
-const MessageItem = ({ email, name, message }) =>{
+const MessageItem = ({ email, name, message }) => {
     return (
       <div className="messageContainer">
         <div className="senderInfo">

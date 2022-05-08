@@ -30,7 +30,9 @@
 
 .works {
   text-align: center;
-  background-color: #a8dadc;
+  background-color: #066d8c;
+  background-image: -webkit-gradient(linear, 0 110%, 0 0, from($secondary), to(transparent));
+  border-bottom: 1px solid rgba(128, 128, 128, 0.707);
 }
 .works img {
   width: auto;

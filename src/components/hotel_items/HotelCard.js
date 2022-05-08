@@ -9,7 +9,6 @@ function HotelCard({ id, name, image_url,description }) {
 		<Link to={`../details/${id}`}>
       <div className="hotel_card">
 			<img src={image_url}/>
-      <p>4/5 <AiFillStar/><AiFillStar/><AiFillStar/><AiFillStar/><AiOutlineStar/></p>
 			<h4>{name}</h4>
 			<p>{description}</p>
       </div>

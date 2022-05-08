@@ -1,3 +1,4 @@
+@import "../../../styles/variables.scss";
 .hotel_container{
     max-width: 90%;
     margin: 2rem auto;
@@ -8,22 +9,26 @@
 .hotel_container p{
     margin: 5px 0;
 }
+.hotel_details img{
+    height: 220px;
+}
 .hotel_details_card{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding: 1rem;
 }
 .hotel_details_card h3{
-     text-align: center;
-     margin-top: .8rem;
+     margin: .8rem 0 0 0;
 }
 .hotel_details_card h5{
-     text-align: center;
      line-height: 25px;
 }
-.hotel_details_card p{
-     padding: 1rem;
+.hotel_card img{
+ height: 120px;
+}
+.stars{
+    color: $primary;
 }
 .booking_form{
     margin: 1rem auto;
@@ -35,4 +40,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.offers{
+    margin: .2rem 0 1rem 0;
+}
+.offers h3{
+    margin-bottom: 8px;
+}
+.offers_container li{
+    font-size: .9em;
+    text-align: left;
+}
+
+.offers_container svg{
+ padding: 10px;
+ font-size: 2.6em;
 }

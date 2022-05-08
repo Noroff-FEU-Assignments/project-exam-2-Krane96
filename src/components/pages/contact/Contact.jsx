@@ -28,7 +28,6 @@ const Contact = (contactData) => {
   const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
 
-  
   const {
     register,
     handleSubmit,
@@ -37,26 +36,22 @@ const Contact = (contactData) => {
     resolver: yupResolver(schema),
   });
 
-  async function onSubmit(data) {
-    data.contactform = contactData;
-    setSubmitting(true);
-
-    try {
-      const response = await axios.post(url, data.attributes);
-      console.log("response", response.data);
-    } catch (error) {
-      console.log("error", error);
-    }
-  }
+  const onSend = async (data) => {
+    const options = {
+      data: {
+        name: data.name,
+        email: data.email,
+        message: data.message,
+      },
+    };
+    const responseData = await axios.post(url, options);
+    console.log(responseData);
+  };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="contact_form">
+    <form onSubmit={handleSubmit(onSend)} className="contact_form">
       <fieldset>
-        <input
-          {...register("name")}
-          placeholder="Name"
-          className="form-info"
-        />
+        <input {...register("name")} placeholder="Name" className="form-info" />
         {errors.name && (
           <span className="form-error">{errors.name.message}</span>
         )}

@@ -7,6 +7,13 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import useAxios from "../../../hooks/useAxios";
+import { OneStar, TwoStar, ThreeStar, FourStar , FiveStar } from "../../hotel_items/hotel_stars";
+import { ImMug } from "react-icons/im";
+import { AiFillCar, AiOutlineWifi } from "react-icons/ai";
+import { CgSmartHomeRefrigerator } from "react-icons/cg";
+import { GiWeightLiftingUp } from "react-icons/gi";
+import { FaSmokingBan } from "react-icons/fa";
+import { MdPets, MdOutlineRestaurantMenu } from "react-icons/md";
 
 const schema = yup.object().shape({
   name: yup
@@ -19,6 +26,8 @@ const Details = () => {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [star, setStar] = useState(false);
+
   const { id } = useParams();
   const navigate = useNavigate();
   const http = useAxios();
@@ -57,8 +66,9 @@ const Details = () => {
     const options = {
       data: {
         name: data.name,
-        email: data.email,
-        message: data.message,
+        hotel: data.hotel,
+        CheckInDate: data.CheckInDate,
+        CheckOutDate: data.CheckOutDate,
       },
     };
     const responseData = await axios.post(BASE_URL + BOOKINGS_PATH, options);
@@ -66,10 +76,7 @@ const Details = () => {
   };
 
   if (loading) {
-    return (
-      <div className="loader">
-      </div>
-    );
+    return <div className="loader"></div>;
   }
 
   if (error) {
@@ -77,22 +84,36 @@ const Details = () => {
   }
 
   return (
-    <div className="">
-      <div className="">
-        <div className="hotel_details_card">
-          <img src={details.image_url} />
-          <h3>{details.name}</h3>
-          <p className="details-p">{details.description}</p>
-          <h5>
-            Address:
-            <br />
-            {details.address}
-          </h5>
-          <h5>{details.price},-NOK</h5>
+    <div className="hotel_details">
+      <img src={details.image_url} />
+      <div className="hotel_details_card">
+        <h2>{details.name}</h2>
+        <span className="stars">
+          <FourStar />
+        </span>
+        <div className="offers">
+          <h3>This stay offers</h3>
+          <ul className="offers_container grid_two">
+            <li><ImMug/>Free Breakfast</li>
+            <li><AiFillCar/>Parking available</li>
+            <li><CgSmartHomeRefrigerator/>Refrigerator</li>
+            <li><AiOutlineWifi/>Wifi</li>
+            <li><GiWeightLiftingUp/>Gym</li>
+            <li><MdPets/>Pet friendly</li>
+            <li><FaSmokingBan/>No smoking</li>
+            <li><MdOutlineRestaurantMenu/>Bar & Restaurant</li>
+          </ul>
         </div>
+        <h3>Description</h3>
+        <p className="details-p">{details.description}</p>
+        <h5 style={{textAlign:"center",marginTop:"1.5rem"}}>
+          Address:
+          <br />
+          {details.address}
+        </h5>
       </div>
 
-      <form onBooking={handleSubmit(onBooking)} className="booking_form">
+      <form onSubmit={handleSubmit(onBooking)} className="booking_form">
         <fieldset>
           <input
             value={details.name}
@@ -122,6 +143,7 @@ const Details = () => {
               />
             </div>
           </div>
+          <h5 style={{textAlign:"center"}}>{details.price},-NOK</h5>
           <button className="Btn">Book</button>
         </fieldset>
       </form>

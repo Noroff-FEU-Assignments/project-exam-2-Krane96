@@ -1,65 +1,97 @@
 import { useState, useEffect } from "react";
-import { BASE_URL } from "../../utils/api";
+import { BASE_URL, MESSAGES_URL } from "../../utils/api";
 import MessageItem from "./MessageItem";
+import useAxios from "../../hooks/useAxios";
+import AuthContext from "../../utils/context";
+import { useContext } from 'react';
+import AdminDashboard from "./AdminDashboard";
+import useToggle from "../../hooks/useToggle";
 
-const MessagesList = () =>{
-  const [Messages, setMessages] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const AdminMessages = () => {
+  const [isTriggered, setIsTriggered] = useToggle();
+  const [error, setError] = useState();
+  const [bookings, setBookings] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(function () {
-    async function fetchData() {
-      try {
-        const url = BASE_URL + "api/messages";
-        const response = await fetch(url);
+  const [auth] = useContext(AuthContext);
 
-        if (response.ok) {
-          const json = await response.data.attributes.json();
+  const http = useAxios();
 
-          setMessages(json);
-        } else {
-          setError("An error occured");
-        }
-      } catch (error) {
-        setError(error.toString());
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      const data = await http.get(MESSAGES_URL);
+      setBookings(data.data.data);
+      setIsLoading(false);
+    };
 
-  if (loading) {
+    fetchData().catch((error) => setError(error.response.data.error));
+  }, [isTriggered, auth]);
+
+
+  // if error object is populated, show user what happened and urge them to login
+  if (error) {
     return (
-      <div className="loader">
-        <div className="lds-ripple">
-          <div></div>
-          <div></div>
-        </div>
+      <div>
+        <h1>You must be Authenticated to view this page</h1>
+        <h3>The server responded with: {error.status}</h3>
+        <p>{error.message}</p>
+        <p>Please Login</p>
       </div>
     );
   }
 
-  if (error) {
-    return <div>ERROR: An error occured</div>;
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
   return (
+    <div>
+      <AdminDashboard/>
+      <hr />
+      <h2>Messages</h2>
+        {bookings.map((item, idx) => {
+          const deleteBooking = async () => {
+            const responseData = await http.delete(
+              `${MESSAGES_URL}/${item.id}`
+            );
+            console.log(responseData);
+          };
+
+          const handleDelete = () => {
+            if (window.confirm('Are you sure?')) {
+              deleteBooking();
+              setIsTriggered();
+            } else {
+              return;
+            }
+          };
+          return (
+              <div key={idx}>
+              <h3>{item.attributes.name}</h3>
+              <h4>{item.attributes.email}</h4>
+              <p>{item.attributes.message}</p>
+              <button className='defaultBtn' onClick={handleDelete}>
+                DELETE
+              </button>
+              </div>
+          );
+        })}
+      
+    </div>
+  );
+};
+
+export default AdminMessages;
+
+/*
+<AdminDashboard />
     <div className="messagesList">
       {Messages.map(function (messageItem) {
-        const { id, author, email, message, updated_at } = messageItem;
+        const { id, name, email, message } = messageItem;
         return (
-          <MessageItem
-            key={id}
-            name={author}
-            email={email}
-            message={message}
-            time={updated_at}
-          />
+          <MessageItem key={id} name={name} email={email} message={message} />
         );
       })}
     </div>
-  );
-}
-
-export default MessagesList;
+    */
