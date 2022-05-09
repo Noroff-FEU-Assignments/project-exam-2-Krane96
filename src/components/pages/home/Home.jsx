@@ -50,7 +50,12 @@ const Home = () => {
 
   return (
     <>
-      <CarouselHotels />
+      <div className="hero_container">
+        <h1>Check out our hotels and apartments</h1>
+        <div className="action_Btn">
+          <Link to="/hotels">Find now</Link>
+        </div>
+      </div>
 
       <motion.div
         ref={carousel}
@@ -88,10 +93,5 @@ const Home = () => {
 export default Home;
 
 /* 
-<div className="hero_container">
-        <h1>Check out our hotels and apartments</h1>
-        <div className="action_Btn">
-          <Link to="/hotels">Find now</Link>
-        </div>
-      </div>
+
       */
