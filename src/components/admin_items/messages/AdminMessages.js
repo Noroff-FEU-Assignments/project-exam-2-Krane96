@@ -3,7 +3,7 @@ import { BASE_URL, MESSAGES_URL } from "../../../utils/api";
 import MessageItem from "./MessageItem";
 import useAxios from "../../../hooks/useAxios";
 import AuthContext from "../../../utils/context";
-import { useContext } from 'react';
+import { useContext } from "react";
 import AdminDashboard from "../AdminDashboard";
 import useToggle from "../../../hooks/useToggle";
 
@@ -28,7 +28,6 @@ const AdminMessages = () => {
     fetchData().catch((error) => setError(error.response.data.error));
   }, [isTriggered, auth]);
 
-
   // if error object is populated, show user what happened and urge them to login
   if (error) {
     return (
@@ -47,37 +46,33 @@ const AdminMessages = () => {
 
   return (
     <div>
-      <AdminDashboard/>
+      <AdminDashboard />
       <hr />
       <h2>Messages</h2>
-        {bookings.map((item, idx) => {
-          const deleteBooking = async () => {
-            const responseData = await http.delete(
-              `${MESSAGES_URL}/${item.id}`
-            );
-            console.log(responseData);
-          };
+      {bookings.map((item, idx) => {
+        const { name, email, message } = item.attributes;
+        const deleteMessage = async () => {
+          const responseData = await http.delete(`${MESSAGES_URL}/${item.id}`);
+          console.log(responseData);
+        };
 
-          const handleDelete = () => {
-            if (window.confirm('Are you sure?')) {
-              deleteBooking();
-              setIsTriggered();
-            } else {
-              return;
-            }
-          };
-          return (
-              <div key={idx}>
-              <h3>{item.attributes.name}</h3>
-              <h4>{item.attributes.email}</h4>
-              <p>{item.attributes.message}</p>
-              <button className='Btn' onClick={handleDelete}>
-                DELETE
-              </button>
-              </div>
-          );
-        })}
-      
+        const handleDelete = () => {
+          if (window.confirm("Are you sure?")) {
+            deleteMessage();
+            setIsTriggered();
+          } else {
+            return;
+          }
+        };
+        return (
+          <div key={idx}>
+            <MessageItem name={name} email={email} message={message} />
+            <button className="Btn" onClick={handleDelete}>
+              DELETE
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 };

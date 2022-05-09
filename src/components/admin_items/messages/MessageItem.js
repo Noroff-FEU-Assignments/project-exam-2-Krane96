@@ -1,7 +1,7 @@
 const MessageItem = ({ email, name, message }) => {
     return (
-      <div className="messageContainer">
-        <div className="senderInfo">
+      <div className="message_container">
+        <div className="sender_info">
           <p>{name}</p>
           <p>{email}</p>
         </div>

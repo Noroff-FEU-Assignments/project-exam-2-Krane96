@@ -50,6 +50,7 @@ const AdminBookings = () => {
       <hr />
       <h2>Bookings</h2>
       {bookings.map((item, idx) => {
+        const { name, hotel, CheckInDate, CheckOutDate } = item.attributes;
         const deleteBooking = async () => {
           const responseData = await http.delete(`${BOOKINGS_PATH}/${item.id}`);
           console.log(responseData);
@@ -64,12 +65,13 @@ const AdminBookings = () => {
           }
         };
         return (
-          <div key={idx} className="booked_card">
-            <BookingItem />
-            <h3>{item.attributes.name}</h3>
-            <h4>{item.attributes.hotel}</h4>
-            <p>{item.attributes.CheckInDate}</p>
-            <p>{item.attributes.CheckOutDate}</p>
+          <div key={idx}>
+            <BookingItem
+              name={name}
+              hotel={hotel}
+              CheckInDate={CheckInDate}
+              CheckOutDate={CheckOutDate}
+            />
             <button className="Btn" onClick={handleDelete}>
               DELETE
             </button>
