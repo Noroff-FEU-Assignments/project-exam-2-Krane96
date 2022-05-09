@@ -81,6 +81,13 @@ h4 {
 h5 {
   font-size: 0.9em;
 }
+form{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  margin: 0 auto;
+}
 .logo_container{
   display: flex;
   align-items: center;

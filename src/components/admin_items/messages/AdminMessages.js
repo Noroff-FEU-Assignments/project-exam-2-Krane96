@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { BASE_URL, MESSAGES_URL } from "../../utils/api";
+import { BASE_URL, MESSAGES_URL } from "../../../utils/api";
 import MessageItem from "./MessageItem";
-import useAxios from "../../hooks/useAxios";
-import AuthContext from "../../utils/context";
+import useAxios from "../../../hooks/useAxios";
+import AuthContext from "../../../utils/context";
 import { useContext } from 'react';
-import AdminDashboard from "./AdminDashboard";
-import useToggle from "../../hooks/useToggle";
+import AdminDashboard from "../AdminDashboard";
+import useToggle from "../../../hooks/useToggle";
 
 const AdminMessages = () => {
   const [isTriggered, setIsTriggered] = useToggle();
@@ -71,7 +71,7 @@ const AdminMessages = () => {
               <h3>{item.attributes.name}</h3>
               <h4>{item.attributes.email}</h4>
               <p>{item.attributes.message}</p>
-              <button className='defaultBtn' onClick={handleDelete}>
+              <button className='Btn' onClick={handleDelete}>
                 DELETE
               </button>
               </div>

@@ -46,11 +46,13 @@ const Contact = (contactData) => {
     };
     const responseData = await axios.post(url, options);
     console.log(responseData);
+    alert('Message sent!');
   };
 
   return (
     <form onSubmit={handleSubmit(onSend)} className="contact_form">
-      <fieldset>
+      <h2>Contact us</h2>
+      <fieldset disabled={submitting}>
         <input {...register("name")} placeholder="Name" className="form-info" />
         {errors.name && (
           <span className="form-error">{errors.name.message}</span>

@@ -1,5 +1,5 @@
 
-import AdminMessages from "../../admin_items/AdminMessages";
+import AdminMessages from "../../admin_items/messages/AdminMessages";
 import { useNavigate } from "react-router-dom";
 
 const Messages = () =>{

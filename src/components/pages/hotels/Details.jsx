@@ -79,6 +79,7 @@ const Details = () => {
     };
     const responseData = await axios.post(BASE_URL + BOOKINGS_PATH, options);
     console.log(responseData);
+    alert('Booking made!');
   };
 
   if (loading) {

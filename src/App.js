@@ -12,6 +12,7 @@ import Contact from "./components/pages/contact/Contact";
 import Messages from "./components/pages/admin/Messages";
 import BookingSent from "./components/common_messages/BookingSent";
 import Bookings from "./components/pages/admin/Bookings";
+import CreateBooking from "./components/pages/admin/CreateBooking";
 
 import "./styles/main.scss";
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="details/:id" element={<Details />} />
             <Route path="admin/messages" element={<Messages />} />
             <Route path="admin/bookings" element={<Bookings />} />
+            <Route path="admin/create" element={<CreateBooking />} />
             <Route path="/BookingSent" element={<BookingSent />} />
           </Routes>
         </Router>

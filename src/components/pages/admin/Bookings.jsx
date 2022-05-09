@@ -1,4 +1,4 @@
-import AdminBookings from "../../admin_items/AdminBookings";
+import AdminBookings from "../../admin_items/bookings/AdminBookings";
 import { useNavigate } from "react-router-dom";
 
 const Bookings = () =>{

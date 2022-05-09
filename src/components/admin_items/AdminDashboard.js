@@ -20,7 +20,7 @@ const AdminDashboard = () => {
             <Link to="/admin/bookings"><BsBookmarks/>Bookings</Link>
           </li>
           <li>
-            <Link to=""><MdOutlineCreate/>Create Booking</Link>
+            <Link to="/admin/create"><MdOutlineCreate/>Create Booking</Link>
           </li>
         </ul>
       </div>
