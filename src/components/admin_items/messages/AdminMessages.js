@@ -65,7 +65,7 @@ const AdminMessages = () => {
           }
         };
         return (
-          <div key={idx}>
+          <div key={idx} className="message_wrapper">
             <MessageItem name={name} email={email} message={message} />
             <button className="Btn" onClick={handleDelete}>
               DELETE

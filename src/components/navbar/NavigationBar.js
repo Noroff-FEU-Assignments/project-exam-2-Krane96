@@ -60,7 +60,7 @@ const NavigationBar = () => {
             <Link to="/" className={classes.header__content__logo}>
               <img
                 src="/images/essie/sample-3.png"
-                style={{ width: "100%", height: "60px" }}
+                style={{ width: "100%", height: "55px" }}
               />
             </Link>
             <Link to="/">Holidaze</Link>
@@ -127,7 +127,11 @@ const NavigationBar = () => {
               <RiAccountPinCircleLine style={{ fontSize: "2em" }} />
             </>
           ) : (
-            <></>
+            <>
+            <div className="info_section">
+            
+            </div>
+            </>
           )}
         </div>
       </div>
@@ -136,3 +140,25 @@ const NavigationBar = () => {
 };
 
 export default NavigationBar;
+
+/*
+{auth ? (
+            <>
+              <h4 className="loggedUser">{`${auth.user.username + " "}`}</h4>
+              <RiAccountPinCircleLine style={{ fontSize: "2em" }} />
+              {error ? (
+                "Error"
+              ) : (
+                
+                <Link to="/login">
+                  <button onClick={logout} className="Btn">
+                    Log out
+                  </button>
+                </Link>
+                
+              )}
+            </>
+          ) : (
+            <Link to="/login" />
+          )} 
+ */

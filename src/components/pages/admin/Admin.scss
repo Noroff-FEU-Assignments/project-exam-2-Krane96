@@ -3,6 +3,40 @@
 .admin_navigation ul li{
     display: inline-block;
 }
+
 .admin_navigation a{
     color: $dark;
+    width: 100%;
+    display: inline-block;
 }
+.admin_navigation {
+    margin: 1rem 1rem 0 0;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    max-width: 600px;
+  }
+  .admin_navigation li {
+    padding: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: .3rem;
+  }
+  .admin_navigation ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .admin_navigation svg {
+    padding: 10px;
+    font-size: 2.6em;
+  }
+  .admin_active{
+    background-color: green;
+  }
+
+  .message_container{
+      
+  }
+  .message_wrapper{
+
+  }

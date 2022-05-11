@@ -4,9 +4,16 @@ import { useContext } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsBookmarks } from "react-icons/bs";
 import { MdOutlineCreate } from "react-icons/md";
+import useToggle from "../../hooks/useToggle";
 
 const AdminDashboard = () => {
   const [auth, setAuth] = useContext(AuthContext);
+  const [toggle, setToggleClass] = useToggle(false);
+
+  const toggleActiveClass = () => {
+
+    setToggleClass(!toggle);
+  }
   return (
     <div>
       <h3>{`Hi, ${auth.user.username + " "}`}</h3>

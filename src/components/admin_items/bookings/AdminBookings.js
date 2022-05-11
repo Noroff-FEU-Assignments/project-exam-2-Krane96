@@ -32,7 +32,7 @@ const AdminBookings = () => {
   if (error) {
     return (
       <div>
-        <h1>You must be Authenticated to view this page</h1>
+        <h1>You must be logged in to see this page</h1>
         <h3>The server responded with: {error.status}</h3>
         <p>{error.message}</p>
         <p>Please Login</p>

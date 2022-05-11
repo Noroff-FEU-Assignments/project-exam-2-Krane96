@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { HOTELS_URL } from "../../utils/api";
-import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import HotelCard from "../hotel_items/HotelCard";
+import HotelSearchCard from "../hotel_items/HotelSearchCard";
+import {AiOutlineSearch} from "react-icons/ai";
+
 
 const SearchBar = () => {
   const [hotels, setHotels] = useState([]);
@@ -35,17 +36,24 @@ const SearchBar = () => {
 
   return (
     <>
+    <div className="search_bar_container">
     <input type="text"
     onChange={e=>onChangeHandler(e.target.value)}
     value={text}
-    />
+    placeholder="Find your next stay"
+    >
+
+    </input>
+    <AiOutlineSearch />
+    </div>
     {suggestions && suggestions.map((suggestion, i)=>
     
-    <div key={i} className="hotel_card_search">
-      <HotelCard
+    <div key={i} className="hotel_search_wrapper">
+      <HotelSearchCard
                 id={suggestion.id}
                 name={suggestion.attributes.name}
                 image_url={suggestion.attributes.image_url}
+                price={suggestion.attributes.price}
               />
     </div>
     )}

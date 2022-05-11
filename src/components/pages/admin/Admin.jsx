@@ -3,12 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../../utils/context";
 import "./Admin.scss";
 import AdminDashboard from "../../admin_items/AdminDashboard";
+import useToggle from "../../../hooks/useToggle";
+
 
 const Admin = () => {
   const [auth, setAuth] = useContext(AuthContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
+ 
   async function logout() {
     const confirmLogOut = window.confirm("Do you want to log out?");
     if (confirmLogOut) {
@@ -31,11 +33,13 @@ const Admin = () => {
               {error ? (
                 "Error"
               ) : (
+                
                 <Link to="/login">
-                  <button onClick={logout} className="button">
+                  <button onClick={logout} className="Btn">
                     Log out
                   </button>
                 </Link>
+                
               )}
             </>
           ) : (

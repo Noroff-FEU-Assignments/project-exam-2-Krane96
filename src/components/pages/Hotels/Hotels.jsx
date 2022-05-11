@@ -3,7 +3,7 @@ import HotelCard from "../../hotel_items/HotelCard";
 import { HOTELS_URL } from "../../../utils/api";
 import "./Hotels.scss";
 import CarouselHotels from "../../carousels/CarouselHotels";
-
+import SearchBar from "../../search/SearchBar";
 function Hotels() {
   const [hotel, setHotel] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -40,6 +40,7 @@ function Hotels() {
 
   return (
     <>
+    <SearchBar />
       <CarouselHotels />
       <div className="hotel_container">
         <h2>Our available hotels</h2>

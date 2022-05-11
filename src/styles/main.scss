@@ -110,24 +110,46 @@ form{
   display: none;
 }
 
-.admin_navigation {
-  margin: 1rem .5rem 0 0;
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-  max-width: 600px;
+.search_bar_container {
+  align-items: center;
+  margin: 1rem auto;
+  width: 90%;
+  background-color: $light;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-.admin_navigation li {
-  padding: 0.3rem;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  width: 100%;
-  text-align: left;
-  margin-bottom: .3rem;
+.search_bar_container input{
+  font-size: 1em;
+  padding: .7rem;
+  width: 90%;
+  background-color: $light;
 }
-.admin_navigation ul {
+.search_bar_container input:focus{
+ outline: none;
+}
+
+.search_bar_container svg{
+  font-size: 2.6em;
+  padding: .5rem;
+  margin-right: .5rem;
+}
+.hotel_search_wrapper{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hotel_card_search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: .5rem auto;
+}
+.search_card_row_one{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-}
-.admin_navigation svg {
-  padding: 10px;
-  font-size: 2.6em;
+  justify-content: space-between;
+  padding: 3px 5px 3px 5px;
 }

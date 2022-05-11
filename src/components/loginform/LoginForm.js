@@ -44,6 +44,7 @@ const LoginForm = ({ closeLogin }) => {
     loginUser(formData).catch(console.error);
     console.log(auth);
     alert("successfully logged in")
+    closeLogin();
   };
 
   // Render page
