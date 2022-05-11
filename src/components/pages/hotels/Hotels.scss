@@ -1,58 +1,65 @@
 @import "../../../styles/variables.scss";
-.hotel_container{
-    max-width: 90%;
-    margin: 2rem auto;
+.hotel_container {
+  max-width: 90%;
+  margin: 2rem auto;
 }
-.hotel_container h2{
-    margin: 1rem 0;
+.hotel_container h2 {
+  margin: 1rem 0;
 }
-.hotel_container p{
-    margin: 5px 0;
+.hotel_container p {
+  margin: 5px 0;
 }
-.hotel_details img{
-    height: 220px;
+.hotel_details img {
+  height: 220px;
 }
-.hotel_details_card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1rem;
+.hotel_details_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
 }
-.hotel_details_card h3{
-     margin: .8rem 0 0 0;
+.hotel_details_card h3 {
+  margin: 0.8rem 0 0 0;
 }
-.hotel_details_card h5{
-     line-height: 25px;
+.hotel_details_card h5 {
+  line-height: 25px;
 }
-.hotel_card img{
- height: 120px;
+.hotel_card img {
+  height: 120px;
 }
-.stars{
-    color: $primary;
+.stars {
+  color: $primary;
 }
-.booking_form{
-    margin: 1rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.booking_form {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.date{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.offers{
-    margin: .2rem 0 1rem 0;
+.offers {
+  margin: 0.2rem 0 1rem 0;
 }
-.offers h3{
-    margin-bottom: 8px;
+.offers h3 {
+  margin-bottom: 8px;
 }
-.offers_container li{
-    font-size: .9em;
-    text-align: left;
+.offers_container li {
+  font-size: 0.9em;
+  text-align: left;
 }
 
-.offers_container svg{
- padding: 10px;
- font-size: 2.6em;
+.offers_container svg {
+  padding: 10px;
+  font-size: 2.6em;
+}
+.hotel_card_search h2 {
+  font-size: 0.8em;
+}
+.hotel_card_search img {
+  height: 50px;
+  width: 60px;
 }

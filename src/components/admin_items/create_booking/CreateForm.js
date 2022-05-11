@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import axios from "axios";
-import { BASE_URL } from "../../../utils/api";
+import { BASE_URL, HOTELS_URL } from "../../../utils/api";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -36,10 +36,9 @@ const CreateForm =() =>{
     setSubmitting(true);
 
     const formData = new FormData();
-    const url = BASE_URL + "hotels";
     
 
-    const resp = await axios.post(url, data);
+    const resp = await axios.post(HOTELS_URL, data);
     navigate("/MessageSent");
   }
 

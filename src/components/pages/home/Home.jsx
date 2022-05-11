@@ -6,6 +6,7 @@ import { HOTELS_URL } from "../../../utils/api";
 import FeaturedCard from "../../hotel_items/FeaturedCard";
 import CarouselHotels from "../../carousels/CarouselHotels";
 import { motion } from "framer-motion";
+import SearchBar from "../../search/SearchBar";
 
 const Home = () => {
   const [hotel, setHotel] = useState([]);
@@ -50,12 +51,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="hero_container">
-        <h1>Check out our hotels and apartments</h1>
-        <div className="action_Btn">
-          <Link to="/hotels">Find now</Link>
-        </div>
-      </div>
+      <SearchBar />
 
       <motion.div
         ref={carousel}
