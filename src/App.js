@@ -13,6 +13,7 @@ import Messages from "./components/pages/admin/Messages";
 import BookingSent from "./components/common_messages/BookingSent";
 import Bookings from "./components/pages/admin/Bookings";
 import CreateBooking from "./components/pages/admin/CreateBooking";
+import LoggedIn from "./components/loginform/LoggedIn";
 
 import "./styles/main.scss";
 
@@ -22,6 +23,7 @@ function App() {
       <AuthProvider>
         <Router>
           <NavigationBar />
+          <LoggedIn />
           <Routes>
             <Route index element={<Home />} />
             <Route path="/login" element={<Login />} />

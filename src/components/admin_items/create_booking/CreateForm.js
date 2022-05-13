@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 import axios from "axios";
-import { BASE_URL, HOTELS_URL, BOOKINGS_PATH } from "../../../utils/api";
+import { BASE_URL, BOOKINGS_PATH } from "../../../utils/api";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -12,7 +12,7 @@ const schema = yup.object().shape({
   name: yup.string().required("Please enter establishment name"),
 });
 
-const CreateForm =() =>{
+const CreateForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
   const navigate = useNavigate();
@@ -28,25 +28,23 @@ const CreateForm =() =>{
   const onCreateBooking = async (data) => {
     const options = {
       data: {
-        name: data.attributes.name,
-        hotel: data.attributes.hotel,
+        name: data.name,
+        hotel: data.hotel,
         CheckInDate: data.CheckInDate,
         CheckOutDate: data.CheckOutDate,
       },
     };
     const responseData = await axios.post(BASE_URL + BOOKINGS_PATH, options);
     console.log(responseData);
-    alert('Booking created!');
+    alert("Booking created!");
   };
 
-
   return (
-      <>
-    <AdminDashboard/>
-    <form onSubmit={handleSubmit(onCreateBooking)} className="booking_form">
+    <>
+      <AdminDashboard />
+      <form onSubmit={handleSubmit(onCreateBooking)} className="booking_form">
         <fieldset>
           <input
-            
             {...register("hotel")}
             placeholder="Hotel Name"
             className="form-info block hidden"
@@ -79,6 +77,6 @@ const CreateForm =() =>{
       </form>
     </>
   );
-}
+};
 
 export default CreateForm;

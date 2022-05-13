@@ -58,7 +58,9 @@ ul {
 .action_Btn a {
   background: linear-gradient(160deg, #d15e5eef 20%, #c34e4edc 60%);
 }
-
+.logged_user{
+  border-bottom: 1px solid black;
+}
 .flex {
   display: flex;
 }

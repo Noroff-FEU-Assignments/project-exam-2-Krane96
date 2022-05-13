@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import classes from "./NavigationBar.module.scss";
 import LoginForm from "../loginform/LoginForm";
 import AuthContext from "../../utils/context";
-import { RiAccountPinCircleLine } from "react-icons/ri";
+
 
 const NavigationBar = () => {
   const navigate = useNavigate();
@@ -63,7 +63,7 @@ const NavigationBar = () => {
                 style={{ width: "100%", height: "55px" }}
               />
             </Link>
-            <Link to="/">Holidaze</Link>
+            <Link to="/" style={{fontSize:"0.9em"}}>Holidaze</Link>
           </div>
           <nav
             className={`${classes.header__content__nav} ${
@@ -119,22 +119,6 @@ const NavigationBar = () => {
         </div>
         {openLogin && <LoginForm closeLogin={setOpenLogin} />}
       </header>
-      <div className="info_section">
-        <div className="account_icon">
-          {auth ? (
-            <>
-              <h4 className="loggedUser">{`${auth.user.username + " "}`}</h4>
-              <RiAccountPinCircleLine style={{ fontSize: "2em" }} />
-            </>
-          ) : (
-            <>
-            <div className="info_section">
-            
-            </div>
-            </>
-          )}
-        </div>
-      </div>
     </>
   );
 };
