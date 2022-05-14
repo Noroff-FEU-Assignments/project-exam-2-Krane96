@@ -90,7 +90,7 @@ const NavigationBar = () => {
             </ul>
             {auth ? (
               <>
-                <Link to="/admin">Admin</Link> |{" "}
+                <Link to="/admin">Admin</Link> {" "}
                 <button onClick={logout}>Log out</button>
               </>
             ) : (
