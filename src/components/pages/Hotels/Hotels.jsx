@@ -3,7 +3,8 @@ import HotelCard from "../../hotel_items/HotelCard";
 import { HOTELS_URL } from "../../../utils/api";
 import "./Hotels.scss";
 import SearchBar from "../../search/SearchBar";
-function Hotels() {
+
+const Hotels = () =>{
   const [hotel, setHotel] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
