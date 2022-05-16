@@ -90,6 +90,9 @@ form{
   justify-content: center;
   margin: 0 auto;
 }
+.form-error{
+  color: $primary;
+}
 .logo_container{
   display: flex;
   align-items: center;
