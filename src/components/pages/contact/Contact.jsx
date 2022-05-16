@@ -5,6 +5,7 @@ import { BASE_URL } from "../../../utils/api";
 import { useContext, useState } from "react";
 import "./Contact.scss";
 import axios from "axios";
+import { TabTitle } from "../../../utils/TitleAndIcon";
 const url = BASE_URL + "api/messages";
 
 const schema = yup.object().shape({
@@ -23,8 +24,10 @@ const schema = yup.object().shape({
 });
 
 const Contact = () => {
+  TabTitle('Holidaze | Contact')
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
+  
 
 
   const {

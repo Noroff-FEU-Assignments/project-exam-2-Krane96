@@ -7,8 +7,10 @@ import FeaturedCard from "../../hotel_items/FeaturedCard";
 import CarouselHotels from "../../carousels/CarouselHotels";
 import { motion } from "framer-motion";
 import SearchBar from "../../search/SearchBar";
+import { TabTitle } from "../../../utils/TitleAndIcon";
 
 const Home = () => {
+  TabTitle('Holidaze');
   const [hotel, setHotel] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

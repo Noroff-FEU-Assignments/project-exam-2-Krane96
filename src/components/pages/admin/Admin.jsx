@@ -4,9 +4,11 @@ import AuthContext from "../../../utils/context";
 import "./Admin.scss";
 import AdminDashboard from "../../admin_items/AdminDashboard";
 import useToggle from "../../../hooks/useToggle";
+import { TabTitle } from "../../../utils/TitleAndIcon";
 
 
 const Admin = () => {
+  TabTitle('Holidaze | Admin')
   const [auth, setAuth] = useContext(AuthContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();

@@ -20,6 +20,7 @@ import { CgSmartHomeRefrigerator } from "react-icons/cg";
 import { GiWeightLiftingUp } from "react-icons/gi";
 import { FaSmokingBan } from "react-icons/fa";
 import { MdPets, MdOutlineRestaurantMenu } from "react-icons/md";
+import { TabTitle } from "../../../utils/TitleAndIcon";
 
 const schema = yup.object().shape({
   name: yup
@@ -29,6 +30,7 @@ const schema = yup.object().shape({
 });
 
 const Details = () => {
+ 
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -89,7 +91,7 @@ const Details = () => {
   if (error) {
     return <div>ERROR: An error occured</div>;
   }
-
+  TabTitle('Holidaze | ' + `${details.name}`);
   return (
     <div className="hotel_details">
       <img src={details.image_url} />
@@ -180,60 +182,9 @@ const Details = () => {
       </form>
     </div>
   );
+  
 };
 
 export default Details;
 
-/*
-const [hotel, setHotel] = useState(null);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
 
-	let navigate = useNavigate();
-
-	const { id } = useParams();
-
-	if (!id) {
-		navigate("/");
-	}
-
-	const url = HOTELS_URL + "/" + id;
-
-	useEffect(
-		function () {
-			async function fetchData() {
-				try {
-					const response = await fetch(url);
-
-					if (response.ok) {
-						const json = await response.json();
-						console.log(json.data);
-						setHotel(json.data);
-					} else {
-						setError("An error occured");
-					}
-				} catch (error) {
-					setError(error.toString());
-				} finally {
-					setLoading(false);
-				}
-			}
-			fetchData();
-		},
-		[]
-	);
-
-	if (loading) {
-		return <div>Loading...</div>;
-	}
-
-	if (error) {
-		return <div>An error occured: {error}</div>;
-	}
-
-	return (
-		<div className="hotel-detail">
-			<h1>{hotel.attributes.name}</h1>
-		</div>
-	);
-*/
