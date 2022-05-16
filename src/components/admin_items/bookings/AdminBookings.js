@@ -45,10 +45,9 @@ const AdminBookings = () => {
   }
 
   return (
-    <div>
-      <AdminDashboard />
+    <div className="bookings_wrapper">
+      <h2 style={{width:"80%",margin:".5rem auto"}}>Bookings</h2>
       <hr />
-      <h2>Bookings</h2>
       {bookings.map((item, idx) => {
         const { name, hotel, CheckInDate, CheckOutDate } = item.attributes;
         const deleteBooking = async () => {
@@ -65,14 +64,14 @@ const AdminBookings = () => {
           }
         };
         return (
-          <div key={idx}>
+          <div key={idx} className="admin_items_wrapper">
             <BookingItem
               name={name}
               hotel={hotel}
               CheckInDate={CheckInDate}
               CheckOutDate={CheckOutDate}
             />
-            <button className="Btn" onClick={handleDelete}>
+            <button className="Btn" onClick={handleDelete} style={{width:"100%"}}>
               DELETE
             </button>
           </div>

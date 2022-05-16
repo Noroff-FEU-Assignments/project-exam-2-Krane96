@@ -45,10 +45,10 @@ const AdminMessages = () => {
   }
 
   return (
-    <div>
-      <AdminDashboard />
+    <div className="">
+     
+      <h2 style={{width:"80%",margin:".5rem auto"}}>Messages</h2>
       <hr />
-      <h2>Messages</h2>
       {bookings.map((item, idx) => {
         const { name, email, message } = item.attributes;
         const deleteMessage = async () => {
@@ -65,7 +65,7 @@ const AdminMessages = () => {
           }
         };
         return (
-          <div key={idx} className="message_wrapper">
+          <div key={idx} className="admin_items_wrapper">
             <MessageItem name={name} email={email} message={message} />
             <button className="Btn" onClick={handleDelete}>
               DELETE

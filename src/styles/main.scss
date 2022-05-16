@@ -101,6 +101,11 @@ form{
 .grid_two {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.grid_hotels {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
 
@@ -119,13 +124,14 @@ form{
   background-color: $light;
   display: flex;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .search_bar_container input{
   font-size: 1em;
   padding: .7rem;
   width: 90%;
   background-color: $light;
+  box-shadow: none;
 }
 .search_bar_container input:focus{
  outline: none;

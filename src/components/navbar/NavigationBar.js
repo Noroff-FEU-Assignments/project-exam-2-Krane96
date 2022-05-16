@@ -90,11 +90,12 @@ const NavigationBar = () => {
             </ul>
             {auth ? (
               <>
-                <Link to="/admin">Admin</Link> {" "}
+                <Link to="/admin"  onClick={menuToggle} style={{marginBottom:"32px"}}>Admin</Link> {" "}
                 <button onClick={logout}>Log out</button>
               </>
             ) : (
               <button
+      
                 className={`${hideToggleCheck}`}
                 onClick={() => {
                   setOpenLogin(true);

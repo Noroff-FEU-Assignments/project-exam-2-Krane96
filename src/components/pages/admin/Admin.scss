@@ -33,15 +33,27 @@
   .admin_active{
     background-color: green;
   }
-
-  .message_container{
-      
-  }
-  .message_wrapper{
-
-  }
-  .booking_container{
-    margin-top: 1rem;
+  .admin_items_wrapper{
+    margin: 2rem auto 2rem auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: $borderRadiusBtn;
+    padding: 1rem;
+  }
+  .admin_dashboard {
+    margin: 1rem auto;
+  }
+  
+  .info_container span{
+    font-size: 1.1em;
+    font-weight: 600;
+    color: $dark;
+  }
+  .info_container h4{
+    font-weight: 600;
+  }
+  .info_container h5{
+    margin: .5rem 0;
   }

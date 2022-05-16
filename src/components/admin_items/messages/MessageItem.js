@@ -1,11 +1,12 @@
 const MessageItem = ({ email, name, message }) => {
     return (
-      <div className="message_container">
+      <div className="info_container">
         <div className="sender_info">
-          <p>{name}</p>
-          <p>{email}</p>
+          <h5><span>From: </span>{name}</h5>
+          <h5><span>Email: </span>{email}</h5>
+          <h5><span>Message: <br/></span>{message}</h5>
         </div>
-        <p className="message">{message}</p>
+        
       </div>
     );
   }

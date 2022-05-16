@@ -158,7 +158,7 @@ const Details = () => {
           />
           <div className="date_container">
             <div className="date">
-              CheckIn Date:
+              Check In:
               <input
                 type="date"
                 {...register("CheckInDate")}
@@ -166,7 +166,7 @@ const Details = () => {
               />
             </div>
             <div className="date">
-              CheckOut Date:
+              Check Out:
               <input
                 type="date"
                 {...register("CheckOutDate")}
@@ -174,7 +174,7 @@ const Details = () => {
               />
             </div>
           </div>
-          <h5 style={{ textAlign: "center" }}>{details.price},-NOK</h5>
+          <h5 style={{ textAlign: "center",margin:".5rem auto" }}>{details.price},-NOK</h5>
           <button className="Btn">Book</button>
         </fieldset>
       </form>

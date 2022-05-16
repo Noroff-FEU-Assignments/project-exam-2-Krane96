@@ -14,10 +14,9 @@ const AdminDashboard = () => {
 
     setToggleClass(!toggle);
   }
+
   return (
-    <div>
-      <h3>{`Hi, ${auth.user.username + " "}`}</h3>
-      <h3>Welcome back</h3>
+    <div className="admin_dashboard">
       <div className="admin_navigation">
         <ul>
           <li>
@@ -36,3 +35,42 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+
+
+/* 
+{auth ? (
+              <>
+                <Link to="/admin">Admin</Link> {" "}
+                <button onClick={logout}>Log out</button>
+              </>
+            ) : (
+              <button
+                className={`${hideToggleCheck}`}
+                onClick={() => {
+                  setOpenLogin(true);
+                  menuToggle();
+                  handleToggle();
+                }}
+              >
+                Login
+              </button>
+            )}
+
+
+
+            <h3>{`Hi, ${auth.user.username + " "}`}</h3>
+      <h3>Welcome back</h3>
+      <div className="admin_navigation">
+        <ul>
+          <li>
+            <Link to="/admin/messages"><AiOutlineMail/>Messages</Link>
+          </li>
+          <li>
+            <Link to="/admin/bookings"><BsBookmarks/>Bookings</Link>
+          </li>
+          <li>
+            <Link to="/admin/create"><MdOutlineCreate/>Create Booking</Link>
+          </li>
+        </ul>
+      </div>
+*/

@@ -41,8 +41,8 @@ const CreateForm = () => {
 
   return (
     <>
-      <AdminDashboard />
-      <form onSubmit={handleSubmit(onCreateBooking)} className="booking_form">
+      <form onSubmit={handleSubmit(onCreateBooking)} className="form_basic">
+      <h2 style={{marginBottom:".5rem"}}>Manual Booking</h2>
         <fieldset>
           <input
             {...register("hotel")}
@@ -56,7 +56,7 @@ const CreateForm = () => {
           />
           <div className="date_container">
             <div className="date">
-              CheckIn Date:
+              Check In:
               <input
                 type="date"
                 {...register("CheckInDate")}
@@ -64,7 +64,7 @@ const CreateForm = () => {
               />
             </div>
             <div className="date">
-              CheckOut Date:
+              Check Out:
               <input
                 type="date"
                 {...register("CheckOutDate")}

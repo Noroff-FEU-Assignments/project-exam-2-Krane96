@@ -3,7 +3,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../../utils/api";
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router";
 import "./Contact.scss";
 import axios from "axios";
 const url = BASE_URL + "api/messages";
@@ -23,10 +22,10 @@ const schema = yup.object().shape({
     .min(10, "The message must be at least 10 characters!"),
 });
 
-const Contact = (contactData) => {
+const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
-  const navigate = useNavigate();
+
 
   const {
     register,
@@ -50,8 +49,8 @@ const Contact = (contactData) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSend)} className="contact_form">
-      <h2>Contact us</h2>
+    <form onSubmit={handleSubmit(onSend)} className="form_basic">
+      <h2 style={{marginBottom:".5rem"}}>Contact us</h2>
       <fieldset disabled={submitting}>
         <input {...register("name")} placeholder="Name" className="form-info" />
         {errors.name && (
