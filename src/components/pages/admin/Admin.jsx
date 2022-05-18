@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthContext from "../../../utils/context";
-import "./Admin.scss";
 import AdminDashboard from "../../admin_items/AdminDashboard";
 import useToggle from "../../../hooks/useToggle";
 import { TabTitle } from "../../../utils/TitleAndIcon";

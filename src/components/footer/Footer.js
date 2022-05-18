@@ -1,7 +1,6 @@
 import classes from "./Footer.module.scss";
 import SocialsIcons from "../socialsIcon/SocialsIcons";
 
-
 const Footer = () => {
   return (
     <>
@@ -35,8 +34,20 @@ const Footer = () => {
           </div>
         </div>
         <div className={classes.footer_row_2}>
-          <span style={{color:"#eff1f394",marginTop:"1rem",fontSize:".9em"}}>&#169; Holidaze. All rights reserved</span>
-          <span style={{color:"#eff1f394",marginTop:"1rem",fontSize:".9em"}}>something - something</span>
+          <img
+            src="/images/essie/sample-3.png"
+            style={{ width: "60px", height: "60px" }}
+          />
+          <span
+            style={{ color: "#eff1f394", marginTop: "1rem", fontSize: ".9em" }}
+          >
+            &#169; Holidaze. All rights reserved
+          </span>
+          <span
+            style={{ color: "#eff1f394", marginTop: "1rem", fontSize: ".9em" }}
+          >
+            something - something
+          </span>
           <SocialsIcons />
         </div>
       </footer>

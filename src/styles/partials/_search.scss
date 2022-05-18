@@ -1,0 +1,44 @@
+.search_bar_container {
+    align-items: center;
+    margin: 1rem auto;
+    width: 90%;
+    background-color: $light;
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  .search_bar_container input{
+    font-size: 1em;
+    padding: .7rem;
+    width: 90%;
+    background-color: $light;
+    box-shadow: none;
+  }
+  .search_bar_container input:focus{
+   outline: none;
+  }
+  
+  .search_bar_container svg{
+    font-size: 2.6em;
+    padding: .5rem;
+    margin-right: .5rem;
+  }
+  .hotel_search_wrapper{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .hotel_card_search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: .5rem auto;
+  }
+  .search_card_row_one{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3px 5px 3px 5px;
+  }

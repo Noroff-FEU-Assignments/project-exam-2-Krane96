@@ -9,13 +9,11 @@ import { TabTitle } from "../../../utils/TitleAndIcon";
 import { ContactSchema } from "../../../utils/yupSchema";
 const url = BASE_URL + "api/messages";
 
-
-
 const Contact = () => {
-  TabTitle('Holidaze | Contact')
+  TabTitle("Holidaze | Contact");
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
-  
+
   const {
     register,
     handleSubmit,
@@ -34,12 +32,12 @@ const Contact = () => {
     };
     const responseData = await axios.post(url, options);
     console.log(responseData);
-    alert('Message sent!');
+    alert("Message sent!");
   };
 
   return (
     <form onSubmit={handleSubmit(onSend)} className="form_basic">
-      <h2 style={{marginBottom:".5rem"}}>Contact us</h2>
+      <h2 style={{ marginBottom: ".5rem" }}>Contact us</h2>
       <fieldset disabled={submitting}>
         <input {...register("name")} placeholder="Name" className="form-info" />
         {errors.name && (

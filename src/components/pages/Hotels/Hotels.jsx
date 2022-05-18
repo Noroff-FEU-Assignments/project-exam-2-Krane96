@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import HotelCard from "../../hotel_items/HotelCard";
 import { HOTELS_URL } from "../../../utils/api";
-import "./Hotels.scss";
 import SearchBar from "../../search/SearchBar";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 

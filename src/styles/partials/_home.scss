@@ -1,0 +1,85 @@
+@import "../variables.scss";
+
+.account_icon {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+  align-items: center;
+}
+
+h4 {
+  text-align: left;
+  margin-top: 10px;
+}
+.hero_container {
+  background: url("../../../public/images/hero_header.jpg") center center/cover
+    no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  justify-content: space-evenly;
+  object-fit: contain;
+  text-align: center;
+  width: 95%;
+  margin: auto auto auto auto;
+  border-radius: $borderRadius;
+}
+.hero_container h1 {
+  color: $light;
+  margin-top: 4rem;
+}
+.action_Btn a {
+  padding: 0.6rem 1.5rem;
+  border-radius: $borderRadius + 3px;
+}
+
+.item_carousel {
+  min-height: 10rem;
+  min-width: 80%;
+  padding: 20px;
+}
+.item_carousel img {
+  width: 100%;
+  height: 150px;
+  pointer-events: none;
+}
+
+.inner_carousel {
+  display: flex;
+}
+.featured_carousel {
+  cursor: grab;
+  overflow: hidden;
+}
+.featured_carousel h2 {
+  padding: 0 20px;
+  margin-top: 2rem;
+}
+
+.contact_hero {
+  background: url("../../../public/images/hotel_contact_hero.jpg") center
+    center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  justify-content: space-between;
+  margin: 5rem auto;
+}
+.contact_hero_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 30px;
+}
+.contact_hero_content h2 {
+  color: $light;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+.contact_hero a {
+  font-size: 1.2em;
+}

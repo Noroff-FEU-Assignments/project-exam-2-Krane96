@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "./Home.scss";
 import AuthContext from "../../../utils/context";
 import { useState, useEffect, useContext, useRef } from "react";
 import { HOTELS_URL } from "../../../utils/api";
