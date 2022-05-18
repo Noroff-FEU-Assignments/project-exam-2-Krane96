@@ -21,8 +21,8 @@ const NavigationBar = () => {
   let hideToggleCheck = hideToggle ? "hide" : "";
 
   const [size, setSize] = useState({
-    width: 700,
-    height: 1000,
+    width: 768,
+    height: undefined,
   });
 
   useEffect(() => {
@@ -61,6 +61,7 @@ const NavigationBar = () => {
               <img
                 src="/images/essie/sample-3.png"
                 style={{ width: "100%", height: "55px" }}
+                alt="logo"
               />
             </Link>
             <Link to="/" style={{fontSize:"0.9em"}}>Holidaze</Link>
