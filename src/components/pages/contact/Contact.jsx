@@ -6,36 +6,22 @@ import { useContext, useState } from "react";
 import "./Contact.scss";
 import axios from "axios";
 import { TabTitle } from "../../../utils/TitleAndIcon";
+import { ContactSchema } from "../../../utils/yupSchema";
 const url = BASE_URL + "api/messages";
 
-const schema = yup.object().shape({
-  name: yup
-    .string()
-    .required("Please enter your name!")
-    .min(3, "Name must be longer than 2 characters!"),
-  email: yup
-    .string()
-    .required("Please enter an email address!")
-    .email("Please enter a valid email address!"),
-  message: yup
-    .string()
-    .required("Please enter your message!")
-    .min(10, "The message must be at least 10 characters!"),
-});
+
 
 const Contact = () => {
   TabTitle('Holidaze | Contact')
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
   
-
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(ContactSchema),
   });
 
   const onSend = async (data) => {

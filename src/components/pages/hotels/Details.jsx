@@ -21,13 +21,7 @@ import { GiWeightLiftingUp } from "react-icons/gi";
 import { FaSmokingBan } from "react-icons/fa";
 import { MdPets, MdOutlineRestaurantMenu } from "react-icons/md";
 import { TabTitle } from "../../../utils/TitleAndIcon";
-
-const schema = yup.object().shape({
-  name: yup
-    .string()
-    .required("Please enter your name!")
-    .min(1, "Name must be at least 1 characters!"),
-});
+import { bookingSchema } from "../../../utils/yupSchema";
 
 const Details = () => {
  
@@ -45,7 +39,7 @@ const Details = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(bookingSchema),
   });
 
   useEffect(function () {
@@ -153,11 +147,18 @@ const Details = () => {
             {...register("hotel")}
             className="form-info block hidden"
           />
+          {errors.hotel && (
+          <span className="form-error">{errors.hotel.message}</span>
+        )}
           <input
             {...register("name")}
             placeholder="Your Name"
             className="form-info block"
           />
+          {errors.name && (
+          <span className="form-error">{errors.name.message}</span>
+        )}
+
           <div className="date_container">
             <div className="date">
               Check In:
@@ -166,6 +167,9 @@ const Details = () => {
                 {...register("CheckInDate")}
                 className="form-info "
               />
+              {errors.message && (
+          <span className="form-error">{errors.checkout.message}</span>
+        )}
             </div>
             <div className="date">
               Check Out:
@@ -174,6 +178,9 @@ const Details = () => {
                 {...register("CheckOutDate")}
                 className="form-info"
               />
+              {errors.message && (
+          <span className="form-error">{errors.checkin.message}</span>
+        )}
             </div>
           </div>
           <h5 style={{ textAlign: "center",margin:".5rem auto" }}>{details.price},-NOK</h5>

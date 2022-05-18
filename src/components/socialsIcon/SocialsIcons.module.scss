@@ -1,19 +1,20 @@
 @import "./../../styles/variables.scss";
 
 
+
 .social_icons span{
     font-size: 1.25rem;
     line-height: 1.75rem;
     padding: 0.5rem 0.8rem;
     margin: 1rem .5rem 0 .5rem;
     border-radius: $borderRound;
-    background-color: $dark;
+    background: linear-gradient($primary, #595fa3);
     color: $light;
     display: inline-block;
 
 }
 .social_icons span:hover{
-    transition: 0.4s linear;
-    background-color: linear-gradient(#e66465, #9198e5);
+    transition: 1.2s ease-in;
+    background: linear-gradient(#595fa3, #06050596 );
     cursor: pointer;
 }
