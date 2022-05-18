@@ -6,6 +6,10 @@
 @import "partials/forms";
 @import "partials/home";
 @import "partials/admin";
+@import "partials/contact";
+@import "partials/login";
+@import "partials/howitworks";
+@import "partials/footer";
 
 // General Styling
 * {
@@ -94,8 +98,26 @@ h5 {
 }
 
 // Media Screens Querys
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 370px) {
   .grid_two {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media only screen and (min-width: 450px) {
+  .item_carousel img {
+    height: 190px;
+  }
+}
+@media only screen and (min-width: 550px) {
+  .item_carousel img {
+    height: 230px;
+  }
+}
+@media only screen and (min-width: 650px) {
+  .item_carousel img {
+    height: 270px;
+  }
+  .footer_row_1 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

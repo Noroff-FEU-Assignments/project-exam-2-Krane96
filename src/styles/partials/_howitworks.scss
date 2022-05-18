@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+.container {
+  max-width: 85%;
+  margin: auto;
+  margin-top: 3rem;
+}
+.box{
+ border-radius: $borderRadius;
+}
+.heading {
+  text-align: center;
+  padding: 50px 0 50px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 80%;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.works {
+  text-align: center;
+  background-color: #066d8c;
+  background-image: -webkit-gradient(linear, 0 110%, 0 0, from($secondary), to(transparent));
+  border-bottom: 1px solid rgba(128, 128, 128, 0.707);
+}
+.works img {
+  width: auto;
+  height: auto;
+}
+.works .box {
+  padding: 25px 15px;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+}
+.works h2 {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 15px 0;
+}
+.works p {
+  font-size: 14px;
+}
+@media screen and (max-width: 768px) {
+  .works .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

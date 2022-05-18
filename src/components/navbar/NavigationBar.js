@@ -21,8 +21,8 @@ const NavigationBar = () => {
   let hideToggleCheck = hideToggle ? "hide" : "";
 
   const [size, setSize] = useState({
-    width: 768,
-    height: undefined,
+    width: 700,
+    height: 1000,
   });
 
   useEffect(() => {
@@ -61,7 +61,6 @@ const NavigationBar = () => {
               <img
                 src="/images/essie/sample-3.png"
                 style={{ width: "100%", height: "55px" }}
-                alt="logo"
               />
             </Link>
             <Link to="/" style={{fontSize:"0.9em"}}>Holidaze</Link>
@@ -91,60 +90,38 @@ const NavigationBar = () => {
             </ul>
             {auth ? (
               <>
-                <Link to="/admin"  onClick={menuToggle} style={{marginBottom:"32px"}}>Admin</Link> {" "}
+                <Link to="/admin" style={{marginBottom:"32px"}} onClick={menuToggle}>Admin</Link>
                 <button onClick={logout}>Log out</button>
               </>
             ) : (
               <button
-      
-                className={`${hideToggleCheck}`}
-                onClick={() => {
-                  setOpenLogin(true);
-                  menuToggle();
-                  handleToggle();
-                }}
-              >
-                Login
-              </button>
-            )}
-          </nav>
-          <div className={classes.header__content__toggle}>
-            <span onClick={menuToggle} style={{ fontSize: "1.1rem" }}>
-              Menu
-            </span>
-            {!menuOpen ? (
-              <BiMenuAltRight onClick={menuToggle} />
-            ) : (
-              <AiOutlineClose onClick={menuToggle} />
-            )}
-          </div>
+              className={`${hideToggleCheck}`}
+              onClick={() => {
+                setOpenLogin(true);
+                menuToggle();
+                handleToggle();
+              }}
+            >
+              Login
+            </button>
+          )}
+        </nav>
+        <div className={classes.header__content__toggle}>
+          <span onClick={menuToggle} style={{ fontSize: "1.1rem" }}>
+            Menu
+          </span>
+          {!menuOpen ? (
+            <BiMenuAltRight onClick={menuToggle} />
+          ) : (
+            <AiOutlineClose onClick={menuToggle} />
+          )}
         </div>
-        {openLogin && <LoginForm closeLogin={setOpenLogin} />}
-      </header>
-    </>
-  );
+      </div>
+      {openLogin && <LoginForm closeLogin={setOpenLogin} />}
+    </header>
+  </>
+);
 };
 
 export default NavigationBar;
 
-/*
-{auth ? (
-            <>
-              <h4 className="loggedUser">{`${auth.user.username + " "}`}</h4>
-              <RiAccountPinCircleLine style={{ fontSize: "2em" }} />
-              {error ? (
-                "Error"
-              ) : (
-                
-                <Link to="/login">
-                  <button onClick={logout} className="Btn">
-                    Log out
-                  </button>
-                </Link>
-                
-              )}
-            </>
-          ) : (
-            <Link to="/login" />
-          )} 
- */

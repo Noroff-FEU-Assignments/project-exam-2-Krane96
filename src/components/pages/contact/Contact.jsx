@@ -3,7 +3,6 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../../utils/api";
 import { useContext, useState } from "react";
-import "./Contact.scss";
 import axios from "axios";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 import { ContactSchema } from "../../../utils/yupSchema";

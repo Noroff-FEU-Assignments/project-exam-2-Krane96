@@ -1,0 +1,37 @@
+@import "../variables.scss";
+footer {
+  background-color: $secondary;
+  padding: 1rem;
+}
+
+footer h4 {
+  color: $light;
+}
+footer li {
+  color: $paragraphLight;
+  font-size: 0.9em;
+}
+ul {
+  display: inline-block;
+}
+footer li:hover {
+  transition: 0.2s;
+  color: $light;
+  cursor: pointer;
+}
+footer h4,
+ul {
+  text-align: center;
+}
+.footer_row_1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+}
+
+.footer_row_2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

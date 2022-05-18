@@ -1,12 +1,11 @@
-import classes from "./Footer.module.scss";
 import SocialsIcons from "../socialsIcon/SocialsIcons";
 
 const Footer = () => {
   return (
     <>
       <footer>
-        <div className={classes.footer_row_1}>
-          <div className={classes.grid}>
+        <div className="footer_row_1">
+          <div className="grid_footer">
             <ul>
               <h4>Support</h4>
               <li>Safety</li>
@@ -15,7 +14,7 @@ const Footer = () => {
               <li>Contact us</li>
             </ul>
           </div>
-          <div className={classes.grid}>
+          <div className="grid_footer">
             <ul>
               <h4>User Privacy</h4>
               <li>Terms & Conditions</li>
@@ -23,7 +22,7 @@ const Footer = () => {
               <li>Cookies</li>
             </ul>
           </div>
-          <div className={classes.grid}>
+          <div className="grid_footer">
             <ul>
               <h4>About</h4>
               <li>Text</li>
@@ -33,9 +32,9 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className={classes.footer_row_2}>
+        <div className="footer_row_2">
           <img
-            src="/images/essie/sample-3.png"
+            src="/images/essie/white_logo.jpg"
             style={{ width: "60px", height: "60px" }}
           />
           <span

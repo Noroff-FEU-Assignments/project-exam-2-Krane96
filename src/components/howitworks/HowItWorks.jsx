@@ -1,5 +1,4 @@
 import React from "react";
-import "./HowItWorks.scss";
 import WorksCard from "./WorksCard";
 import copyWriting from "./copyWriting";
 
