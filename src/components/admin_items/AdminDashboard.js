@@ -3,14 +3,14 @@ import { AiOutlineMail } from "react-icons/ai";
 import { BsBookmarks } from "react-icons/bs";
 import { MdOutlineCreate } from "react-icons/md";
 
-
 const AdminDashboard = () => {
-
   const navAdminStyles = ({ isActive }) => {
-    return{
-      fontWeight: isActive ? 'bold' : 'normal',
-      boxShadow: isActive ? 'rgba(0, 0, 0, 0.40) 2px 2px 3.6px' : 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px',
-    }
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      boxShadow: isActive
+        ? "rgba(0, 0, 0, 0.40) 2px 2px 3.6px"
+        : "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+    };
   };
 
   return (
