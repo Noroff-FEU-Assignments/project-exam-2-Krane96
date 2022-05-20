@@ -9,7 +9,7 @@ const Bookings = () =>{
   }
   return (
     <>
-    <AdminDashboard />
+      <AdminDashboard />
       <AdminBookings />
     </>
   );

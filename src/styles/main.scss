@@ -58,6 +58,9 @@ ul {
   padding: 0;
 }
 
+.page_width{
+  max-width: 1200px;
+}
 .Btn {
   border: none;
   background-color: #457b9d;
@@ -98,7 +101,7 @@ h5 {
 }
 
 // Media Screens Querys
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 360px) {
   .grid_two {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -120,4 +123,7 @@ h5 {
   .footer_row_1 {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+@media only screen and (min-width: 768px) {
+  
 }

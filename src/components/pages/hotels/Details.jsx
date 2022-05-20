@@ -103,7 +103,7 @@ const Details = () => {
             </li>
             <li>
               <AiFillCar />
-              Parking available
+              Free Parking
             </li>
             <li>
               <CgSmartHomeRefrigerator />

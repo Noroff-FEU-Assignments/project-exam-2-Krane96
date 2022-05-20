@@ -25,10 +25,10 @@ const Footer = () => {
           <div className="grid_footer">
             <ul>
               <h4>About</h4>
-              <li>Text</li>
-              <li>Text</li>
-              <li>Text</li>
-              <li>Text</li>
+              <li>Travel Guides</li>
+              <li>About us</li>
+              <li>Vacation rentals</li>
+              <li>Site Index</li>
             </ul>
           </div>
         </div>

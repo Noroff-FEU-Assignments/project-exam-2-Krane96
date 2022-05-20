@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
+import { RiAccountPinCircleLine } from "react-icons/ri";
 import { useContext, useEffect, useState } from "react";
 import classes from "./NavigationBar.module.scss";
 import LoginForm from "../loginform/LoginForm";
 import AuthContext from "../../utils/context";
-
 
 const NavigationBar = () => {
   const navigate = useNavigate();
@@ -21,8 +21,8 @@ const NavigationBar = () => {
   let hideToggleCheck = hideToggle ? "hide" : "";
 
   const [size, setSize] = useState({
-    width: 700,
-    height: 1000,
+    width: 300,
+    height: 300,
   });
 
   useEffect(() => {
@@ -63,7 +63,9 @@ const NavigationBar = () => {
                 style={{ width: "100%", height: "55px" }}
               />
             </Link>
-            <Link to="/" style={{fontSize:"0.9em"}}>Holidaze</Link>
+            <Link to="/" style={{ fontSize: "0.9em" }}>
+              Holidaze
+            </Link>
           </div>
           <nav
             className={`${classes.header__content__nav} ${
@@ -90,38 +92,71 @@ const NavigationBar = () => {
             </ul>
             {auth ? (
               <>
-                <Link to="/admin" style={{marginBottom:"32px"}} onClick={menuToggle}>Admin</Link>
+                <Link
+                  to="/admin"
+                  style={{ marginBottom: "32px" }}
+                  onClick={menuToggle}
+                >
+                  Admin
+                </Link>
                 <button onClick={logout}>Log out</button>
               </>
             ) : (
               <button
-              className={`${hideToggleCheck}`}
-              onClick={() => {
-                setOpenLogin(true);
-                menuToggle();
-                handleToggle();
-              }}
-            >
-              Login
-            </button>
-          )}
-        </nav>
-        <div className={classes.header__content__toggle}>
-          <span onClick={menuToggle} style={{ fontSize: "1.1rem" }}>
-            Menu
-          </span>
-          {!menuOpen ? (
-            <BiMenuAltRight onClick={menuToggle} />
+                className={`${hideToggleCheck}`}
+                onClick={() => {
+                  setOpenLogin(true);
+                  menuToggle();
+                  handleToggle();
+                }}
+              >
+                Login
+              </button>
+            )}
+          </nav>
+          <div className={classes.header__content__toggle}>
+            <span onClick={menuToggle} style={{ fontSize: "1.1rem" }}>
+              Menu
+            </span>
+            {!menuOpen ? (
+              <BiMenuAltRight onClick={menuToggle} />
+            ) : (
+              <AiOutlineClose onClick={menuToggle} />
+            )}
+          </div>
+        </div>
+        {openLogin && <LoginForm closeLogin={setOpenLogin} />}
+      </header>
+      <div className="info_section">
+        <div className="account_icon">
+          {auth ? (
+            <>
+              <h4>{`${auth.user.username + " "}`}</h4>
+              <Link to="/admin">
+                <img
+                  src="/images/batman_avatar.png"
+                  style={{ width: "40px" }}
+                />
+              </Link>
+            </>
           ) : (
-            <AiOutlineClose onClick={menuToggle} />
+            <>
+              <div className="info_logged_out">
+                <RiAccountPinCircleLine
+                  style={{ fontSize: "2em", cursor: "pointer" }}
+                  className={`${hideToggleCheck}`}
+                  onClick={() => {
+                    setOpenLogin();
+                    handleToggle();
+                  }}
+                />
+              </div>
+            </>
           )}
         </div>
       </div>
-      {openLogin && <LoginForm closeLogin={setOpenLogin} />}
-    </header>
-  </>
-);
+    </>
+  );
 };
 
 export default NavigationBar;
-
