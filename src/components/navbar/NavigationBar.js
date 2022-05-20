@@ -94,7 +94,7 @@ const NavigationBar = () => {
               <>
                 <Link
                   to="/admin"
-                  style={{ marginBottom: "32px" }}
+                  className="admin_link"
                   onClick={menuToggle}
                 >
                   Admin

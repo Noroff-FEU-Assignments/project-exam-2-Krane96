@@ -29,7 +29,6 @@ const SearchBar = () => {
         return hotel.attributes.name.match(regex)
       })
     }
-    console.log('matches', matches);
     setSuggestions(matches)
     setText(text);
   }

@@ -13,7 +13,6 @@ import Messages from "./components/pages/admin/Messages";
 import BookingSent from "./components/common_messages/BookingSent";
 import Bookings from "./components/pages/admin/Bookings";
 import CreateBooking from "./components/pages/admin/CreateBooking";
-import LoggedInPanel from "./components/pages/login/LoggedInPanel";
 import "./styles/main.scss";
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
         <Router>
           <NavigationBar />
           <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-            <LoggedInPanel />
             <Routes>
               <Route index element={<Home />} />
               <Route path="/login" element={<Login />} />
@@ -37,9 +35,10 @@ function App() {
               <Route path="/BookingSent" element={<BookingSent />} />
             </Routes>
           </div>
-        </Router>
-        <HowItWorks />
+          <HowItWorks />
         <Footer />
+        </Router>
+        
       </AuthProvider>
     </>
   );

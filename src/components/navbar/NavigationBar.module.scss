@@ -135,3 +135,14 @@
 a:hover{
     color: $light;
 }
+
+
+@media only screen and (min-width: 768px) {
+
+  .header ul{
+    margin-right: 0;
+  }
+  .header button{
+    margin-left: 16px;
+  }
+}
