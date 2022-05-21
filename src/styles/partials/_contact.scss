@@ -12,6 +12,7 @@ fieldset {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 2rem 1rem;
   border-radius: $borderRadius;
+  max-width: 600px;
 }
 textarea {
   resize: none;

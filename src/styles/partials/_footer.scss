@@ -28,6 +28,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   justify-items: center;
+  grid-gap: 5px;
 }
 
 .footer_row_3 {
@@ -36,6 +37,10 @@ ul {
   justify-items: center;
   align-items: center;
   text-align: center;
+  grid-gap: 5px;
+}
+.footer_width{
+  margin-top: 1rem;
 }
 .footer_row_3 img {
   border-radius: $borderRound;
@@ -46,4 +51,7 @@ ul {
   color: #eff1f394;
   margin-top: 1rem;
   font-size: .9em;
+}
+.footer_logo{
+  margin: 1rem 0;
 }

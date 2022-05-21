@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="footer_row_3">
             <SocialsIcons />
 
-            <Link to="/">
+            <Link to="/" className="footer_logo">
               <img
                 src="/images/essie/white_logo.jpg"
                 style={{ width: "60px", height: "60px" }}

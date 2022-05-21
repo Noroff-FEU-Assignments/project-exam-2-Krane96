@@ -130,6 +130,9 @@ h5 {
   .container {
     max-width: 65%;
   }
+  .form_basic{
+    padding: 4rem 2rem;
+  }
 }
 @media only screen and (min-width: 650px) {
   .item_carousel img {
@@ -137,14 +140,18 @@ h5 {
   }
   .footer_row_1 {
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 1rem;
   }
   .footer_row_3 {
     grid-template-columns: repeat(3, 1fr);
   }
+  .copyright{
+    margin: 0;
+  }
 
   .footer_width {
     max-width: 95%;
-    margin: 0 auto;
+    margin: 2rem auto 0 auto;
   }
   .grid_hotels{
     grid-template-columns: repeat(3, 1fr);
@@ -173,6 +180,17 @@ h5 {
   .footer_width {
     max-width: 80%;
   }
-  
+  .hotel_container {
+    max-width: 85%;
+  }
+  .search_bar_container{
+    max-width: 85%;
+  }
+  .container{
+    max-width: 900px;
+  }
+  fieldset{
+    max-width: 70%;
+  }
 }
 

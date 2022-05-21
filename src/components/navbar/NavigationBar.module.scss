@@ -1,14 +1,19 @@
 @import "./../../styles/variables.scss";
 
-.header {
+.header_wrapper{
   background: $primary;
   width: 100%;
+}
+.header {
+  background: $primary;
+  max-width: 1300px;
   height: 70px;
   padding: 0 1rem;
   @include breakpoint(md) {
     padding: 0 3rem;
   }
   transition: 0.3s ease all;
+  margin: 0 auto;
 
 &__content {
     overflow: hidden;

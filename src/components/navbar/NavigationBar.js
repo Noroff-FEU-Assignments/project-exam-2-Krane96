@@ -54,6 +54,7 @@ const NavigationBar = () => {
 
   return (
     <>
+    <div className={classes.header_wrapper}>
       <header className={classes.header}>
         <div className={classes.header__content}>
           <div className="logo_container">
@@ -114,6 +115,7 @@ const NavigationBar = () => {
               </button>
             )}
           </nav>
+          
           <div className={classes.header__content__toggle}>
             <span onClick={menuToggle} style={{ fontSize: "1.1rem" }}>
               Menu
@@ -127,6 +129,7 @@ const NavigationBar = () => {
         </div>
         {openLogin && <LoginForm closeLogin={setOpenLogin} />}
       </header>
+      </div>
       <div className="info_section">
         <div className="account_icon">
           {auth ? (
