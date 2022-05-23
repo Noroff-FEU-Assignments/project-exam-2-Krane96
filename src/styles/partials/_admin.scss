@@ -40,12 +40,13 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: $borderRadiusBtn;
     padding: 1rem;
+    justify-content: space-between;
   }
   .admin_dashboard {
     margin: 1rem auto;
   }
   .info_section{
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
   }
   
@@ -60,3 +61,16 @@
   .info_container h5{
     margin: .5rem 0;
   }
+
+  .logout_container{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .logout_container button{
+    padding: .5rem 1rem;
+  }
+
+  .grid_admin {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}

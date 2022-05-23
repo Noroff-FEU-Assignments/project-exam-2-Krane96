@@ -10,6 +10,7 @@
 @import "partials/login";
 @import "partials/howitworks";
 @import "partials/footer";
+@import "partials/loader";
 
 // General Styling
 * {
@@ -79,7 +80,15 @@ ul {
   font-size: 1em;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
+.deleteBtn{
+  border: none;
+  background-color:  $errorMsg;
+  color: $light;
+  border-radius: $borderRadius;
+  letter-spacing: 1px;
+  font-size: 1em;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .action_Btn a {
   background: linear-gradient(160deg, #d15e5eef 20%, #c34e4edc 60%);
 }
@@ -113,6 +122,12 @@ h5 {
 }
 
 // Media Screens Querys
+@media screen and (max-width: 330px){
+  .grid_hotels{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media only screen and (max-width: 360px) {
   .grid_two {
     grid-template-columns: repeat(1, 1fr);
@@ -122,6 +137,7 @@ h5 {
   .item_carousel img {
     height: 190px;
   }
+  
 }
 @media only screen and (min-width: 550px) {
   .item_carousel img {
@@ -132,6 +148,9 @@ h5 {
   }
   .form_basic{
     padding: 4rem 2rem;
+  }
+  .grid_admin{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media only screen and (min-width: 650px) {
@@ -155,6 +174,9 @@ h5 {
   }
   .grid_hotels{
     grid-template-columns: repeat(3, 1fr);
+  }
+  .admin_navigation{
+    margin: 1rem auto;
   }
 }
 // Tablet
@@ -191,6 +213,42 @@ h5 {
   }
   fieldset{
     max-width: 70%;
+  }
+  .hotel_details_flex{
+    display: flex;
+    justify-content: center;
+  }
+  .details_flex{
+    justify-content: center;
+  }
+  .hotel_details{
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .hotel_details h5{
+    margin: 0;
+  }
+  .hotel_details img{
+    height: auto;
+    width: 450px;
+  }
+  .details-p{
+    max-width: 450px;
+  }
+  .hotel_details_card{
+    padding: 0 1rem;
+    justify-content: flex-start;
+  }
+  .details_flex_wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem 0;
+  }
+  .grid_admin{
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

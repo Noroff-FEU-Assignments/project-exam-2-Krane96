@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { BASE_URL, BOOKINGS_PATH } from "../../../utils/api";
+import { BOOKINGS_PATH } from "../../../utils/api";
 import BookingItem from "./BookingItem";
 import useAxios from "../../../hooks/useAxios";
 import AuthContext from "../../../utils/context";
 import { useContext } from "react";
-import AdminDashboard from "../AdminDashboard";
 import useToggle from "../../../hooks/useToggle";
-
+import Moment from 'react-moment';
+import 'moment-timezone';
 const AdminBookings = () => {
   const [isTriggered, setIsTriggered] = useToggle();
   const [error, setError] = useState();
@@ -33,7 +33,6 @@ const AdminBookings = () => {
     return (
       <div>
         <h1>You must be logged in to see this page</h1>
-        <h3>The server responded with: {error.status}</h3>
         <p>{error.message}</p>
         <p>Please Login</p>
       </div>
@@ -41,43 +40,62 @@ const AdminBookings = () => {
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
   }
 
   return (
-    <div className="bookings_wrapper">
-      <h2 style={{width:"80%",margin:".5rem auto"}}>Bookings</h2>
+    <>
+      <h2 style={{ width: "80%", margin: ".5rem auto" }}>Bookings</h2>
       <hr />
-      {bookings.map((item, idx) => {
-        const { name, hotel, CheckInDate, CheckOutDate } = item.attributes;
-        const deleteBooking = async () => {
-          const responseData = await http.delete(`${BOOKINGS_PATH}/${item.id}`);
-          console.log(responseData);
-        };
+      <div className="grid_admin">
+        {bookings.map((item, idx) => {
+          const { name, hotel, CheckInDate, CheckOutDate } = item.attributes;
+          const deleteBooking = async () => {
+            const responseData = await http.delete(
+              `${BOOKINGS_PATH}/${item.id}`
+            );
+            console.log(responseData);
+          };
 
-        const handleDelete = () => {
-          if (window.confirm("Are you sure?")) {
-            deleteBooking();
-            setIsTriggered();
-          } else {
-            return;
-          }
-        };
-        return (
-          <div key={idx} className="admin_items_wrapper">
-            <BookingItem
-              name={name}
-              hotel={hotel}
-              CheckInDate={CheckInDate}
-              CheckOutDate={CheckOutDate}
-            />
-            <button className="Btn" onClick={handleDelete} style={{width:"100%"}}>
-              DELETE
-            </button>
-          </div>
-        );
-      })}
-    </div>
+          const handleDelete = () => {
+            if (window.confirm("Are you sure?")) {
+              deleteBooking();
+              setIsTriggered();
+            } else {
+              return;
+            }
+          };
+          
+          return (
+            <div key={idx} className="admin_items_wrapper">
+              <BookingItem
+                name={name}
+                hotel={hotel}
+                CheckInDate={CheckInDate}
+                CheckOutDate={CheckOutDate}
+              />
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <span>Made at: <Moment format="YYYY.MM.DD">{item.attributes.createdAt}</Moment></span>
+                <button className="deleteBtn" onClick={handleDelete}>
+                  DELETE
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 

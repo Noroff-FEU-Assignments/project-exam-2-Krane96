@@ -1,8 +1,6 @@
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../../utils/api";
-import { useContext, useState } from "react";
 import axios from "axios";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 import { ContactSchema } from "../../../utils/yupSchema";
@@ -10,8 +8,6 @@ const url = BASE_URL + "api/messages";
 
 const Contact = () => {
   TabTitle("Holidaze | Contact");
-  const [submitting, setSubmitting] = useState(false);
-  const [loginError, setLoginError] = useState(null);
 
   const {
     register,
@@ -37,7 +33,7 @@ const Contact = () => {
   return (
     <form onSubmit={handleSubmit(onSend)} className="form_basic">
       <h2 style={{ marginBottom: ".5rem" }}>Contact us</h2>
-      <fieldset disabled={submitting}>
+      <fieldset>
         <input {...register("name")} placeholder="Name" className="form-info" />
         {errors.name && (
           <span className="form-error">{errors.name.message}</span>

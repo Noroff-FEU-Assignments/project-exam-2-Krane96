@@ -4,8 +4,8 @@ import { HOTELS_URL } from "../../../utils/api";
 import SearchBar from "../../search/SearchBar";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 
-const Hotels = () =>{
-  TabTitle('Holidaze | Hotels')
+const Hotels = () => {
+  TabTitle("Holidaze | Hotels");
   const [hotel, setHotel] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,7 +32,18 @@ const Hotels = () =>{
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
   }
 
   if (error) {
@@ -41,7 +52,7 @@ const Hotels = () =>{
 
   return (
     <>
-    <SearchBar />
+      <SearchBar />
       <div className="hotel_container">
         <h2>Our available hotels</h2>
         <div className="grid_hotels">
@@ -60,6 +71,6 @@ const Hotels = () =>{
       </div>
     </>
   );
-}
+};
 
 export default Hotels;

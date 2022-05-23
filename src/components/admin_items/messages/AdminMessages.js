@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { BASE_URL, MESSAGES_URL } from "../../../utils/api";
+import { MESSAGES_URL } from "../../../utils/api";
 import MessageItem from "./MessageItem";
 import useAxios from "../../../hooks/useAxios";
 import AuthContext from "../../../utils/context";
 import { useContext } from "react";
-import AdminDashboard from "../AdminDashboard";
 import useToggle from "../../../hooks/useToggle";
 
 const AdminMessages = () => {
@@ -33,7 +32,6 @@ const AdminMessages = () => {
     return (
       <div>
         <h1>You must be Authenticated to view this page</h1>
-        <h3>The server responded with: {error.status}</h3>
         <p>{error.message}</p>
         <p>Please Login</p>
       </div>
@@ -41,52 +39,56 @@ const AdminMessages = () => {
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
   }
 
   return (
-    <div className="">
-     
-      <h2 style={{width:"80%",margin:".5rem auto"}}>Messages</h2>
+    <>
+      <h2 style={{ width: "80%", margin: "2rem auto" }}>Messages</h2>
       <hr />
-      {bookings.map((item, idx) => {
-        const { name, email, message } = item.attributes;
-        const deleteMessage = async () => {
-          const responseData = await http.delete(`${MESSAGES_URL}/${item.id}`);
-          console.log(responseData);
-        };
+      <div className="grid_admin">
+        {bookings.map((item, idx) => {
+          const { name, email, message } = item.attributes;
+          const deleteMessage = async () => {
+            const responseData = await http.delete(
+              `${MESSAGES_URL}/${item.id}`
+            );
+            console.log(responseData);
+          };
 
-        const handleDelete = () => {
-          if (window.confirm("Are you sure?")) {
-            deleteMessage();
-            setIsTriggered();
-          } else {
-            return;
-          }
-        };
-        return (
-          <div key={idx} className="admin_items_wrapper">
-            <MessageItem name={name} email={email} message={message} />
-            <button className="Btn" onClick={handleDelete}>
-              DELETE
-            </button>
-          </div>
-        );
-      })}
-    </div>
+          const handleDelete = () => {
+            if (window.confirm("Are you sure?")) {
+              deleteMessage();
+              setIsTriggered();
+            } else {
+              return;
+            }
+          };
+          return (
+            <div key={idx} className="admin_items_wrapper">
+              <MessageItem name={name} email={email} message={message} />
+              <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                <button className="deleteBtn" onClick={handleDelete}>
+                  DELETE
+                </button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
 export default AdminMessages;
-
-/*
-<AdminDashboard />
-    <div className="messagesList">
-      {Messages.map(function (messageItem) {
-        const { id, name, email, message } = messageItem;
-        return (
-          <MessageItem key={id} name={name} email={email} message={message} />
-        );
-      })}
-    </div>
-    */

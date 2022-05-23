@@ -1,18 +1,22 @@
-import * as yup from 'yup';
+import * as yup from "yup";
 
-export const userLoginSchema = yup.object().shape({
+export const loginSchema = yup.object().shape({
   email: yup
     .string()
-    .required('Please enter an email address')
-    .email('Please enter a valid email address'),
-  password: yup.string().required('Please enter your password'),
+    .required("Please enter an email address")
+    .email("Please enter a valid email address"),
+  password: yup.string().required("Please enter your password"),
 });
 
 export const bookingSchema = yup.object().shape({
   name: yup
     .string()
-    .required("Please enter your name!")
+    .required("Please enter your name")
     .min(3, "Name must be longer than 2 characters!"),
+  CheckInDate: yup
+  .string().required("Must enter start date"),
+  CheckOutDate: yup
+  .string().required("Must enter end date"),
 });
 
 export const ContactSchema = yup.object().shape({

@@ -1,19 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import HotelCard from "../../hotel_items/HotelCard";
 import { HOTELS_URL, BOOKINGS_PATH, BASE_URL } from "../../../utils/api";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import useAxios from "../../../hooks/useAxios";
-import {
-  OneStar,
-  TwoStar,
-  ThreeStar,
-  FourStar,
-  FiveStar,
-} from "../../hotel_items/hotel_stars";
+import { FourStar } from "../../hotel_items/hotel_stars";
 import { ImMug } from "react-icons/im";
 import { AiFillCar, AiOutlineWifi } from "react-icons/ai";
 import { CgSmartHomeRefrigerator } from "react-icons/cg";
@@ -24,15 +15,10 @@ import { TabTitle } from "../../../utils/TitleAndIcon";
 import { bookingSchema } from "../../../utils/yupSchema";
 
 const Details = () => {
- 
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [star, setStar] = useState(false);
-
   const { id } = useParams();
-  const navigate = useNavigate();
-  const http = useAxios();
 
   const {
     register,
@@ -62,7 +48,6 @@ const Details = () => {
     }
     fetchData();
   }, []);
-  const [submitting, setSubmitting] = useState(false);
 
   const onBooking = async (data) => {
     const options = {
@@ -75,89 +60,101 @@ const Details = () => {
     };
     const responseData = await axios.post(BASE_URL + BOOKINGS_PATH, options);
     console.log(responseData);
-    alert('Booking made!');
+    alert("Booking made!");
   };
 
   if (loading) {
-    return <div className="loader"></div>;
+    return (
+      <div className="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
   }
 
   if (error) {
     return <div>ERROR: An error occured</div>;
   }
-  TabTitle('Holidaze | ' + `${details.name}`);
+  TabTitle("Holidaze | " + `${details.name}`);
   return (
     <div className="hotel_details">
-      <img src={details.image_url} />
-      <div className="hotel_details_card">
-        <h2>{details.name}</h2>
-        <span className="stars">
-          <FourStar />
-        </span>
-        <div className="offers">
-          <h3>This stay offers</h3>
-          <ul className="offers_container grid_two">
-            <li>
-              <ImMug />
-              Free Breakfast
-            </li>
-            <li>
-              <AiFillCar />
-              Free Parking
-            </li>
-            <li>
-              <CgSmartHomeRefrigerator />
-              Refrigerator
-            </li>
-            <li>
-              <AiOutlineWifi />
-              Wifi
-            </li>
-            <li>
-              <GiWeightLiftingUp />
-              Gym
-            </li>
-            <li>
-              <MdPets />
-              Pet friendly
-            </li>
-            <li>
-              <FaSmokingBan />
-              No smoking
-            </li>
-            <li>
-              <MdOutlineRestaurantMenu />
-              Bar & Restaurant
-            </li>
-          </ul>
+      <div className="hotel_details_flex">
+        <img src={details.image_url} alt="hotel" />
+        <div className="hotel_details_card">
+          <h2>{details.name}</h2>
+          <span className="stars">
+            <FourStar />
+          </span>
+          <div className="offers">
+            <h3>This stay offers</h3>
+            <ul className="offers_container grid_two">
+              <li>
+                <ImMug />
+                Free Breakfast
+              </li>
+              <li>
+                <AiFillCar />
+                Free Parking
+              </li>
+              <li>
+                <CgSmartHomeRefrigerator />
+                Refrigerator
+              </li>
+              <li>
+                <AiOutlineWifi />
+                Wifi
+              </li>
+              <li>
+                <GiWeightLiftingUp />
+                Gym
+              </li>
+              <li>
+                <MdPets />
+                Pet friendly
+              </li>
+              <li>
+                <FaSmokingBan />
+                No smoking
+              </li>
+              <li>
+                <MdOutlineRestaurantMenu />
+                Bar & Restaurant
+              </li>
+            </ul>
+          </div>
         </div>
-        <h3>Description</h3>
-        <p className="details-p">{details.description}</p>
-        <h5 style={{ textAlign: "center", marginTop: "1.5rem" }}>
+      </div>
+      <div className="details_flex_wrap">
+        <div className="details_flex">
+          <h3>Description</h3>
+          <p className="details-p">{details.description}</p>
+        </div>
+        <h5>
           Address:
           <br />
           {details.address}
         </h5>
       </div>
-
       <form onSubmit={handleSubmit(onBooking)} className="booking_form">
         <fieldset>
-          <input
-            value={details.name}
-            {...register("hotel")}
-            className="form-info block hidden"
-          />
+          <input value={details.name} {...register("hotel")} disabled />
           {errors.hotel && (
-          <span className="form-error">{errors.hotel.message}</span>
-        )}
+            <span className="form-error">{errors.hotel.message}</span>
+          )}
           <input
             {...register("name")}
             placeholder="Your Name"
             className="form-info block"
           />
           {errors.name && (
-          <span className="form-error">{errors.name.message}</span>
-        )}
+            <span className="form-error">{errors.name.message}</span>
+          )}
 
           <div className="date_container">
             <div className="date">
@@ -167,9 +164,9 @@ const Details = () => {
                 {...register("CheckInDate")}
                 className="form-info "
               />
-              {errors.message && (
-          <span className="form-error">{errors.checkout.message}</span>
-        )}
+              {errors.CheckInDate && (
+                <span className="form-error">{errors.CheckInDate.message}</span>
+              )}
             </div>
             <div className="date">
               Check Out:
@@ -178,20 +175,21 @@ const Details = () => {
                 {...register("CheckOutDate")}
                 className="form-info"
               />
-              {errors.message && (
-          <span className="form-error">{errors.checkin.message}</span>
-        )}
+              {errors.CheckOutDate && (
+                <span className="form-error">
+                  {errors.CheckOutDate.message}
+                </span>
+              )}
             </div>
           </div>
-          <h5 style={{ textAlign: "center",margin:".5rem auto" }}>{details.price},-NOK</h5>
+          <h5 style={{ textAlign: "center", margin: ".5rem auto" }}>
+            {details.price},-NOK
+          </h5>
           <button className="Btn">Book</button>
         </fieldset>
       </form>
     </div>
   );
-  
 };
 
 export default Details;
-
-

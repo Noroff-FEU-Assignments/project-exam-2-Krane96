@@ -54,81 +54,78 @@ const NavigationBar = () => {
 
   return (
     <>
-    <div className={classes.header_wrapper}>
-      <header className={classes.header}>
-        <div className={classes.header__content}>
-          <div className="logo_container">
-            <Link to="/" className={classes.header__content__logo}>
-              <img
-                src="/images/essie/sample-3.png"
-                style={{ width: "100%", height: "55px" }}
-              />
-            </Link>
-            <Link to="/" style={{ fontSize: "0.9em" }}>
-              Holidaze
-            </Link>
-          </div>
-          <nav
-            className={`${classes.header__content__nav} ${
-              menuOpen && size.width < 768 ? classes.isMenu : ""
-            }`}
-          >
-            <ul>
-              <li>
-                <Link to="/" onClick={menuToggle}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" onClick={menuToggle}>
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/hotels" onClick={menuToggle}>
-                  Hotels
-                </Link>
-              </li>
-              <Link to="/Details"></Link>
-            </ul>
-            {auth ? (
-              <>
-                <Link
-                  to="/admin"
-                  className="admin_link"
-                  onClick={menuToggle}
+      <div className={classes.header_wrapper}>
+        <header className={classes.header}>
+          <div className={classes.header__content}>
+            <div className="logo_container">
+              <Link to="/" className={classes.header__content__logo}>
+                <img
+                  src="/images/essie/sample-3.png"
+                  style={{ width: "100%", height: "55px" }}
+                  alt="logo"
+                />
+              </Link>
+              <Link to="/" style={{ fontSize: "0.9em" }}>
+                Holidaze
+              </Link>
+            </div>
+            <nav
+              className={`${classes.header__content__nav} ${
+                menuOpen && size.width < 768 ? classes.isMenu : ""
+              }`}
+            >
+              <ul>
+                <li>
+                  <Link to="/" onClick={menuToggle}>
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" onClick={menuToggle}>
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/hotels" onClick={menuToggle}>
+                    Hotels
+                  </Link>
+                </li>
+                <Link to="/Details"></Link>
+              </ul>
+              {auth ? (
+                <>
+                  <Link to="/admin" className="admin_link" onClick={menuToggle}>
+                    Admin
+                  </Link>
+                  <button onClick={logout}>Log out</button>
+                </>
+              ) : (
+                <button
+                  className={`${hideToggleCheck}`}
+                  onClick={() => {
+                    setOpenLogin(true);
+                    menuToggle();
+                    handleToggle();
+                  }}
                 >
-                  Admin
-                </Link>
-                <button onClick={logout}>Log out</button>
-              </>
-            ) : (
-              <button
-                className={`${hideToggleCheck}`}
-                onClick={() => {
-                  setOpenLogin(true);
-                  menuToggle();
-                  handleToggle();
-                }}
-              >
-                Login
-              </button>
-            )}
-          </nav>
-          
-          <div className={classes.header__content__toggle}>
-            <span onClick={menuToggle} style={{ fontSize: "1.1rem" }}>
-              Menu
-            </span>
-            {!menuOpen ? (
-              <BiMenuAltRight onClick={menuToggle} />
-            ) : (
-              <AiOutlineClose onClick={menuToggle} />
-            )}
+                  Login
+                </button>
+              )}
+            </nav>
+
+            <div className={classes.header__content__toggle}>
+              <span onClick={menuToggle} style={{ fontSize: "1.1rem" }}>
+                Menu
+              </span>
+              {!menuOpen ? (
+                <BiMenuAltRight onClick={menuToggle} />
+              ) : (
+                <AiOutlineClose onClick={menuToggle} />
+              )}
+            </div>
           </div>
-        </div>
-        {openLogin && <LoginForm closeLogin={setOpenLogin} />}
-      </header>
+          {openLogin && <LoginForm closeLogin={setOpenLogin} />}
+        </header>
       </div>
       <div className="info_section">
         <div className="account_icon">
@@ -139,6 +136,7 @@ const NavigationBar = () => {
                 <img
                   src="/images/batman_avatar.png"
                   style={{ width: "40px" }}
+                  alt="batman_avatar"
                 />
               </Link>
             </>

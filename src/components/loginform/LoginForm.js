@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { userLoginSchema } from "../../utils/yupSchema";
+import { loginSchema } from "../../utils/yupSchema";
 import axios from "axios";
 import { AUTH_URL } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ const LoginForm = ({ closeLogin }) => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(userLoginSchema),
+    resolver: yupResolver(loginSchema),
   });
 
   // Login function, accepts data from YUP object
@@ -34,6 +34,7 @@ const LoginForm = ({ closeLogin }) => {
     setAuth(responseData.data);
     // redirect to admin page
     navigate("/admin");
+    alert("successfully logged in")
   };
 
   // handleSubmit
@@ -42,7 +43,7 @@ const LoginForm = ({ closeLogin }) => {
 
     loginUser(formData).catch(console.error);
     console.log(auth);
-    alert("successfully logged in")
+    
     closeLogin();
   };
 
@@ -69,7 +70,9 @@ const LoginForm = ({ closeLogin }) => {
               {...register("email")}
               placeholder="Your email..."
             />
-            {errors.email && <span>{errors.email.message}</span>}
+            {errors.email && (
+            <span className="form-error">{errors.email.message}</span>
+          )}
             <label>Password</label>
             <input
               style={{ boxShadow: "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px" }}
@@ -77,8 +80,9 @@ const LoginForm = ({ closeLogin }) => {
               type="password"
               placeholder="Your password..."
             />
-            {errors.password && <span>{errors.password.message}</span>}
-
+            {errors.password && (
+            <span className="form-error">{errors.password.message}</span>
+          )}
             <button className="Btn">Login</button>
           </form>
           <div className="closeBtnContainer">
