@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../../utils/context";
 import { useState, useEffect, useContext, useRef } from "react";
 import { HOTELS_URL } from "../../../utils/api";
-
+import HotelCard from "../../hotel_items/HotelCard"
 import SearchBar from "../../search/SearchBar";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 
@@ -20,7 +20,7 @@ const Home = () => {
   }, []);
 
   useEffect(function () {
-    async function fetchData() {
+    const fetchData = async () => {
       try {
         const response = await fetch(HOTELS_URL);
 
@@ -51,8 +51,18 @@ const Home = () => {
   return (
     <>
       <SearchBar />
-
-
+          {hotel.map(function (hotel, idx) {
+            const { name, image_url } = hotel.attributes;
+            return (
+              <HotelCard
+                key={idx}
+                id={hotel.id}
+                name={name}
+                image_url={image_url}
+              />
+            );
+          })}
+      
       <div className="contact_hero">
         <div className="contact_hero_content">
           <h2>Any questions?</h2>

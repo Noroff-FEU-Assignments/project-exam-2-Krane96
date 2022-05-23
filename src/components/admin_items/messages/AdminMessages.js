@@ -5,6 +5,8 @@ import useAxios from "../../../hooks/useAxios";
 import AuthContext from "../../../utils/context";
 import { useContext } from "react";
 import useToggle from "../../../hooks/useToggle";
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 const AdminMessages = () => {
   const [isTriggered, setIsTriggered] = useToggle();
@@ -56,7 +58,7 @@ const AdminMessages = () => {
   return (
     <>
       <h2 style={{ width: "80%", margin: "2rem auto" }}>Messages</h2>
-      <hr />
+      <hr style={{maxWidth:"1000px",margin:"auto"}}/>
       <div className="grid_admin">
         {bookings.map((item, idx) => {
           const { name, email, message } = item.attributes;
@@ -78,7 +80,8 @@ const AdminMessages = () => {
           return (
             <div key={idx} className="admin_items_wrapper">
               <MessageItem name={name} email={email} message={message} />
-              <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems:"flex-end" }}>
+              <span>Made at: <Moment format="YYYY.MM.DD">{item.attributes.createdAt}</Moment></span>
                 <button className="deleteBtn" onClick={handleDelete}>
                   DELETE
                 </button>

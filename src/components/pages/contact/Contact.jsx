@@ -34,11 +34,12 @@ const Contact = () => {
     <form onSubmit={handleSubmit(onSend)} className="form_basic">
       <h2 style={{ marginBottom: ".5rem" }}>Contact us</h2>
       <fieldset>
+        <label>Name</label>
         <input {...register("name")} placeholder="Name" className="form-info" />
         {errors.name && (
           <span className="form-error">{errors.name.message}</span>
         )}
-
+        <label>Email</label>
         <input
           {...register("email")}
           placeholder="Email"
@@ -47,7 +48,7 @@ const Contact = () => {
         {errors.email && (
           <span className="form-error">{errors.email.message}</span>
         )}
-
+        <label>Your message</label>
         <textarea
           {...register("message")}
           placeholder="Message"

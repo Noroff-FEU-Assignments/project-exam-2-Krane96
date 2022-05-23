@@ -14,7 +14,6 @@ const SearchBar = () => {
   useEffect(() => {
     const loadHotels = async () => {
       const response = await axios.get(HOTELS_URL);
-      console.log(response.data.data);
       setHotels(response.data.data);
     };
     loadHotels();
@@ -42,6 +41,7 @@ const SearchBar = () => {
         ></input>
         <AiOutlineSearch />
       </div>
+    
       {suggestions &&
         suggestions.map((suggestion, i) => (
           <div key={i} className="hotel_search_wrapper">
@@ -51,6 +51,7 @@ const SearchBar = () => {
               image_url={suggestion.attributes.image_url}
               price={suggestion.attributes.price}
             />
+             
           </div>
         ))}
     </>

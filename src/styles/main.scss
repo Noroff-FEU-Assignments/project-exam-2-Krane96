@@ -80,6 +80,9 @@ ul {
   font-size: 1em;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.logout_container{
+  display: flex;
+}
 .deleteBtn{
   border: none;
   background-color:  $errorMsg;
@@ -102,6 +105,7 @@ ul {
   display: flex;
   justify-content: space-between;
 }
+
 h1 {
   font-size: 1.3em;
 }
@@ -137,6 +141,7 @@ h5 {
   .item_carousel img {
     height: 190px;
   }
+  
   
 }
 @media only screen and (min-width: 550px) {
@@ -191,6 +196,15 @@ h5 {
   }
   .admin_link{
     margin: 0 16px 0 0;
+  }
+  .logout_container{
+    display: none;
+  }
+  input, textarea{
+    padding: 8px 10px;
+  }
+  .info_section{
+    display: none;
   }
 }
 
@@ -249,6 +263,9 @@ h5 {
   }
   .grid_admin{
     grid-template-columns: repeat(3, 1fr);
+  }
+  .contact_hero{
+    height: 600px;
   }
 }
 

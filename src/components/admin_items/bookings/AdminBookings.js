@@ -56,8 +56,8 @@ const AdminBookings = () => {
 
   return (
     <>
-      <h2 style={{ width: "80%", margin: ".5rem auto" }}>Bookings</h2>
-      <hr />
+      <h2 style={{ width: "80%", margin: "2rem auto" }}>Bookings</h2>
+      <hr style={{maxWidth:"1000px",margin:"auto"}}/>
       <div className="grid_admin">
         {bookings.map((item, idx) => {
           const { name, hotel, CheckInDate, CheckOutDate } = item.attributes;
@@ -85,7 +85,7 @@ const AdminBookings = () => {
                 CheckInDate={CheckInDate}
                 CheckOutDate={CheckOutDate}
               />
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems:"flex-end" }}>
                 <span>Made at: <Moment format="YYYY.MM.DD">{item.attributes.createdAt}</Moment></span>
                 <button className="deleteBtn" onClick={handleDelete}>
                   DELETE

@@ -9,11 +9,13 @@ fieldset {
 .form_basic {
   margin: 2rem auto;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 2rem 1rem;
   border-radius: $borderRadius;
   max-width: 600px;
 }
-textarea {
-  resize: none;
+.form_basic input, .form_basic textarea{
+  border-radius: 10px;
+}
+form label{
+  padding: 0 .5rem;
 }
