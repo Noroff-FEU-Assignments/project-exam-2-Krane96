@@ -6,7 +6,7 @@ function FeaturedCard({ id, name, image_url }) {
       <Link to={`../details/${id}`}>
         <div className="hotel_featured_card">
           <img src={image_url} />
-          <h4>{name}</h4>
+          <h3>{name}</h3>
         </div>
       </Link>
     </>

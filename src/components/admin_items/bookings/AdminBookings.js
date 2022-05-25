@@ -56,6 +56,7 @@ const AdminBookings = () => {
 
   return (
     <>
+     <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
       <h2 style={{ width: "80%", margin: "2rem auto" }}>Bookings</h2>
       <hr style={{maxWidth:"1000px",margin:"auto"}}/>
       <div className="grid_admin">
@@ -94,6 +95,7 @@ const AdminBookings = () => {
             </div>
           );
         })}
+      </div>
       </div>
     </>
   );

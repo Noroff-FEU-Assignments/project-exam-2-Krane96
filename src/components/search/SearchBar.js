@@ -41,7 +41,7 @@ const SearchBar = () => {
         ></input>
         <AiOutlineSearch />
       </div>
-    
+
       {suggestions &&
         suggestions.map((suggestion, i) => (
           <div key={i} className="hotel_search_wrapper">
@@ -51,7 +51,6 @@ const SearchBar = () => {
               image_url={suggestion.attributes.image_url}
               price={suggestion.attributes.price}
             />
-             
           </div>
         ))}
     </>

@@ -52,6 +52,7 @@ const Hotels = () => {
 
   return (
     <>
+    <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
       <SearchBar />
       <div className="hotel_container">
         <h2>Our available hotels</h2>
@@ -68,6 +69,7 @@ const Hotels = () => {
             );
           })}
         </div>
+      </div>
       </div>
     </>
   );

@@ -21,7 +21,7 @@ function App() {
       <AuthProvider>
         <Router>
           <NavigationBar />
-          <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          
             <Routes>
               <Route index element={<Home />} />
               <Route path="/login" element={<Login />} />
@@ -34,7 +34,7 @@ function App() {
               <Route path="admin/create" element={<CreateBooking />} />
               <Route path="/BookingSent" element={<BookingSent />} />
             </Routes>
-          </div>
+          
           <HowItWorks />
         <Footer />
         </Router>

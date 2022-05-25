@@ -11,6 +11,7 @@ const Admin = () => {
 
   return (
     <>
+    <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
       <div className="admin_wrapper">
         <div className="admin_container">
           {auth ? (
@@ -22,6 +23,7 @@ const Admin = () => {
             <Link to="/login" />
           )}
         </div>
+      </div>
       </div>
     </>
   );

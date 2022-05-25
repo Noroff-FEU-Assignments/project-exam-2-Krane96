@@ -157,6 +157,19 @@ h5 {
   .grid_admin{
     grid-template-columns: repeat(2, 1fr);
   }
+  .hero_container{
+    height: 350px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .home_hero_content {
+    padding: 3rem 2rem 1rem 2rem;
+  }
+  .home_hero_content h1{
+    margin-top: 0;
+    font-size: 1.6em;
+  }
 }
 @media only screen and (min-width: 650px) {
   .item_carousel img {
@@ -172,6 +185,7 @@ h5 {
   .copyright{
     margin: 0;
   }
+  
 
   .footer_width {
     max-width: 95%;
@@ -182,6 +196,9 @@ h5 {
   }
   .admin_navigation{
     margin: 1rem auto;
+  }
+  .search_bar_container{
+    margin: 3rem auto;
   }
 }
 // Tablet
@@ -206,6 +223,28 @@ h5 {
   .info_section{
     display: none;
   }
+  .home_hero_content {
+    padding: 4rem 2rem 1rem 4rem;
+  }
+  .home_hero_content h1{
+    font-size: 1.7em;
+  }
+  .home_hero_content h3{
+    font-size: 1.3em;
+  }
+  .home_hero_content a{
+    font-size: 1.2em;
+  }
+  .hero_container{
+    height: 400px;
+  }
+  .featured_container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hotel_featured_card{
+    width: 95%;
+  }
+  
 }
 
 
@@ -267,5 +306,43 @@ h5 {
   .contact_hero{
     height: 600px;
   }
+  .hero_container{
+    height: 500px;
+  }
+  .home_hero_content{
+    padding: 6rem 2rem 2rem 5rem;
+  }
+  .home_hero_content h1{
+    font-size: 2.2em;
+  }
+  .home_hero_content h3{
+    font-size: 1.6em;
+    margin: 0.7rem 0 3rem 0;
+  }
+  .home_hero_content a{
+    font-size: 1.3em;
+    padding: 1rem 2rem;
+  }
+  .featured_container{
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  .hotel_featured_card{
+    width: 100%;
+  }
 }
 
+@media only screen and (min-width: 1200px) {
+  .hero_container{
+    height: 680px;
+  }
+  .home_hero_content{
+    padding: 10rem 2rem 2rem 10rem;
+  }
+  .home_hero_content a{
+    padding: 1rem 3rem;
+  }
+  .home_hero_content h1{
+    font-size: 2.6em;
+  }
+}
