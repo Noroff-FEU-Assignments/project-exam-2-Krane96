@@ -37,7 +37,18 @@ const Home = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    );
   }
 
   if (error) {
@@ -62,22 +73,23 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      <div className="featured_container">
-        {hotel.map(function (hotel, idx) {
-          if (hotel.attributes.featured) {
-            const { name, image_url } = hotel.attributes;
-            return (
-              <FeaturedCard
-                key={idx}
-                id={hotel.id}
-                name={name}
-                image_url={image_url}
-              />
-            );
-          }
-        })}
-      </div>
+      <div style={{ maxWidth: "1200px", margin: "3rem auto" }}>
+        <h2 style={{ maxWidth: "90%", margin: "0 auto" }}>Popular Hotels</h2>
+        <div className="featured_container">
+          {hotel.map(function (hotel, idx) {
+            if (hotel.attributes.featured) {
+              const { name, image_url } = hotel.attributes;
+              return (
+                <FeaturedCard
+                  key={idx}
+                  id={hotel.id}
+                  name={name}
+                  image_url={image_url}
+                />
+              );
+            }
+          })}
+        </div>
       </div>
       <div className="contact_hero">
         <div className="contact_hero_content">

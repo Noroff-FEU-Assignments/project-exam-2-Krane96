@@ -83,7 +83,7 @@ const AdminMessages = () => {
             <div key={idx} className="admin_items_wrapper">
               <MessageItem name={name} email={email} message={message} />
               <div style={{ display: "flex", justifyContent: "space-between", alignItems:"flex-end" }}>
-              <span>Made at: <Moment format="YYYY.MM.DD">{item.attributes.createdAt}</Moment></span>
+              <span>Sent at: <Moment format="YYYY.MM.DD">{item.attributes.createdAt}</Moment></span>
                 <button className="deleteBtn" onClick={handleDelete}>
                   DELETE
                 </button>
