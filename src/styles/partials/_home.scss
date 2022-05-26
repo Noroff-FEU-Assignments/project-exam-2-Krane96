@@ -12,7 +12,8 @@ h4 {
   margin-top: 10px;
 }
 .home_hero{
-  margin-top: 4rem;
+  margin-top: 3rem;
+  transition: 2s ease-out;
 }
 .hero_container {
   background: linear-gradient(to top, rgba(0,0,0,0.2)50%,rgba(0,0,0,0.2)50%), url("../../../public/images/hero_header.jpg");

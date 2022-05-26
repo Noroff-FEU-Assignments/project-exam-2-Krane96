@@ -124,6 +124,23 @@ h5 {
 .admin_link {
   margin-bottom: 32px;
 }
+.fade-appear,
+.fade-enter {
+opacity: 0;
+z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+opacity: 1;
+transition: opacity 450ms linear 250ms;
+}
+.fade-exit {
+opacity: 1;
+}
+.fade-exit.fade-exit-active {
+opacity: 0;
+transition: opacity 150ms linear;
+}
 
 // Media Screens Querys
 @media screen and (max-width: 330px) {

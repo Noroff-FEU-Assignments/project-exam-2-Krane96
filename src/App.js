@@ -13,6 +13,7 @@ import Messages from "./components/pages/admin/Messages";
 import BookingSent from "./components/common_messages/BookingSent";
 import Bookings from "./components/pages/admin/Bookings";
 import CreateBooking from "./components/pages/admin/CreateBooking";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./styles/main.scss";
 
 function App() {
@@ -21,24 +22,34 @@ function App() {
       <AuthProvider>
         <Router>
           <NavigationBar />
-          
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/hotels" element={<Hotels />} />
-              <Route path="details/:id" element={<Details />} />
-              <Route path="admin/messages" element={<Messages />} />
-              <Route path="admin/bookings" element={<Bookings />} />
-              <Route path="admin/create" element={<CreateBooking />} />
-              <Route path="/BookingSent" element={<BookingSent />} />
-            </Routes>
-          
+          <Routes>
+            <Route
+              render ={({ location }) => (
+                <TransitionGroup>
+                  <CSSTransition
+                    key={location.key}
+                    timeout={450}
+                    classNames="fade"
+                  >
+                    <Route index element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/admin" element={<Admin />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/hotels" element={<Hotels />} />
+                    <Route path="details/:id" element={<Details />} />
+                    <Route path="admin/messages" element={<Messages />} />
+                    <Route path="admin/bookings" element={<Bookings />} />
+                    <Route path="admin/create" element={<CreateBooking />} />
+                    <Route path="/BookingSent" element={<BookingSent />} />
+                  </CSSTransition>
+                </TransitionGroup>
+              )}
+            />
+          </Routes>
+
           <HowItWorks />
-        <Footer />
+          <Footer />
         </Router>
-        
       </AuthProvider>
     </>
   );
