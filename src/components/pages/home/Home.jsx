@@ -7,6 +7,7 @@ import SearchBar from "../../search/SearchBar";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 import FeaturedCard from "../../hotel_items/FeaturedCard";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const Home = () => {
   TabTitle("Holidaze");
@@ -38,15 +39,17 @@ const Home = () => {
 
   if (loading) {
     return (
-      <div className="lds-roller">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div className="loader_container">
+        <div className="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     );
   }
@@ -56,7 +59,11 @@ const Home = () => {
   }
 
   return (
-    <>
+    <motion.div
+      initial={false}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+    >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <SearchBar />
       </div>
@@ -78,14 +85,17 @@ const Home = () => {
         <div className="featured_container">
           {hotel.map(function (hotel, idx) {
             if (hotel.attributes.featured) {
-              const { name, image_url } = hotel.attributes;
+              const { name, price } = hotel.attributes;
               return (
-                <FeaturedCard
+                <div
+                  className="featured_background_image"
                   key={idx}
-                  id={hotel.id}
-                  name={name}
-                  image_url={image_url}
-                />
+                  style={{
+                    backgroundImage: `url('${hotel.attributes.image_url}')`,
+                  }}
+                >
+                  <FeaturedCard id={hotel.id} name={name} price={price} />
+                </div>
               );
             }
           })}
@@ -99,7 +109,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 

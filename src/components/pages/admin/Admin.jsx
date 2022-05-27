@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../../utils/context";
 import AdminDashboard from "../../admin_items/AdminDashboard";
 import { TabTitle } from "../../../utils/TitleAndIcon";
+import { motion } from "framer-motion";
 
 const Admin = () => {
   TabTitle("Holidaze | Admin");
@@ -11,20 +12,25 @@ const Admin = () => {
 
   return (
     <>
-    <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      <div className="admin_wrapper">
-        <div className="admin_container">
-          {auth ? (
-            <>
-              <AdminDashboard />
-              {error ? "Error" : <></>}
-            </>
-          ) : (
-            <Link to="/login" />
-          )}
+      <motion.div
+        style={{ maxWidth: "1200px", margin: "0 auto" }}
+        initial={false}
+        animate={{ width: "100%" }}
+        exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+      >
+        <div className="admin_wrapper">
+          <div className="admin_container">
+            {auth ? (
+              <>
+                <AdminDashboard />
+                {error ? "Error" : <></>}
+              </>
+            ) : (
+              <Link to="/login" />
+            )}
+          </div>
         </div>
-      </div>
-      </div>
+      </motion.div>
     </>
   );
 };

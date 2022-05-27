@@ -13,6 +13,7 @@
     "axios": "^0.26.1",
     "bootstrap": "^5.1.3",
     "create-use-context": "^1.0.1",
+    "framer-motion": "^6.3.4",
     "moment": "^2.29.3",
     "moment-timezone": "^0.5.34",
     "react": "^18.0.0",

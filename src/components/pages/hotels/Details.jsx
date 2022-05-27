@@ -13,6 +13,7 @@ import { FaSmokingBan } from "react-icons/fa";
 import { MdPets, MdOutlineRestaurantMenu } from "react-icons/md";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 import { bookingSchema } from "../../../utils/yupSchema";
+import { motion } from "framer-motion";
 
 const Details = () => {
   const [details, setDetails] = useState(null);
@@ -65,15 +66,17 @@ const Details = () => {
 
   if (loading) {
     return (
-      <div className="lds-roller">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div className="loader_container">
+        <div className="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     );
   }
@@ -83,7 +86,12 @@ const Details = () => {
   }
   TabTitle("Holidaze | " + `${details.name}`);
   return (
-    <div className="hotel_details">
+    <motion.div
+      className="hotel_details"
+      initial={false}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+    >
       <div className="hotel_details_flex">
         <img src={details.image_url} alt="hotel" />
         <div className="hotel_details_card">
@@ -188,7 +196,7 @@ const Details = () => {
           <button className="Btn">Book</button>
         </fieldset>
       </form>
-    </div>
+    </motion.div>
   );
 };
 
