@@ -2,7 +2,7 @@ import {  Routes, Route, useLocation } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Login from "../pages/login/Login";
 import Admin from "../pages/admin/Admin";
-import Hotels from "../pages/hotels/Hotels";
+import Hotels from "../pages/hotels/Hotels"
 import Details from "../pages/hotels/Details";
 import Contact from "../pages/contact/Contact";
 import Messages from "../pages/admin/Messages";
