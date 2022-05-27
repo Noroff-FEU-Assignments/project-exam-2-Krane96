@@ -78,7 +78,8 @@ const Home = () => {
         </div>
       </section>
       <div style={{ maxWidth: "1200px", margin: "3rem auto" }}>
-        <h2 style={{ maxWidth: "90%", margin: "0 auto" }}>Popular Hotels</h2>
+        
+        <h2 className="header_container">Popular Hotels</h2>
         <div className="featured_container">
           {hotel.map(function (hotel, idx) {
             if (hotel.attributes.featured) {

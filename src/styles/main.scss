@@ -84,8 +84,8 @@ ul {
   display: flex;
 }
 .deleteBtn {
-  background-color: transparent;
-  border: 2px solid $errorMsg;
+  border: none;
+  background-color: $errorMsg;
   color: $light;
   border-radius: $borderRadius;
   letter-spacing: 1px;
@@ -94,7 +94,8 @@ ul {
 }
 .deleteBtn:hover,
 .deleteBtn:focus {
-  box-shadow: inset 0 0 0 2em var(--hover);
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.1em);
 }
 .action_Btn a {
   background: linear-gradient($primary, rgba(211, 53, 53, 0.9));
@@ -241,6 +242,14 @@ h5 {
 // Tablet
 
 @media only screen and (min-width: 768px) {
+  .header_container{
+    font-size: 1.5em;
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+  }
+  .hotel_container h2{
+    font-size: 1.5em;
+  }
   .footer_width {
     max-width: 90%;
   }
@@ -284,6 +293,9 @@ h5 {
 }
 
 @media only screen and (min-width: 992px) {
+  .search_bar_container input{
+    padding: .8rem 2rem;
+  }
   .form_basic {
     max-width: 800px;
   }

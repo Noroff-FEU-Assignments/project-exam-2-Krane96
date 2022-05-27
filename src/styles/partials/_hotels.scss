@@ -25,7 +25,7 @@
   line-height: 25px;
 }
 .hotel_card img {
-  height: 120px;
+  height: 110px;
 }
 .stars {
   color: $primary;
@@ -89,9 +89,10 @@
   width: 100%;
 }
 
-.hotel_card:hover{
+.hotel_card:hover, .featured_background_image:hover{
   transform: scale(1.05);
   transition: all .2s ease-in-out;
+  opacity: .9;
 }
 .hotel_card img:hover{
   opacity: .85;
