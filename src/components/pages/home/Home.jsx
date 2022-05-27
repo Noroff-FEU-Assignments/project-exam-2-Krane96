@@ -62,7 +62,7 @@ const Home = () => {
     <motion.div
       initial={false}
       animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <SearchBar />
@@ -115,18 +115,3 @@ const Home = () => {
 
 export default Home;
 
-/* 
-<div className="featured_container">
-          {hotel.map(function (hotel, idx) {
-            const { name, image_url } = hotel.attributes;
-            return (
-              <FeaturedCard
-                key={idx}
-                id={hotel.id}
-                name={name}
-                image_url={image_url}
-              />
-            );
-          })}
-     </div>
-      */

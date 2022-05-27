@@ -35,7 +35,7 @@ const Contact = () => {
     <motion.div
       initial={false}
       animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
     >
       <form onSubmit={handleSubmit(onSend)} className="form_basic">
         <h2 style={{ marginBottom: ".5rem" }}>Contact us</h2>

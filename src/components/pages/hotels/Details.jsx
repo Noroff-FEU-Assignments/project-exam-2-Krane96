@@ -90,7 +90,7 @@ const Details = () => {
       className="hotel_details"
       initial={false}
       animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
     >
       <div className="hotel_details_flex">
         <img src={details.image_url} alt="hotel" />

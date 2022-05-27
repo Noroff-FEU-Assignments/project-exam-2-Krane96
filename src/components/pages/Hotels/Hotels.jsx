@@ -57,7 +57,7 @@ const Hotels = () => {
     <motion.div
       initial={false}
       animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
         <SearchBar />

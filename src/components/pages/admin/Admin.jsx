@@ -16,7 +16,7 @@ const Admin = () => {
         style={{ maxWidth: "1200px", margin: "0 auto" }}
         initial={false}
         animate={{ width: "100%" }}
-        exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+        exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
       >
         <div className="admin_wrapper">
           <div className="admin_container">
