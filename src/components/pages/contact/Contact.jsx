@@ -1,11 +1,12 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BASE_URL } from "../../../utils/api";
+import { motion } from "framer-motion";
 import axios from "axios";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 import { ContactSchema } from "../../../utils/yupSchema";
 const url = BASE_URL + "api/messages";
-import { motion } from "framer-motion";
+
 
 const Contact = () => {
   TabTitle("Holidaze | Contact");

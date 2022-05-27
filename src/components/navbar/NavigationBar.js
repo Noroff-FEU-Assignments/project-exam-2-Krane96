@@ -81,12 +81,12 @@ const NavigationBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" onClick={menuToggle}>
+                  <Link to="/Contact" onClick={menuToggle}>
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link to="/hotels" onClick={menuToggle}>
+                  <Link to="/Hotels" onClick={menuToggle}>
                     Hotels
                   </Link>
                 </li>
@@ -94,7 +94,7 @@ const NavigationBar = () => {
               </ul>
               {auth ? (
                 <>
-                  <Link to="/admin" className="admin_link" onClick={menuToggle}>
+                  <Link to="Aadmin" className="admin_link" onClick={menuToggle}>
                     Admin
                   </Link>
                   <button onClick={logout}>Log out</button>
