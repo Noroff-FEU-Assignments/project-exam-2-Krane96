@@ -1,16 +1,12 @@
-import { useState, useContext, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
-import { BASE_URL, BOOKINGS_PATH } from "../../../utils/api";
+import { HOTELS_URL } from "../../../utils/api";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router";
-import AdminDashboard from "../AdminDashboard";
+import { createHotelSchema } from "../../../utils/yupSchema";
 
-const schema = yup.object().shape({
-  hotel: yup.string().required("Please enter establishment name"),
-  name: yup.string().required("Please enter establishment name"),
-});
 
 const CreateForm = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -22,57 +18,73 @@ const CreateForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(createHotelSchema),
   });
 
-  const onCreateBooking = async (data) => {
+  const onCreateHotel = async (data) => {
     const options = {
       data: {
         name: data.name,
-        hotel: data.hotel,
-        CheckInDate: data.CheckInDate,
-        CheckOutDate: data.CheckOutDate,
+        price: data.price,
+        description: data.description,
+        address: data.address,
+        image_url: data.image_url,
+        stars: data.stars,
       },
     };
-    const responseData = await axios.post(BASE_URL + BOOKINGS_PATH, options);
+    const responseData = await axios.post(HOTELS_URL, options);
     console.log(responseData);
-    alert("Booking created!");
+    alert("Hotel Created!");
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit(onCreateBooking)} className="form_basic">
-      <h2 style={{marginBottom:".5rem"}}>Manual Booking</h2>
+      <form onSubmit={handleSubmit(onCreateHotel)} className="form_basic">
+        <h2 style={{ marginBottom: ".5rem" }}>Create Hotel</h2>
         <fieldset>
           <input
-            {...register("hotel")}
+            {...register("name")}
             placeholder="Hotel Name"
             className="form-info block hidden"
           />
+           {errors.name && (
+            <span className="form-error">{errors.name.message}</span>
+          )}
           <input
-            {...register("name")}
-            placeholder="Your Name"
+            {...register("price")}
+            placeholder="price"
             className="form-info block"
           />
-          <div className="date_container">
-            <div className="date">
-              Check In:
-              <input
-                type="date"
-                {...register("CheckInDate")}
-                className="form-info "
-              />
-            </div>
-            <div className="date">
-              Check Out:
-              <input
-                type="date"
-                {...register("CheckOutDate")}
-                className="form-info"
-              />
-            </div>
-          </div>
-          <button className="Btn">Book</button>
+           {errors.price && (
+            <span className="form-error">{errors.price.message}</span>
+          )}
+
+          <input
+            placeholder="address"
+            {...register("address")}
+            className="form-info"
+          />
+             {errors.address && (
+            <span className="form-error">{errors.address.message}</span>
+          )}
+          <input
+            placeholder="image_url"
+            {...register("image_url")}
+            className="form-info"
+          />
+ {errors.image_url && (
+            <span className="form-error">{errors.image_url.message}</span>
+          )}
+          <textarea
+            placeholder="description"
+            {...register("description")}
+            className="form-info "
+          />
+           {errors.description && (
+            <span className="form-error">{errors.description.message}</span>
+          )}
+
+          <button className="Btn">Create</button>
         </fieldset>
       </form>
     </>

@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import AuthContext from "../../../utils/context";
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useContext } from "react";
 import { HOTELS_URL } from "../../../utils/api";
-import HotelCard from "../../hotel_items/HotelCard";
 import SearchBar from "../../search/SearchBar";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 import FeaturedCard from "../../hotel_items/FeaturedCard";
-import { AiOutlineArrowRight } from "react-icons/ai";
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -23,7 +21,6 @@ const Home = () => {
 
         if (response.ok) {
           const json = await response.json();
-          console.log(json.data);
           setHotel(json.data);
         } else {
           setError("An error occured");

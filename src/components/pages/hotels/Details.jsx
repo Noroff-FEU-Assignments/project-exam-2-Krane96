@@ -143,12 +143,12 @@ const Details = () => {
           <h3>Description</h3>
           <p className="details-p">{details.description}</p>
         </div>
-        <h5>
-          Address:
-          <br />
-          {details.address}
-        </h5>
+        <div className="details_address">
+          <h3>Address:  {details.address}</h3>
+          <img src="/images/hotel/google_maps.jpg" alt="google-maps" />
+        </div>
       </div>
+      <hr style={{width:"100%"}}/>
       <form onSubmit={handleSubmit(onBooking)} className="booking_form">
         <fieldset>
           <input value={details.name} {...register("hotel")} disabled />

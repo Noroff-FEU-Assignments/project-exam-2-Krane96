@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsBookmarks } from "react-icons/bs";
 import { MdOutlineCreate } from "react-icons/md";
@@ -31,37 +31,43 @@ const AdminDashboard = () => {
   }
   return (
     <>
-    <div className="logout_container">
-    <button onClick={logout} className="Btn">
-    Log out
-  </button>
-  </div>
-    <div className="admin_dashboard">
-      <div className="admin_navigation">
-        <ul>
-          <li>
-            <NavLink to="/admin/messages" style={navAdminStyles}>
-              <AiOutlineMail />
-              Messages
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/admin/bookings" style={navAdminStyles}>
-              <BsBookmarks />
-              Bookings
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/admin/create" style={navAdminStyles}>
-              <MdOutlineCreate />
-              Create Booking
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-  </>
+      {auth ? (
+        <>
+          <div className="logout_container">
+            <button onClick={logout} className="Btn">
+              Log out
+            </button>
+          </div>
+          <div className="admin_dashboard">
+            <div className="admin_navigation">
+              <ul>
+                <li>
+                  <NavLink to="/admin/messages" style={navAdminStyles}>
+                    <AiOutlineMail />
+                    Messages
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/admin/bookings" style={navAdminStyles}>
+                    <BsBookmarks />
+                    Bookings
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/admin/create" style={navAdminStyles}>
+                    <MdOutlineCreate />
+                    Create Hotel
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {error ? "Error" : <></>}
+        </>
+      ) : (
+        <Link to="/login" />
+      )}
+    </>
   );
 };
 

@@ -97,7 +97,7 @@
         border-radius: calc(#{$borderRadius} + 6px);
         font-size: 1rem;
         font-family: inherit;
-        background: $dark;
+        background: linear-gradient( $dark, rgb(52, 49, 49));
         color: $light;
         border: 1px solid transparent;
         transition: 0.3s ease all;

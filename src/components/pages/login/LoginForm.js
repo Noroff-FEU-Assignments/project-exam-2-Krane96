@@ -1,15 +1,17 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { loginSchema } from "../../utils/yupSchema";
+import { loginSchema } from "../../../utils/yupSchema";
 import axios from "axios";
-import { AUTH_URL } from "../../utils/api";
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import AuthContext from "../../utils/context";
+import { AUTH_URL } from "../../../utils/api";
+import { useNavigate} from "react-router-dom";
+import { useContext, useState  } from "react";
+import AuthContext from "../../../utils/context";
+
 
 const LoginForm = ({ closeLogin }) => {
   const navigate = useNavigate();
   const [auth, setAuth] = useContext(AuthContext);
+  const [error, setError] = useState(null);
 
   // YUP
   const {
@@ -27,12 +29,13 @@ const LoginForm = ({ closeLogin }) => {
       identifier: formData.email,
       password: formData.password,
     });
-
+    
     console.log("Response Data: ", responseData);
 
     // Save JWT response to localstorage
     setAuth(responseData.data);
     // redirect to admin page
+    closeLogin();
     navigate("/admin");
     alert("successfully logged in")
   };
@@ -43,8 +46,6 @@ const LoginForm = ({ closeLogin }) => {
 
     loginUser(formData).catch(console.error);
     console.log(auth);
-    
-    closeLogin();
   };
 
   // Render page
@@ -83,14 +84,14 @@ const LoginForm = ({ closeLogin }) => {
             {errors.password && (
             <span className="form-error">{errors.password.message}</span>
           )}
-            <button className="Btn">Login</button>
+            <button className="Btn" style={{marginLeft:"0"}}>Login</button>
           </form>
           <div className="closeBtnContainer">
             <button
               style={{
                 background: "none",
                 border: "none",
-                marginTop: "1rem",
+                marginTop: "1rem", 
               }}
               onClick={() => {
                 closeLogin(false);

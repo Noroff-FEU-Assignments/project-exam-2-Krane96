@@ -39,8 +39,21 @@
 .details_flex {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-bottom: 1rem;
+
+}
+.details_flex_wrap img{
+  max-width: 450px;
+  height: auto;
+}
+.details_address{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem;
 }
 .details_flex_wrap {
   padding: 0 1rem;
@@ -76,3 +89,11 @@
   width: 100%;
 }
 
+.hotel_card:hover{
+  transform: scale(1.05);
+  transition: all .2s ease-in-out;
+}
+.hotel_card img:hover{
+  opacity: .85;
+  transition: all .2s ease-in-out;
+}

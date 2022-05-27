@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { RiAccountPinCircleLine } from "react-icons/ri";
 import { useContext, useEffect, useState } from "react";
 import classes from "./NavigationBar.module.scss";
-import LoginForm from "../loginform/LoginForm";
+import LoginForm from "../pages/login/LoginForm";
 import AuthContext from "../../utils/context";
 
 const NavigationBar = () => {
@@ -94,7 +94,7 @@ const NavigationBar = () => {
               </ul>
               {auth ? (
                 <>
-                  <Link to="Aadmin" className="admin_link" onClick={menuToggle}>
+                  <Link to="Admin" className="admin_link" onClick={menuToggle}>
                     Admin
                   </Link>
                   <button onClick={logout}>Log out</button>

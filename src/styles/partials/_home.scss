@@ -75,6 +75,7 @@ h4 {
   background-size: cover;
   background-repeat: no-repeat;
   width: 85%;
+  border-radius: $borderRadius;
 }
 .featured_container {
   display: grid;
@@ -97,9 +98,14 @@ h4 {
  justify-content: flex-end;
  
 }
+.featured_card_name{
+ display: flex;
+ justify-content: flex-start;
+ 
+}
 .featured_card_price p{
   padding: .4rem 1rem;
- background-color: #00afb9;
+ background: linear-gradient(#00afb9, #027d6b);
  color: $light;
  border-radius: $borderRadius;
  font-weight: 500;
@@ -108,4 +114,7 @@ h4 {
 .featured_card_name h2{
   color: $light;
   font-weight: 600;
+  padding: .5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: $borderRadius;
 }
