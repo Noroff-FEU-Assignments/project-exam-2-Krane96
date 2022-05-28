@@ -9,8 +9,6 @@ const Admin = () => {
   TabTitle("Holidaze | Admin");
   const [auth, setAuth] = useContext(AuthContext);
   const [error, setError] = useState(null);
-  setAuth();
-  setError();
 
   return (
     <>
@@ -29,7 +27,7 @@ const Admin = () => {
               </>
             ) : (
               <Link to="/login" />
-            )}
+            )[setAuth(), setError()]}
           </div>
         </div>
       </motion.div>
