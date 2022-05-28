@@ -7,6 +7,7 @@ import { useContext } from "react";
 import useToggle from "../../../hooks/useToggle";
 import Moment from 'react-moment';
 import 'moment-timezone';
+
 const AdminBookings = () => {
   const [isTriggered, setIsTriggered] = useToggle();
   const [error, setError] = useState();
@@ -23,6 +24,7 @@ const AdminBookings = () => {
       const data = await http.get(BOOKINGS_PATH);
       setBookings(data.data.data);
       setIsLoading(false);
+     
     };
 
     fetchData().catch((error) => setError(error.response.data.error));

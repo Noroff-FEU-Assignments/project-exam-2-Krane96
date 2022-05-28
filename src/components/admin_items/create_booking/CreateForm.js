@@ -1,17 +1,11 @@
-import { useState } from "react";
 import axios from "axios";
 import { HOTELS_URL } from "../../../utils/api";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useNavigate } from "react-router";
 import { createHotelSchema } from "../../../utils/yupSchema";
 
 
 const CreateForm = () => {
-  const [submitting, setSubmitting] = useState(false);
-  const [loginError, setLoginError] = useState(null);
-  const navigate = useNavigate();
 
   const {
     register,

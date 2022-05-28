@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import AuthContext from "../../../utils/context";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { HOTELS_URL } from "../../../utils/api";
 import SearchBar from "../../search/SearchBar";
 import { TabTitle } from "../../../utils/TitleAndIcon";
@@ -12,7 +11,6 @@ const Home = () => {
   const [hotel, setHotel] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [auth, setAuth] = useContext(AuthContext);
 
   useEffect(function () {
     const fetchData = async () => {
