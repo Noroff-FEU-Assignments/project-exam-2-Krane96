@@ -27,7 +27,7 @@ const Admin = () => {
               </>
             ) : (
               <Link to="/login" />
-            )[setAuth(), setError()]}
+            )[setAuth() + setError()]}
           </div>
         </div>
       </motion.div>

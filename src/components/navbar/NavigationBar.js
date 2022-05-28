@@ -22,7 +22,7 @@ const NavigationBar = () => {
 
   const [size, setSize] = useState({
     width: 300,
-    height: 300,
+    height: undefined,
   });
 
   useEffect(() => {
@@ -45,7 +45,11 @@ const NavigationBar = () => {
 
   const menuToggle = () => {
     setMenuOpen((p) => !p);
-  };
+};
+
+const closeMenu = () => {
+  setMenuOpen(false);
+}
 
   function logout() {
     setAuth(null);
@@ -76,17 +80,17 @@ const NavigationBar = () => {
             >
               <ul>
                 <li>
-                  <Link to="/" onClick={menuToggle}>
+                  <Link to="/" onClick={closeMenu}>
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/Contact" onClick={menuToggle}>
+                  <Link to="/Contact" onClick={closeMenu}>
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link to="/Hotels" onClick={menuToggle}>
+                  <Link to="/Hotels" onClick={closeMenu}>
                     Hotels
                   </Link>
                 </li>
@@ -94,7 +98,7 @@ const NavigationBar = () => {
               </ul>
               {auth ? (
                 <>
-                  <Link to="Admin" className="admin_link" onClick={menuToggle}>
+                  <Link to="Admin" className="admin_link" onClick={closeMenu}>
                     Admin
                   </Link>
                   <button onClick={logout}>Log out</button>
@@ -104,8 +108,8 @@ const NavigationBar = () => {
                   className={`${hideToggleCheck}`}
                   onClick={() => {
                     setOpenLogin(true);
-                    menuToggle();
                     handleToggle();
+                    closeMenu();
                   }}
                 >
                   Login

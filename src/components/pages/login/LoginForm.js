@@ -48,7 +48,6 @@ const LoginForm = ({ closeLogin }) => {
     console.log(auth);
   };
 
-  // Render page
   return (
     <>
       <div className="loginBackground">
