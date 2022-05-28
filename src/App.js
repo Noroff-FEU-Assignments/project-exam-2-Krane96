@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/home/Home";
 import Login from "./components/pages/login/Login";
 import Admin from "./components/pages/admin/Admin";
-import Hotels from "./components/pages/hotels/Hotels";
+
 import Details from "./components/pages/hotels/Details";
 import Contact from "./components/pages/contact/Contact";
 import Messages from "./components/pages/admin/Messages";
@@ -25,7 +25,6 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/hotels" element={<Hotels />} />
             <Route path="details/:id" element={<Details />} />
             <Route path="admin/messages" element={<Messages />} />
             <Route path="admin/bookings" element={<Bookings />} />
