@@ -16,6 +16,7 @@ const AdminDashboard = () => {
       boxShadow: isActive
         ? "rgba(0, 0, 0, 0.40) 2px 2px 3.6px"
         : "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+        background: isActive ? "linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.15))" : "",
     };
   };
   async function logout() {

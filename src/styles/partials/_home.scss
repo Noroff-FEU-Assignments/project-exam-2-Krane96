@@ -84,7 +84,7 @@ h4 {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   margin: 1rem 0;
-  grid-gap: 10px;
+  grid-gap: 20px;
   justify-items: center;
 }
 
@@ -92,7 +92,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: 200px;
+  height: 180px;
   margin: 0 auto;
   padding: 0.5rem;
 }
@@ -108,11 +108,11 @@ h4 {
 }
 .featured_card_price p{
   padding: .4rem 1rem;
- background: linear-gradient(#00afb9, #027d6b);
+ background: linear-gradient(#00b0b9db, #027d6be0);
  color: $light;
  border-radius: $borderRadius;
  font-weight: 500;
- font-size: 1em;
+ font-size: .8em;
 }
 .featured_card_name h2{
   color: $light;
@@ -120,4 +120,5 @@ h4 {
   padding: .5rem 1rem;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: $borderRadius;
+  font-size: 1em;
 }

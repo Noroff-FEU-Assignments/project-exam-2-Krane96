@@ -30,6 +30,7 @@ const Admin = () => {
             )[setAuth() + setError()]}
           </div>
         </div>
+        
       </motion.div>
     </>
   );
