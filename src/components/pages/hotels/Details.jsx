@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { HOTELS_URL, BOOKINGS_PATH, BASE_URL } from "../../../utils/api";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -14,13 +14,14 @@ import { MdPets, MdOutlineRestaurantMenu } from "react-icons/md";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 import { bookingSchema } from "../../../utils/yupSchema";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Details = () => {
   const [details, setDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -61,7 +62,7 @@ const Details = () => {
     };
     const responseData = await axios.post(BASE_URL + BOOKINGS_PATH, options);
     console.log(responseData);
-    alert("Booking made!");
+    navigate("/BookingSuccess");
   };
 
   if (loading) {

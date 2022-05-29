@@ -6,7 +6,6 @@
 @import "partials/forms";
 @import "partials/home";
 @import "partials/admin";
-@import "partials/contact";
 @import "partials/login";
 @import "partials/howitworks";
 @import "partials/footer";
@@ -80,22 +79,36 @@ ul {
   font-size: 1em;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.Btn:hover,
+.Btn:focus {
+  transition: .1s ease-in-out;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.2em);
+}
 .logout_container {
   display: flex;
 }
+.success_container{
+  width: 180px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
 .deleteBtn {
   border: none;
-  background-color: $errorMsg;
+  background: linear-gradient($errorMsg, #b7313c) ;
   color: $light;
   border-radius: $borderRadius;
   letter-spacing: 1px;
   font-size: 1em;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  text-transform: uppercase;
 }
 .deleteBtn:hover,
 .deleteBtn:focus {
+  transition: .1s ease-in-out;
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.1em);
+  background: linear-gradient($errorMsg, #c73d49a9) ;
 }
 .action_Btn a {
   background: linear-gradient($primary, rgba(211, 53, 53, 0.9));

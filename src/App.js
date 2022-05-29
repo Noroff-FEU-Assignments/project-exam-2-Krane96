@@ -13,6 +13,8 @@ import Hotels from "./components/pages/hotels/Hotels";
 import { AuthProvider } from "./utils/context";
 import HowItWorks from "./components/howitworks/HowItWorks";
 import "./styles/main.scss";
+import SuccessContact from "./components/pages/success_page/SuccessContact";
+import BookingSuccess from "./components/pages/success_page/BookingSuccess";
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
             <Route path="admin/messages" element={<Messages />} />
             <Route path="admin/bookings" element={<Bookings />} />
             <Route path="admin/create" element={<CreateBooking />} />
+            <Route path="/successcontact" element={<SuccessContact />} />
+            <Route path="/bookingsuccess" element={<BookingSuccess />} />
           </Routes>
           <HowItWorks />
           <Footer />

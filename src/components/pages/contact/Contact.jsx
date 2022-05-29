@@ -5,16 +5,20 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { TabTitle } from "../../../utils/TitleAndIcon";
 import { ContactSchema } from "../../../utils/yupSchema";
+import { useNavigate } from "react-router-dom";
 const url = BASE_URL + "api/messages";
+
+
 
 
 const Contact = () => {
   TabTitle("Holidaze | Contact");
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful },
   } = useForm({
     resolver: yupResolver(ContactSchema),
   });
@@ -29,7 +33,7 @@ const Contact = () => {
     };
     const responseData = await axios.post(url, options);
     console.log(responseData);
-    alert("Message sent!");
+    navigate("/SuccessContact");
   };
 
   return (
@@ -38,6 +42,7 @@ const Contact = () => {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
     >
+      
       <form onSubmit={handleSubmit(onSend)} className="form_basic">
         <h2 style={{ marginBottom: ".5rem" }}>Contact us</h2>
         <fieldset>
@@ -68,7 +73,9 @@ const Contact = () => {
           {errors.message && (
             <span className="form-error">{errors.message.message}</span>
           )}
-
+          {isSubmitSuccessful && (
+            <span className="form_success">Success</span>
+          )}
           <button className="Btn">Send</button>
         </fieldset>
       </form>

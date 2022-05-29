@@ -1,3 +1,4 @@
+@import "../../styles/variables.scss";
 form{
     display: flex;
     flex-direction: column;
@@ -19,6 +20,25 @@ form{
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     font-size: .9em;
   }
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+  }
+  .form_basic {
+    margin: 2rem auto;
+    align-items: center;
+    padding: 2rem 1rem;
+    border-radius: $borderRadius;
+    max-width: 600px;
+  }
+  .form_basic input, .form_basic textarea{
+    border-radius: 10px;
+  }
+  form label{
+    padding: 0 .5rem;
+  }
   
   form button{
     margin-top: 10px;
@@ -29,5 +49,37 @@ form{
     height: 100px;
   }
   
+
+  .success_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    height: 60vh;
+  }
+  .success_container h2{
+    color: greenyellow;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .success_container h1{
+    color: greenyellow;
+    margin-bottom: 1rem;
+  }
+  .success_container button{
+    width: 150px;
+  }
+  .success_card{
+    padding: 2rem;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    border-radius: $borderRadius;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#039198,#057278);
+  }
   
   
