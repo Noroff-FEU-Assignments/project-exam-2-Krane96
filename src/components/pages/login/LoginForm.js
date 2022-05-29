@@ -48,61 +48,59 @@ const LoginForm = ({ closeLogin }) => {
   };
 
   return (
-    <>
-      <div className="loginBackground">
-        <div className="loginContainer">
-          <div className="closeBtnContainer">
-            <button
-              className="closeBtn"
-              onClick={() => {
-                closeLogin(false);
-              }}
-            >
-              &times;
-            </button>
-          </div>
-          <h2>Login</h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <label>Username</label>
-            <input
-              style={{ boxShadow: "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px" }}
-              {...register("email")}
-              placeholder="Your email..."
-            />
-            {errors.email && (
-              <span className="form-error">{errors.email.message}</span>
-            )}
-            <label>Password</label>
-            <input
-              style={{ boxShadow: "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px" }}
-              {...register("password")}
-              type="password"
-              placeholder="Your password..."
-            />
-            {errors.password && (
-              <span className="form-error">{errors.password.message}</span>
-            )}
-            <button className="Btn" style={{ marginLeft: "0" }}>
-              Login
-            </button>
-          </form>
-          <div className="closeBtnContainer">
-            <button
-              style={{
-                background: "none",
-                border: "none",
-                marginTop: "1rem",
-              }}
-              onClick={() => {
-                closeLogin(false);
-              }}
-            >
-              Close
-            </button>
-          </div>
+    <div className="loginBackground">
+      <div className="loginContainer">
+        <div className="closeBtnContainer">
+          <button
+            className="closeBtn"
+            onClick={() => {
+              closeLogin(false);
+            }}
+          >
+            &times;
+          </button>
+        </div>
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label>Username</label>
+          <input
+            style={{ boxShadow: "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px" }}
+            {...register("email")}
+            placeholder="Your email..."
+          />
+          {errors.email && (
+            <span className="form-error">{errors.email.message}</span>
+          )}
+          <label>Password</label>
+          <input
+            style={{ boxShadow: "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px" }}
+            {...register("password")}
+            type="password"
+            placeholder="Your password..."
+          />
+          {errors.password && (
+            <span className="form-error">{errors.password.message}</span>
+          )}
+          <button className="Btn" style={{ marginLeft: "0" }}>
+            Login
+          </button>
+        </form>
+        <div className="closeBtnContainer">
+          <button
+            style={{
+              background: "none",
+              border: "none",
+              marginTop: "1rem",
+            }}
+            onClick={() => {
+              closeLogin(false);
+            }}
+          >
+            Close
+          </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

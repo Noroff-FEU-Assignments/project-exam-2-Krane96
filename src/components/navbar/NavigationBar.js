@@ -45,11 +45,11 @@ const NavigationBar = () => {
 
   const menuToggle = () => {
     setMenuOpen((p) => !p);
-};
+  };
 
-const closeMenu = () => {
-  setMenuOpen(false);
-}
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   function logout() {
     setAuth(null);

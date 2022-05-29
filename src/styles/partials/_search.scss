@@ -1,50 +1,48 @@
 @import "../variables.scss";
 .search_bar_container {
-    align-items: center;
-    margin: 1rem auto;
-    width: 90%;
-    background-color: $light;
-    display: flex;
-    justify-content: center;
-    border-radius: $borderRound;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  .search_bar_container input{
-    font-size: 1em;
-    padding: .7rem .7rem .7rem 1rem;
-    width: 100%;
-    background-color: $light;
-    box-shadow: none;
-    border-radius: $borderRound;
-  }
-  .search_bar_container input:focus{
-   outline: none;
-  }
-  
-  .search_bar_container svg{
-    font-size: 2.6em;
-    padding: .5rem;
-    margin-right: .5rem;
-  }
-  .hotel_search_wrapper{
-    width: 85%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
-    transition: 1s ease-out;
-  }
-  
-  .hotel_card_search {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: .5rem auto;
-  
-  }
-  .search_card_row_one{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 3px 5px 3px 5px;
-  }
- 
+  align-items: center;
+  margin: 1rem auto;
+  width: 90%;
+  background-color: $light;
+  display: flex;
+  justify-content: center;
+  border-radius: $borderRound;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.search_bar_container input {
+  font-size: 1em;
+  padding: 0.7rem 0.7rem 0.7rem 1rem;
+  width: 100%;
+  background-color: $light;
+  box-shadow: none;
+  border-radius: $borderRound;
+}
+.search_bar_container input:focus {
+  outline: none;
+}
+
+.search_bar_container svg {
+  font-size: 2.6em;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+.hotel_search_wrapper {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  transition: 1s ease-out;
+}
+
+.hotel_card_search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.5rem auto;
+}
+.search_card_row_one {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3px 5px 3px 5px;
+}

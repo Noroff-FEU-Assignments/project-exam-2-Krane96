@@ -4,8 +4,8 @@
   margin: auto;
   margin-top: 3rem;
 }
-.box{
- border-radius: $borderRadius;
+.box {
+  border-radius: $borderRadius;
 }
 .heading {
   text-align: center;
@@ -23,7 +23,7 @@
   .container {
     max-width: 75%;
   }
-  
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -32,7 +32,13 @@
 .works {
   text-align: center;
   background-color: #066d8c;
-  background-image: -webkit-gradient(linear, 0 110%, 0 0, from($secondary), to(transparent));
+  background-image: -webkit-gradient(
+    linear,
+    0 110%,
+    0 0,
+    from($secondary),
+    to(transparent)
+  );
   border-bottom: 1px solid rgba(128, 128, 128, 0.707);
 }
 .works img {
@@ -56,7 +62,7 @@
   .works .grid {
     grid-template-columns: repeat(1, 1fr);
   }
-  .works img{
+  .works img {
     width: 20%;
   }
 }

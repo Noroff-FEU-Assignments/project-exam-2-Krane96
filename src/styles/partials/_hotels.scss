@@ -41,13 +41,12 @@
   flex-direction: column;
   justify-content: space-evenly;
   margin-bottom: 1rem;
-
 }
-.details_flex_wrap img{
+.details_flex_wrap img {
   max-width: 450px;
   height: auto;
 }
-.details_address{
+.details_address {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -89,12 +88,13 @@
   width: 100%;
 }
 
-.hotel_card:hover, .featured_background_image:hover{
+.hotel_card:hover,
+.featured_background_image:hover {
   transform: scale(1.05);
-  transition: all .2s ease-in-out;
-  opacity: .9;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.9;
 }
-.hotel_card img:hover{
-  opacity: .85;
-  transition: all .2s ease-in-out;
+.hotel_card img:hover {
+  opacity: 0.85;
+  transition: all 0.2s ease-in-out;
 }

@@ -5,7 +5,6 @@ import {
 } from "react-icons/ai";
 import styles from "./SocialsIcons.module.scss";
 
-
 const SocialsIcons = () => {
   return (
     <>

@@ -4,9 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { createHotelSchema } from "../../../utils/yupSchema";
 
-
 const CreateForm = () => {
-
   const {
     register,
     handleSubmit,
@@ -40,7 +38,7 @@ const CreateForm = () => {
             placeholder="Hotel Name"
             className="form-info block hidden"
           />
-           {errors.name && (
+          {errors.name && (
             <span className="form-error">{errors.name.message}</span>
           )}
           <input
@@ -48,7 +46,7 @@ const CreateForm = () => {
             placeholder="price"
             className="form-info block"
           />
-           {errors.price && (
+          {errors.price && (
             <span className="form-error">{errors.price.message}</span>
           )}
 
@@ -57,7 +55,7 @@ const CreateForm = () => {
             {...register("address")}
             className="form-info"
           />
-             {errors.address && (
+          {errors.address && (
             <span className="form-error">{errors.address.message}</span>
           )}
           <input
@@ -65,7 +63,7 @@ const CreateForm = () => {
             {...register("image_url")}
             className="form-info"
           />
- {errors.image_url && (
+          {errors.image_url && (
             <span className="form-error">{errors.image_url.message}</span>
           )}
           <textarea
@@ -73,7 +71,7 @@ const CreateForm = () => {
             {...register("description")}
             className="form-info "
           />
-           {errors.description && (
+          {errors.description && (
             <span className="form-error">{errors.description.message}</span>
           )}
 

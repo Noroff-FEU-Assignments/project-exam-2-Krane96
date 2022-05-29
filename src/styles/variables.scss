@@ -14,7 +14,6 @@ $paragraphLight: rgba(239, 241, 243, 0.58);
 $callToActionBtn: #457b9d;
 $errorMsg: #e63946;
 
-
 // spacing
 $spacing-md: 16px;
 $spacing-lg: 32px;
@@ -24,13 +23,11 @@ $borderRadius: 3px;
 $borderRadiusBtn: 12px;
 $borderRound: 9999px;
 
-
 @mixin breakpoint($point) {
-    @if $point == md {
-        // 768px
-        @media (min-width: 48em) {
-            @content;
-        }
+  @if $point == md {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
     }
+  }
 }
-

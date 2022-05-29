@@ -8,9 +8,6 @@ import { ContactSchema } from "../../../utils/yupSchema";
 import { useNavigate } from "react-router-dom";
 const url = BASE_URL + "api/messages";
 
-
-
-
 const Contact = () => {
   TabTitle("Holidaze | Contact");
   const navigate = useNavigate();
@@ -42,7 +39,6 @@ const Contact = () => {
       animate={{ width: "100%" }}
       exit={{ x: window.innerWidth, transition: { duration: 0.3 } }}
     >
-      
       <form onSubmit={handleSubmit(onSend)} className="form_basic">
         <h2 style={{ marginBottom: ".5rem" }}>Contact us</h2>
         <fieldset>
@@ -73,7 +69,7 @@ const Contact = () => {
           {errors.message && (
             <span className="form-error">{errors.message.message}</span>
           )}
-          
+
           <button className="Btn">Send</button>
         </fieldset>
       </form>

@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import axios from 'axios';
-import AuthContext from '../utils/context';
-import { BASE_URL } from '../utils/api';
+import { useContext } from "react";
+import axios from "axios";
+import AuthContext from "../utils/context";
+import { BASE_URL } from "../utils/api";
 
 const useAxios = () => {
   const [auth] = useContext(AuthContext);
@@ -10,7 +10,7 @@ const useAxios = () => {
   });
 
   apiClient.interceptors.request.use((config) => {
-    config.headers.Authorization = auth ? `Bearer ${auth.jwt}` : '';
+    config.headers.Authorization = auth ? `Bearer ${auth.jwt}` : "";
     return config;
   });
 

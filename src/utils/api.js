@@ -3,7 +3,6 @@ import axios from "axios";
 export const BASE_URL = "https://hotel-strapi-exam.herokuapp.com/";
 export const AUTH_URL = `${BASE_URL}api/auth/local`;
 export const HOTELS_URL = `${BASE_URL}api/hotels`;
-export const FEATURED_URL = `${BASE_URL}api/featured-hotels`;
 export const POPULATE = "?populate=*";
 export const MESSAGES_URL = "https://hotel-strapi-exam.herokuapp.com/api/messages";
 
@@ -11,7 +10,7 @@ export const AUTH_PATH = "api/auth/local";
 export const BOOKINGS_PATH = "api/bookings";
 
 export const getData = (url) => {
-  axios.get(url).then((response) => console.log(response.data.data));
+  axios.get(url).then((response) => console.log(""));
 };
 
 export const getHotels = getData( HOTELS_URL + POPULATE);

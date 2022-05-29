@@ -76,7 +76,6 @@ const Home = () => {
         </div>
       </section>
       <div style={{ maxWidth: "1200px", margin: "3rem auto" }}>
-        
         <h2 className="header_container">Popular Hotels</h2>
         <div className="featured_container">
           {hotel.map(function (hotel, idx) {
@@ -110,4 +109,3 @@ const Home = () => {
 };
 
 export default Home;
-

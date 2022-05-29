@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { HOTELS_URL } from "../../utils/api";
-
 import axios from "axios";
-
 import HotelSearchCard from "../hotel_items/HotelSearchCard";
 import { AiOutlineSearch } from "react-icons/ai";
 
