@@ -10,7 +10,7 @@ const CreateForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful },
   } = useForm({
     resolver: yupResolver(createHotelSchema),
   });
@@ -28,7 +28,6 @@ const CreateForm = () => {
     };
     const responseData = await axios.post(HOTELS_URL, options);
     console.log(responseData);
-    alert("Hotel Created!");
   };
 
   return (
@@ -79,6 +78,9 @@ const CreateForm = () => {
           )}
 
           <button className="Btn">Create</button>
+          {isSubmitSuccessful && (
+            <span className="form_success">Hotel Created</span>
+          )}
         </fieldset>
       </form>
     </>

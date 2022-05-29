@@ -1,78 +1,86 @@
 @import "../variables.scss";
 
-.admin_navigation ul li{
-    display: inline-block;
+.admin_navigation ul li {
+  display: inline-block;
 }
 
-.admin_navigation a{
-    color: $dark;
-    width: 100%;
-    display: inline-block;
-    padding: .5rem;
+.admin_navigation a {
+  color: $dark;
+  width: 100%;
+  display: inline-block;
+  padding: 0.5rem;
 }
 .admin_navigation {
-    margin: 1rem 1rem 0 0;
-    max-width: 600px;
-  }
-  .admin_navigation li {
-    
-    
-    width: 100%;
-    text-align: left;
-    margin-bottom: .3rem;
-  }
-  .admin_navigation ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .admin_navigation svg {
-    padding: 10px;
-    font-size: 2.6em;
-  }
+  margin: 1rem 1rem 0 0;
+  max-width: 600px;
+}
+.admin_navigation li {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.3rem;
+}
+.admin_navigation ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.admin_navigation svg {
+  padding: 10px;
+  font-size: 2.6em;
+}
 
-  .admin_items_wrapper{
-    margin: 2rem auto 2rem auto;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: $borderRadiusBtn;
-    padding: 1rem;
-    justify-content: space-between;
-  }
-  .admin_dashboard {
-    margin: 1rem auto;
-  }
-  .info_section{
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .info_container span{
-    font-size: 1.1em;
-    font-weight: 600;
-    color: $dark;
-  }
-  .info_container h4{
-    font-weight: 600;
-  }
-  .info_container h5{
-    margin: .5rem 0;
-  }
+.admin_items_wrapper {
+  margin: 2rem auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: $borderRadiusBtn;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.admin_dashboard {
+  margin: 1rem auto;
+}
+.info_section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .logout_container{
-    display: flex;
-    justify-content: flex-end;
-  }
-  .logout_container button{
-    padding: .4rem .7rem;
-    margin-right: .8rem;
-  }
+.info_container span {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: $dark;
+}
+.info_container h4 {
+  font-weight: 600;
+}
+.info_container h5 {
+  margin: 0.5rem 0;
+}
 
-  .grid_admin {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    max-width: 1000px;
-    margin: 0 auto;
+.logout_container {
+  display: flex;
+  justify-content: flex-end;
+}
+.logout_container button {
+  padding: 0.4rem 0.7rem;
+  margin-right: 0.8rem;
+}
+
+.grid_admin {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sender_message {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 75px;
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+  border-radius: $borderRadius + 3px;
 }

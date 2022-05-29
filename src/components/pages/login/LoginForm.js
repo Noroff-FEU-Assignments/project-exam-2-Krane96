@@ -3,10 +3,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../../../utils/yupSchema";
 import axios from "axios";
 import { AUTH_URL } from "../../../utils/api";
-import { useNavigate} from "react-router-dom";
-import { useContext, useState  } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import AuthContext from "../../../utils/context";
-
 
 const LoginForm = ({ closeLogin }) => {
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ const LoginForm = ({ closeLogin }) => {
       identifier: formData.email,
       password: formData.password,
     });
-    
+
     console.log("Response Data: ", responseData);
 
     // Save JWT response to localstorage
@@ -37,7 +36,7 @@ const LoginForm = ({ closeLogin }) => {
     // redirect to admin page
     closeLogin();
     navigate("/admin");
-    alert("successfully logged in")
+    alert("successfully logged in");
   };
 
   // handleSubmit
@@ -71,8 +70,8 @@ const LoginForm = ({ closeLogin }) => {
               placeholder="Your email..."
             />
             {errors.email && (
-            <span className="form-error">{errors.email.message}</span>
-          )}
+              <span className="form-error">{errors.email.message}</span>
+            )}
             <label>Password</label>
             <input
               style={{ boxShadow: "rgba(33, 35, 38, 0.1) 0px 10px 10px -10px" }}
@@ -81,16 +80,18 @@ const LoginForm = ({ closeLogin }) => {
               placeholder="Your password..."
             />
             {errors.password && (
-            <span className="form-error">{errors.password.message}</span>
-          )}
-            <button className="Btn" style={{marginLeft:"0"}}>Login</button>
+              <span className="form-error">{errors.password.message}</span>
+            )}
+            <button className="Btn" style={{ marginLeft: "0" }}>
+              Login
+            </button>
           </form>
           <div className="closeBtnContainer">
             <button
               style={{
                 background: "none",
                 border: "none",
-                marginTop: "1rem", 
+                marginTop: "1rem",
               }}
               onClick={() => {
                 closeLogin(false);

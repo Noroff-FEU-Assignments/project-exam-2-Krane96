@@ -26,11 +26,10 @@ const Admin = () => {
                 {error ? "Error" : <></>}
               </>
             ) : (
-              <Link to="/login" />
-            )[setAuth() + setError()]}
+              (<Link to="/login" />)[setAuth() + setError()]
+            )}
           </div>
         </div>
-        
       </motion.div>
     </>
   );

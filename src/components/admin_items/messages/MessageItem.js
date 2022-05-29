@@ -5,8 +5,8 @@ const MessageItem = ({ email, name, message }) => {
           <h5><span>From: </span>{name}</h5>
           <h5><span>Email: </span>{email}</h5>
           <div>
-          <span>Message: <br/></span>
-          <h5 style={{overflowX:"hidden", overflowY:"auto",height:"80px"}}>{message}</h5>
+          <h5><span>Message:</span></h5>
+          <p className="sender_message">{message}</p>
           </div>
         </div>
         

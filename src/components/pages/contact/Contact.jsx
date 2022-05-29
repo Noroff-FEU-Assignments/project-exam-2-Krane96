@@ -18,7 +18,7 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(ContactSchema),
   });
@@ -73,9 +73,7 @@ const Contact = () => {
           {errors.message && (
             <span className="form-error">{errors.message.message}</span>
           )}
-          {isSubmitSuccessful && (
-            <span className="form_success">Success</span>
-          )}
+          
           <button className="Btn">Send</button>
         </fieldset>
       </form>
