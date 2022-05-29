@@ -72,7 +72,7 @@ ul {
 }
 .Btn {
   border: none;
-  background: linear-gradient(#457b9d,#305c78);
+  background: linear-gradient(#457b9d, #305c78);
   color: $light;
   border-radius: $borderRadius;
   letter-spacing: 1px;
@@ -81,14 +81,14 @@ ul {
 }
 .Btn:hover,
 .Btn:focus {
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
   transform: translateY(-0.2em);
 }
 .logout_container {
   display: flex;
 }
-.success_container{
+.success_container {
   width: 180px;
   margin: 1rem auto;
   padding: 1rem;
@@ -96,7 +96,7 @@ ul {
 
 .deleteBtn {
   border: none;
-  background: linear-gradient($errorMsg, #b7313c) ;
+  background: linear-gradient($errorMsg, #b7313c);
   color: $light;
   border-radius: $borderRadius;
   letter-spacing: 1px;
@@ -106,20 +106,22 @@ ul {
 }
 .deleteBtn:hover,
 .deleteBtn:focus {
-  transition: .1s ease-in-out;
+  transition: 0.1s ease-in-out;
   box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  background: linear-gradient($errorMsg, #c73d49a9) ;
+  background: linear-gradient($errorMsg, #c73d49a9);
 }
 .action_Btn a {
   background: linear-gradient($primary, rgba(211, 53, 53, 0.9));
 }
-.home_hero_content a:hover{
+.home_hero_content a:hover {
   background: linear-gradient($primary, rgba(211, 53, 53, 0.6));
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 7px 18px, rgba(0, 0, 0, 0.075) 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 7px 18px,
+    rgba(0, 0, 0, 0.075) 0px 10px 10px;
 }
-.contact_hero a:hover{
+.contact_hero a:hover {
   background: linear-gradient($primary, rgba(211, 53, 53, 0.8));
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 7px 18px, rgba(0, 0, 0, 0.075) 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 7px 18px,
+    rgba(0, 0, 0, 0.075) 0px 10px 10px;
 }
 .logged_user {
   border-bottom: 1px solid black;
@@ -189,6 +191,9 @@ h5 {
   .item_carousel img {
     height: 230px;
   }
+  .hotel_details img{
+    height: 250px;
+  }
 
   .container {
     max-width: 65%;
@@ -219,6 +224,9 @@ h5 {
 @media only screen and (min-width: 650px) {
   .item_carousel img {
     height: 270px;
+  }
+  .hotel_details img{
+    height: 290px;
   }
   .details_flex_wrap {
     padding: 2rem;
@@ -255,12 +263,15 @@ h5 {
 // Tablet
 
 @media only screen and (min-width: 768px) {
-  .header_container{
+  .header_container {
     font-size: 1.5em;
     padding: 0 2rem;
     margin-bottom: 1rem;
   }
-  .hotel_container h2{
+  .hotel_details img{
+    height: 340px;
+  }
+  .hotel_container h2 {
     font-size: 1.5em;
   }
   .footer_width {
@@ -306,8 +317,8 @@ h5 {
 }
 
 @media only screen and (min-width: 992px) {
-  .search_bar_container input{
-    padding: .8rem 2rem;
+  .search_bar_container input {
+    padding: 0.8rem 2rem;
   }
   .form_basic {
     max-width: 800px;
@@ -355,7 +366,7 @@ h5 {
     margin: 0;
   }
   .hotel_details img {
-    height: auto;
+    height: 350px;
     width: 450px;
   }
   .details-p {
@@ -380,12 +391,24 @@ h5 {
   }
   .contact_hero {
     height: 600px;
+    align-items: center;
+  }
+  .contact_hero_content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
   }
   .hero_container {
     height: 500px;
+    justify-content: center;
   }
   .home_hero_content {
     padding: 6rem 2rem 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
   }
   .home_hero_content h1 {
     font-size: 2.2em;
@@ -418,13 +441,24 @@ h5 {
   .hero_container {
     height: 680px;
   }
-  .home_hero_content {
-    padding: 10rem 2rem 2rem 10rem;
-  }
+  
   .action_Btn a {
     padding: 1rem 3rem;
   }
   .home_hero_content h1 {
     font-size: 2.6em;
   }
+  .hotel_featured_card {
+    height: 240px;
+  }
+  .featured_background_image {
+    width: 100%;
+  }
+  .header_container {
+    font-size: 1.8em;
+  }
+  .contact_hero_content h2 {
+    font-size: 2.4em;
+  }
+ 
 }

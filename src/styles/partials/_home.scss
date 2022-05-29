@@ -11,12 +11,17 @@ h4 {
   text-align: left;
   margin-top: 10px;
 }
-.home_hero{
+.home_hero {
   margin-top: 3rem;
   transition: 2s ease-out;
 }
 .hero_container {
-  background: linear-gradient(to top, rgba(0,0,0,0.2)50%,rgba(0,0,0,0.2)50%), url("../../../public/images/hero_header.jpg");
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.2) 50%
+    ),
+    url("../../../public/images/hero_header.jpg");
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   background-position: center;
   background-size: cover;
@@ -44,7 +49,7 @@ h4 {
   border-radius: $borderRadius + 3px;
 }
 
-.header_container{
+.header_container {
   padding: 0 1rem;
   font-size: 1.3em;
 }
@@ -69,16 +74,18 @@ h4 {
   color: $light;
   font-size: 1.8em;
   font-weight: 600;
+  padding: 0.5rem 1rem;
 }
 .contact_hero a {
   font-size: 1.2em;
 }
-.featured_background_image{
+.featured_background_image {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   width: 85%;
   border-radius: $borderRadius;
+  max-width: 350px;
 }
 .featured_container {
   display: grid;
@@ -96,28 +103,26 @@ h4 {
   margin: 0 auto;
   padding: 0.5rem;
 }
-.featured_card_price{
- display: flex;
- justify-content: flex-end;
- 
+.featured_card_price {
+  display: flex;
+  justify-content: flex-end;
 }
-.featured_card_name{
- display: flex;
- justify-content: flex-start;
- 
+.featured_card_name {
+  display: flex;
+  justify-content: flex-start;
 }
-.featured_card_price p{
-  padding: .4rem 1rem;
- background: linear-gradient(#00b0b9db, #027d6be0);
- color: $light;
- border-radius: $borderRadius;
- font-weight: 500;
- font-size: .8em;
+.featured_card_price p {
+  padding: 0.4rem 1rem;
+  background: linear-gradient(#00b0b9db, #027d6be0);
+  color: $light;
+  border-radius: $borderRadius;
+  font-weight: 500;
+  font-size: 0.8em;
 }
-.featured_card_name h2{
+.featured_card_name h2 {
   color: $light;
   font-weight: 600;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: $borderRadius;
   font-size: 1em;
