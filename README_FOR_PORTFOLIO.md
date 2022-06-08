@@ -1,6 +1,6 @@
 # Holidaze
 
-<img src="images/boostcraft.jpg" width="350" title="hover text">
+<img src="public/images/holidaze.png" width="350" title="hover text">
 
 ## Description
 The goal with this was to:
